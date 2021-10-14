@@ -1,16 +1,21 @@
 # HelloJulia.jl
 
+Tutorials for a workshop introducing Julia and machine learning in Julia.
+
+| Linux | Coverage |
+| :------------ | :------- |
+| [![Build Status](https://github.com/ablaom/HelloJulia.jl/workflows/CI/badge.svg)](https://github.com/ablaom/HelloJulia.jl/actions) | [![Coverage](https://codecov.io/gh/ablaom/HelloJulia.jl/branch/master/graph/badge.svg)](https://codecov.io/github/ablaom/HelloJulia.jl?branch=master) |
 To run the tutorials provided in this repository:
 
 ### Beginner instructions
 
 - If necessary, install [Julia 1.6](https://julialang.org/download/)
-  on your machine
+  on your machine.
 
 - To start the so-called REPL, open (click on) the Julia 1.6
   application. This should run the Julia in command-line environment
   specific to your operating system (e.g., a unix shell) so that your
-  see a the prompt `julia >`.
+  see a `julia >` prompt..
 
 - Type the following at the `julia>` prompt:
 
@@ -38,7 +43,3 @@ Clone this repository locally and navigate to the appropriate sub-folder of
 `/tutorials`. Open the file with `.jl` extension in your Julia-enabled
 IDE.
 
-
-| Linux | Coverage |
-| :------------ | :------- |
-| [![Build Status](https://github.com/ablaom/HelloJulia.jl/workflows/CI/badge.svg)](https://github.com/ablaom/HelloJulia.jl/actions) | [![Coverage](https://codecov.io/gh/ablaom/HelloJulia.jl/branch/master/graph/badge.svg)](https://codecov.io/github/ablaom/HelloJulia.jl?branch=master) |
