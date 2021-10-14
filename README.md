@@ -17,8 +17,8 @@ To run the tutorials provided in this repository:
   on your machine.
 
 - To start the so-called REPL, open (click on) the Julia 1.6
-  application. This should run the Julia in command-line environment
-  specific to your operating system (e.g., a unix shell) so that your
+  application. This should run Julia in a command-line environment
+  specific to your operating system (e.g., unix shell) so that your
   see a `julia >` prompt..
 
 - Type the following at the `julia>` prompt:
