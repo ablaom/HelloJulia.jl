@@ -8,6 +8,7 @@ UNDER CONSTRUCTION
 | Linux | Coverage |
 | :------------ | :------- |
 | [![Build Status](https://github.com/ablaom/HelloJulia.jl/workflows/CI/badge.svg)](https://github.com/ablaom/HelloJulia.jl/actions) | [![Coverage](https://codecov.io/gh/ablaom/HelloJulia.jl/branch/master/graph/badge.svg)](https://codecov.io/github/ablaom/HelloJulia.jl?branch=master) |
+
 To run the tutorials provided in this repository:
 
 ### Beginner instructions
