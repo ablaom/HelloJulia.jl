@@ -7,7 +7,7 @@ To run the tutorials provided in this repository:
 - If necessary, install [Julia 1.6](https://julialang.org/download/)
   on your machine
 
-- To get start the so-called REPL, open the Julia 1.6
+- To start the so-called REPL, open (click on) the Julia 1.6
   application. This should run the Julia in command-line environment
   specific to your operating system (e.g., a unix shell) so that your
   see a the prompt `julia >`.
@@ -27,13 +27,14 @@ go()
   from the directory that opens, select the file with the `.ipynb`
   extension (such as `lightning_tour.ipynb`).
   
-If for any reason you cannot run the notebook, you can inspect a
-static version of the notebook by intead opening the file with the
-`.md` extension.
+**Having technical difficulties?** You can inspect static versions of
+a notebook by navigating to the appropriate file with extension `.md`
+(e.g., `lightning_tour.md`) starting
+[here](https://github.com/ablaom/HelloJulia.jl/tree/dev/tutorials/).
 
 ### For more experienced users
 
-Clone this repo locally and navigate to the appropriate subfolder of
+Clone this repository locally and navigate to the appropriate sub-folder of
 `/tutorials`. Open the file with `.jl` extension in your Julia-enabled
 IDE.
 
