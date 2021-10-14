@@ -1,6 +1,9 @@
 # HelloJulia.jl
 
+
 Tutorials for a workshop introducing Julia and machine learning in Julia.
+
+UNDER CONSTRUCTION
 
 | Linux | Coverage |
 | :------------ | :------- |
