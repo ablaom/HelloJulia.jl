@@ -1,49 +1,94 @@
 # HelloJulia.jl
 
 
-Tutorials for a workshop introducing Julia and machine learning in Julia.
-
-UNDER CONSTRUCTION
+Introducing the Julia language
 
 | Linux | Coverage |
 | :------------ | :------- |
 | [![Build Status](https://github.com/ablaom/HelloJulia.jl/workflows/CI/badge.svg)](https://github.com/ablaom/HelloJulia.jl/actions) | [![Coverage](https://codecov.io/gh/ablaom/HelloJulia.jl/branch/master/graph/badge.svg)](https://codecov.io/github/ablaom/HelloJulia.jl?branch=master) |
 
-To run the tutorials provided in this repository:
 
-### Beginner instructions
+### Is Julia for me?
 
-- If necessary, install [Julia 1.6](https://julialang.org/download/)
-  on your machine.
+- [Julia language home page](https://julialang.org) - Good for a quick
+  rundown of features and introduction to the broader ecosystem
 
-- To start the so-called REPL, open (click on) the Julia 1.6
-  application. This should run Julia in a command-line environment
-  specific to your operating system (e.g., unix shell) so that your
-  see a `julia >` prompt..
+- [Why Julia?](https://indico.cern.ch/event/1074269/contributions/4539601/attachments/2317518/3945412/why-julia%20slides.pdf) - Motivation and comparison to other languages. Slides for a talk by Oliver Schulz, Max Planck Institute for Physics.  [Alternative link](https://github.com/oschulz/Why-Julia)
 
-- Type the following at the `julia>` prompt:
+- [JuliaPackages.com](https://juliapackages.com/packages?search=) Good for scouting out existing julia software in your area of interest
 
-```julia
-using Pkg
-Pkg.add(url="https://github.com/ablaom/HelloJulia.jl")
 
-using HelloJulia
-go()
-```
+### First steps
 
-- This should launch a Juptyer notebook session in your browser. Now
-  choose one of the folders in the list, say "lightning_tour", and
-  from the directory that opens, select the file with the `.ipynb`
-  extension (such as `lightning_tour.ipynb`).
+While Julia can be run in the cloud (see e.g.,
+[here](https://juliahub.com/ui/Home)) we recommend installing Julia on
+your machine when starting out, as this is not difficult in our
+experience:
+
+- *Installing julia compiler:* [Ubuntu](https://ferrolho.github.io/blog/2019-01-26/how-to-install-julia-on-ubun) or similar; [Mac, Windows, or other](https://julialang.org/download/)
   
-**Having technical difficulties?** You can inspect static versions of
-a notebook by navigating to the appropriate file with extension `.md`
-(e.g., `lightning_tour.md`) starting
-[here](https://github.com/ablaom/HelloJulia.jl/tree/dev/tutorials/).
+  
+- Open the downloaded application (or run `julia` from a
+  terminal/console) to launch the command-line interface for
+  interacting with julia (its called the
+  [REPL](https://en.wikipedia.org/wiki/Read–eval–print_loop)).
 
-### For more experienced users
+- At the `julia> ` prompt, type the obligatory `println("Hello
+  world!")` to check the REPL is alive.
 
-Clone this repository locally and navigate to the appropriate sub-folder of
-`/tutorials`. Open the file with `.jl` extension in your Julia-enabled
-IDE.
+
+### Advanced setup
+
+Once you are familiar with basic interaction using the REPL, you will want to:
+
+- Hook your Julia installation up with an editor or integrated
+  development environment (IDE) so you can efficiently edit, run and
+  debug longer julia scripts. See [these
+  options](https://julialang.org). If you don't have an existing
+  preference I recommend VS Code. I prefer emacs, but it much older
+  and has a steeper learning curve.
+
+- Or, interact with Julia using a notebook. Here you have two options:
+  - Juptyer notebooks (used also for R and python) - follow [these
+    instructions](https://github.com/JuliaLang/IJulia.jl).
+  - [Pluto](https://github.com/fonsp/Pluto.jl) "reactive" notebooks (specific to Julia)
+  
+  
+### Getting help
+
+Popular forums for asking your julia questions are [Julia
+Discourse](https://discourse.julialang.org) and the [Julia Slack
+channel](https://julialang.org/slack/).
+
+
+### Learning Julia
+
+### If you have little or no prior programming experience
+
+Many people use R, python or MATLAB packages with a minimum of actual
+programming knowledge and the same applies to Julia. However, to start
+deepening your Julia programming knowledge, you could try some of the
+resources at this [Julia org page](https://julialang.org/learning/). I
+have also heard that [Think
+Julia](https://benlauwens.github.io/ThinkJulia.jl/latest/book.html) is
+a pretty good ab initio introduction to programming.
+
+
+### If you have moderate to advanced programming experience elsewhere
+
+My strong recommendation would be to read Aaron Christinson's tutorial
+[Dispatching Design
+Patterns](https://github.com/ninjaaron/dispatching-design-patterns)
+which is nicely compressed in his [half-hour
+video presentation](https://www.youtube.com/watch?v=n-E-1-A_rZM).
+
+These [points of
+difference](https://docs.julialang.org/en/v1/manual/noteworthy-differences/)
+between Julia and other popular languages may also be useful.
+
+Serious Julia developers will want a copy of [Hands-On Design Patterns
+and Best Julia Practices with Julia](https://www.perlego.com/book/1365831/handson-design-patterns-and-best-practices-with-julia-proven-solutions-to-common-problems-in-software-design-for-julia-1x-pdf?utm_source=google&utm_medium=cpc&gclid=CjwKCAjw_L6LBhBbEiwA4c46uv-v5MDWoUCnOsWjAsPQ1OWcownNPPDrKDhhlwNbGG69_zSNFwyM5RoCMgcQAvD_BwE) by Tom Kwong. This is the book
+I wished existed when I started. I learned Julia from the
+[manual](https://docs.julialang.org/en/v1/) which is, however,
+excellent.
 
