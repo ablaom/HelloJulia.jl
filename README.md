@@ -1,12 +1,12 @@
 # HelloJulia.jl
 
 
-Introducing the Julia language
+Resources for an Introduction to Julia course
 
-| Linux | Coverage |
-| :------------ | :------- |
-| [![Build Status](https://github.com/ablaom/HelloJulia.jl/workflows/CI/badge.svg)](https://github.com/ablaom/HelloJulia.jl/actions) | [![Coverage](https://codecov.io/gh/ablaom/HelloJulia.jl/branch/master/graph/badge.svg)](https://codecov.io/github/ablaom/HelloJulia.jl?branch=master) |
+This page contains useful resources for starting out with Julia. To launch the tutorials, click below:
 
+
+[<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="86" height="20" role="img" aria-label="Start: tutorial"><title>Start: tutorial</title><linearGradient id="s" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="r"><rect width="86" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#r)"><rect width="37" height="20" fill="#555"/><rect x="37" width="49" height="20" fill="#97ca00"/><rect width="86" height="20" fill="url(#s)"/></g><g fill="#fff" text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" text-rendering="geometricPrecision" font-size="110"><text aria-hidden="true" x="195" y="150" fill="#010101" fill-opacity=".3" transform="scale(.1)" textLength="270">Start</text><text x="195" y="140" transform="scale(.1)" fill="#fff" textLength="270">Start</text><text aria-hidden="true" x="605" y="150" fill="#010101" fill-opacity=".3" transform="scale(.1)" textLength="390">tutorial</text><text x="605" y="140" transform="scale(.1)" fill="#fff" textLength="390">tutorial</text></g></svg>](TUTORIALS.md)
 
 ### Is Julia for me?
 
@@ -91,4 +91,3 @@ and Best Julia Practices with Julia](https://www.perlego.com/book/1365831/handso
 I wished existed when I started. I learned Julia from the
 [manual](https://docs.julialang.org/en/v1/) which is, however,
 excellent.
-
