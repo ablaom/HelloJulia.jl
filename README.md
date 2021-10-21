@@ -58,15 +58,13 @@ Once you are familiar with basic interaction using the REPL, you will want to:
 
 Popular forums for asking your julia questions are [Julia
 Discourse](https://discourse.julialang.org) and the [Julia Slack
-channel](https://julialang.org/slack/).
+channel](https://julialang.org/slack/). Also useful:
 
-Tips:
+- [Julia cheatsheet](https://juliadocs.github.io/Julia-Cheat-Sheet/).
 
-- [Julia cheatsheet](https://juliadocs.github.io/Julia-Cheat-Sheet/)
+- Get help on a command with `juia> ?some_command` at the REPL or `@doc ?some_command` in a notebook.
 
-- Get help on a command with `juia> ?some_command` at the REPL or `@doc` in a notebook
-
-- `apropos("invert")` seaches for objects with "invert" in the doc string
+- `apropos("invert")` seaches for objects with "invert" in the doc string.
 
 
 ## Learning Julia
