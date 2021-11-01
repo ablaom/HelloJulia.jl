@@ -1,5 +1,7 @@
 # HelloJulia.jl
 
+UNDER CONSTRUCTION
+
 
 Resources used by the author for a short *Introduction to Julia* workshop.
 
