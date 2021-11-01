@@ -1,0 +1,12 @@
+/Manifest.toml
+/docs/Manifest.toml
+.ipynb_checkpoints
+*~
+#*
+*.bu
+.DS_Store
+sandbox/
+docs/build
+paper/auto
+*.aux
+*.bbl

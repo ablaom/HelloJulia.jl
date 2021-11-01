@@ -1,6 +1,11 @@
 # # Tutorial 1
 
-# Crash course in Julia basics.
+# Crash course in Julia basics:
+
+# Arithmetic, arrays, tuples, strings, dictionaries, functions,
+# iteration, random numbers, package loading, plotting
+
+# (40 min)
 
 # ## Julia is a calculator:
 
@@ -41,7 +46,7 @@ A = [3 5 7
 
 size(A)
 
-# Accessing elements:
+# Accessing elements (Julia indices start at 1 not 0):
 
 A[1, 2]
 
@@ -104,7 +109,7 @@ typeof(t)
 
 t[3]
 
-# ## Strings
+# ## Strings and relatives
 
 a_string = "the cat"
 a_character = 't'
@@ -165,14 +170,6 @@ pair = 'a' => "ant"
 
 first(pair)
 
-#-
-
-pairs = [x => x^2 for x in 1:5]
-
-#-
-
-Dict(pairs)
-
 
 # ## Functions
 
@@ -219,23 +216,62 @@ squares
 
 [x^2 for x in 1:10]
 
-# METHOD 3 (delayed comprension):
-
-squares2 = (x^2 for x in 1:10)
-
-#-
-
-collect(squares2)
-
-
-# METHOD 4 (map):
+# METHOD 3 (map):
 
 map(x -> x^2, 1:10)
 
 
-# METHOD 5 (broadcasting with dot syntax):
+# METHOD 4 (broadcasting with dot syntax):
 
 (1:10) .^ 2
+
+
+# ## Random numbers
+
+typeof(2)
+
+#-
+
+rand() # sample a Float64 uniformly from interval [0, 1]
+
+#-
+
+rand(3, 4) # do that 12 times and put in a 3 x 4 array
+
+#-
+
+randn(3, 4) # use normal distribution instead
+
+#-
+
+rand(Int8) # random elment of type Int8
+
+#-
+
+rand(['a', 'b', 'c'], 10) # 10 random elements from a vector
+
+# Some standard libraries are needed to do more, for example:
+
+using Random
+
+#-
+
+randstring(30)
+
+#-
+
+using Statistics
+
+#-
+
+y = rand(30)
+@show mean(y) quantile(y, 0.75);
+
+# (Use the macro @show before stuff you want printed prefixed by
+# *what* it is that is being printed.)
+
+# For sampling from more general distributions we need
+# Distributions.jl package which is not part of the standard library.
 
 
 # ## Loading packages
@@ -282,3 +318,11 @@ histogram!(samples , normalize=true, alpha=0.4)
 #-
 
 savefig("my_first_plot.png")
+
+
+## Exercises
+
+### Exercise 1
+
+# Write a function with one argument `v`, which may assume is a
+# vector, that returns

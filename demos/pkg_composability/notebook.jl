@@ -3,7 +3,7 @@
 # Instantiate package environment:
 
 using Pkg
-Pkg.activate("src")
+Pkg.activate("env")
 Pkg.instantiate()
 
 

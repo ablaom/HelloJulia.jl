@@ -32,6 +32,3 @@ IDE.
 
 [![Build Status](https://github.com/ablaom/HelloJulia.jl/workflows/CI/badge.svg)](https://github.com/ablaom/HelloJulia.jl/actions) 
 
-
-
-
