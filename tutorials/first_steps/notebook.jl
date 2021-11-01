@@ -109,6 +109,10 @@ typeof(t)
 
 t[3]
 
+# Tuples also come in a *named* variety:
+
+(; i = 1, x = 2.0, animal="cat")
+
 # ## Strings and relatives
 
 a_string = "the cat"

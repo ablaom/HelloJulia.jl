@@ -16,7 +16,9 @@ following the following instructions:
 
 ```julia
 using Pkg
-Pkg.add(url="https://github.com/ablaom/HelloJulia.jl")
+Pkg.develop(url="https://github.com/ablaom/HelloJulia.jl")
+Pkg.activate(joinpath(Pkg.devdir(), "HelloJulia"))
+Pkg.instantiate()
 
 using HelloJulia
 go()
