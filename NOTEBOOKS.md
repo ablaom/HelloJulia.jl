@@ -1,4 +1,5 @@
-# Launching the live tutorial
+Notebooks for demos in the workshop (and some others) can be run by
+following the following instructions:
 
 - *Installing julia compiler:*
   [Ubuntu](https://ferrolho.github.io/blog/2019-01-26/how-to-install-julia-on-ubun)
@@ -25,7 +26,7 @@ go()
 ### For more experienced users
 
 Clone this repository locally and navigate to the appropriate sub-folder of
-`/tutorials`. Open the file with `.jl` extension in your Julia-enabled
+`/notebooks`. Open the file with `.jl` extension in your Julia-enabled
 IDE.
 
 ---
