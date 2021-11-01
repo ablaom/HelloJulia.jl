@@ -25,7 +25,7 @@ go()
 ```
 
 
-### For more experienced users
+### To run as script in your editor (for more experienced users)
 
 Clone this repository locally and navigate to the appropriate sub-folder of
 `/notebooks`. Open the file with `.jl` extension in your Julia-enabled
