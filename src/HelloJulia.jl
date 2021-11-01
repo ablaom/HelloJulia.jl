@@ -5,10 +5,10 @@ export go
 using IJulia
 
 const ROOT = joinpath(@__DIR__, "..")
+const NOTEBOOKS = joinpath(ROOT, "notebooks")
 
 go() = begin
-    @show TUTORIALS
-    notebook(dir=TUTORIALS)
+    notebook(dir=NOTEBOOKS)
 end
 
 end # module
