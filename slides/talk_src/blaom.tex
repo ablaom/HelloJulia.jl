@@ -47,6 +47,13 @@
 \end{frame}
 
 \begin{frame}
+  Resources:
+  \begin{center}
+  {\huge https://github.com/ablaom/HelloJulia.jl}
+  \end{center}
+\end{frame}
+
+\begin{frame}
   \frametitle{Introducing Julia}
   Julia is an open source, general-purpose programming language, in
   the fourth year of its first {\df stable} release 1.0.\pause
@@ -55,7 +62,7 @@
     \begin{itemize}
     \item Julia let's you write {\df fast}
       code {\df fast}.\pause
-    \item Julia is maximally hackable.\pause
+    \item Maximally hackable.\pause
     \item Julia's design encourages code re-use and extension,
       promoting a relatively rapid expansion of third party libraries.\pause
   \item Julia's design is {\df elegant}. Coding in Julia is {\df joyful}.
@@ -101,7 +108,7 @@
   calling code written in these languages. \pause
   
 \item ``Scripting'' languages like python, MATLAB, and R allow you
-  quickly wrap computational tasks into {\df customized and easily
+  quickly {\df wrap} computational tasks into {\df customized and easily
     modified workflows}. They also accelerate {\df testing and
     protyping} of new computational algorithms.\pause
 
@@ -115,12 +122,13 @@
 \begin{frame}
   \frametitle{Why  is two languages a problem?}
   \begin{itemize}
+    \item Can't easily modify core algorithms
     \item Barrier to certain kinds of functionality, e.g., {\df auto-differentiation}
     \item Complicates installation of a complete software stack
-    (package {\df dependency hell}, manual intervention)
+    (package {\df dependency hell}, manual interventions)
   \item Hampers development of novel algorithms
-  \item Barrier to transparency
-  \item Barrier to understanding tools, even if not seeking to modify them
+  \item Barrier to transparency and reproducibility
+  \item Barrier to {\df understanding algorithms} even if not seeking to modify them
   \end{itemize}
 \end{frame}
 
@@ -135,7 +143,7 @@
 % \includepdf[pages=3-5]{Sebastian.pdf}
 
 % lego analogy
-\includepdf[scale=1.3,pages={1,2,3}]{lego.pdf}
+\includepdf[scale=1.3,pages={1,3}]{lego.pdf}
 
 % \begin{frame}[plain]
 %     \includegraphics[scale=0.45]{benchmarks.png}
@@ -148,13 +156,12 @@
   programming language are {\df form} and {\df function}. Roughly
   speaking, the {\df Expression Problem} is the problem of how to
   represent data (form) and how to articulate required behaviour
-  (function) in way that allows {\df extension} in an optimal and safe
-  way.\pause
+  (function) in way that allows {\df extension} of both in an optimal
+  and safe way.\pause
   \begin{itemize}
     \item Object oriented languages typically score poorly here (Ruby has a
       dirty way, Scala a clean workaround).
-    \item Julia scores well, as evidenced by large code-reuse and
-      the ease with which packages are composed 
+    \item Julia scores well. {\df Proof:} \pause Large code-reuse, package composibility
   \end{itemize}
 \end{frame}
 
@@ -176,6 +183,29 @@
 \end{frame}
 
 \begin{frame}
+  \frametitle{Other features}
+  \begin{itemize}
+    \item Fast user-defined composite types (C-like structs)
+    \item Built-in package manager
+    \item Lisp-like macros/metaprogramming
+    \item Call C functions directly
+    \item Can wrap Python, R Java/Scala
+    \item State-of-the-art distributed computing and multi-threading support
+  \end{itemize}
+\end{frame}
+
+% code snippet:
+\begin{frame}
+  \frametitle{Other features (continued)}
+  \begin{itemize}
+  \item First-class math support
+    \item Exellent REPL (console)
+    \item Built-in package manager
+    \item Automatic differentiation (Zygote.jl)
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
   \frametitle{Drawbacks}
   For most users all serious drawbacks derive from Julia's young age:
   \begin{itemize}
@@ -191,71 +221,71 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}
-  \frametitle{The Julia data science ecosystem}
-  \begin{block}{Data manipulation and exploratory data analysis}
-  \begin{itemize}
-      \item DataFrames.jl (stable release)
-      \item Queryverse.jl for querying (in-memory) data sources (stable release)
-      \item Mature plotting packages, including a common front-end Plots.jl for:
-        matplotlib, Plotly, Vega, GR, \& others.  Makie.jl is native julia and
-        runs on a GPU.\pause
-  \end{itemize}
-\end{block}
-\end{frame}
-\begin{frame}
-  \begin{block}{Models}
-  \begin{itemize}
-     \item Wrappers exist for: scikit-learn, XGBoost, LightGBM, SVM (also have MLJ interfaces)\pause
-     \item Julia native libraries for Gradient Tree Boosting, general gradient descent models (neural networks),
-         Clustering, Decision Trees, Random Forests, General Linear Models, Elastic Net \& Lasso, naive bayes,
-         probabilistic programming models, guassian processes, \ldots\pause
-  \end{itemize}
-  \end{block}
-  \begin{block}{ML Frameworks}
-  \begin{itemize}
-     \item MLJ.jl (multi-paradigm)
-     \item MLAutoPipeline.jl (multi-paradigm)
-     \item ScikitLearn.jl (wrapper)
-     \item FastAI.jl (gradient descent)
-  \end{itemize}
-  \end{block}
-\end{frame}
+% \begin{frame}
+%   \frametitle{The Julia data science ecosystem}
+%   \begin{block}{Data manipulation and exploratory data analysis}
+%   \begin{itemize}
+%       \item DataFrames.jl (stable release)
+%       \item Queryverse.jl for querying (in-memory) data sources (stable release)
+%       \item Mature plotting packages, including a common front-end Plots.jl for:
+%         matplotlib, Plotly, Vega, GR, \& others.  Makie.jl is native julia and
+%         runs on a GPU.\pause
+%   \end{itemize}
+% \end{block}
+% \end{frame}
+% \begin{frame}
+%   \begin{block}{Models}
+%   \begin{itemize}
+%      \item Wrappers exist for: scikit-learn, XGBoost, LightGBM, SVM (also have MLJ interfaces)\pause
+%      \item Julia native libraries for Gradient Tree Boosting, general gradient descent models (neural networks),
+%          Clustering, Decision Trees, Random Forests, General Linear Models, Elastic Net \& Lasso, naive bayes,
+%          probabilistic programming models, guassian processes, \ldots\pause
+%   \end{itemize}
+%   \end{block}
+%   \begin{block}{ML Frameworks}
+%   \begin{itemize}
+%      \item MLJ.jl (multi-paradigm)
+%      \item MLAutoPipeline.jl (multi-paradigm)
+%      \item ScikitLearn.jl (wrapper)
+%      \item FastAI.jl (gradient descent)
+%   \end{itemize}
+%   \end{block}
+% \end{frame}
 
-\begin{frame}
-  \mbox{}
-  \vspace{4\baselineskip}
-  \begin{center}
-    \large {\df MLJ} (Machine Learning in Julia)
-  \end{center}
-\end{frame}
+% \begin{frame}
+%   \mbox{}
+%   \vspace{4\baselineskip}
+%   \begin{center}
+%     \large {\df MLJ} (Machine Learning in Julia)
+%   \end{center}
+% \end{frame}
 
-\begin{frame}
-  \vspace{0\baselineskip}
-  \begin{center}
-    \includegraphics[scale=0.2]{Turing_logo.png}
-    \includegraphics[scale=0.35]{UoA_logo.png}
+% \begin{frame}
+%   \vspace{0\baselineskip}
+%   \begin{center}
+%     \includegraphics[scale=0.2]{Turing_logo.png}
+%     \includegraphics[scale=0.35]{UoA_logo.png}
 
-    \includegraphics[scale=0.2]{IQVIA_logo.png}
-    \includegraphics[scale=0.12]{NESI-logo.jpg}
-    \includegraphics[scale=0.12]{warwick.png}
-    \includegraphics[scale=0.12]{julia.png}
-  \end{center}
-\end{frame}
+%     \includegraphics[scale=0.2]{IQVIA_logo.png}
+%     \includegraphics[scale=0.12]{NESI-logo.jpg}
+%     \includegraphics[scale=0.12]{warwick.png}
+%     \includegraphics[scale=0.12]{julia.png}
+%   \end{center}
+% \end{frame}
 
-\begin{frame}
-  \frametitle{The Team}
+% \begin{frame}
+%   \frametitle{The Team}
 
-  {\small
-    {\dff Core design:} A. B., Franz Kiraly, Sebastian Vollmer\\[1\baselineskip]
+%   {\small
+%     {\dff Core design:} A. B., Franz Kiraly, Sebastian Vollmer\\[1\baselineskip]
 
-    {\dff Lead development:} A. B., Thibaut Lienart \\[1\baselineskip]
+%     {\dff Lead development:} A. B., Thibaut Lienart \\[1\baselineskip]
 
-    {\dff Other contributors:} Diego Arenas, Samuel Okon, Yiannis Simillides, Julian Samaroo, Ayush Shridar, Mosè Giordano\ldots \\[1\baselineskip]
+%     {\dff Other contributors:} Diego Arenas, Samuel Okon, Yiannis Simillides, Julian Samaroo, Ayush Shridar, Mosè Giordano\ldots \\[1\baselineskip]
 
-    {\dff Julia language consultants:} Avik Sengupta, Dilum Aluthge\\[1\baselineskip]}
+%     {\dff Julia language consultants:} Avik Sengupta, Dilum Aluthge\\[1\baselineskip]}
 
-\end{frame}
+% \end{frame}
 
 % \begin{frame}
 %   \frametitle{Contributing}
@@ -400,43 +430,43 @@
     \end{block}
   \end{frame}
 
-\begin{frame}
-\frametitle{Toolboxes in other ecosystems}
-  \begin{center}
-    \includegraphics[scale=0.4]{other_toolboxes.png}
-  \end{center}
-\end{frame}
+% \begin{frame}
+% \frametitle{Toolboxes in other ecosystems}
+%   \begin{center}
+%     \includegraphics[scale=0.4]{other_toolboxes.png}
+%   \end{center}
+% \end{frame}
 
 %%%
 
-\begin{frame}
-  \frametitle{Distinguishing features}
-     \begin{itemize}
-     \item Written in Julia (one language!)\pause
-     \item Over 160 models supported (with help of scikit-learn bootstrap)\pause
-     \item Best-in-class model composition API\pause
-     \item Model registry for automatically matching models to data\pause
-     \item Most meta-algorithms are implemented as model wrappers
-       (e.g., tuning, iterative model control)\pause
-     \item Ontological approach to articulating data requirements
-       (``scientific types'')\pause
-     \item Supports a universal Julia tabular data format (Tables.jl)\pause
-     \item Clean design for handling probabilistic predictions\pause
-     \item Persistent tracking of all classes of categorical variables
-      \end{itemize}
-\end{frame}
+% \begin{frame}
+%   \frametitle{Distinguishing features}
+%      \begin{itemize}
+%      \item Written in Julia (one language!)\pause
+%      \item Over 160 models supported (with help of scikit-learn bootstrap)\pause
+%      \item Best-in-class model composition API\pause
+%      \item Model registry for automatically matching models to data\pause
+%      \item Most meta-algorithms are implemented as model wrappers
+%        (e.g., tuning, iterative model control)\pause
+%      \item Ontological approach to articulating data requirements
+%        (``scientific types'')\pause
+%      \item Supports a universal Julia tabular data format (Tables.jl)\pause
+%      \item Clean design for handling probabilistic predictions\pause
+%      \item Persistent tracking of all classes of categorical variables
+%       \end{itemize}
+% \end{frame}
 
-\begin{frame}
-  \frametitle{MLJ Limitations}
-     \begin{itemize}
-     \item Feature-sparse data not fully supported
-     \item Integration with models specific to time series and probabilistic programming
-        relatively immature
-     \item No support for online learning, survival analysis,
-       re-inforcement learning, adversarial learning
-     \item No support for training models on data that does not fit into memory
-     \end{itemize}
-\end{frame}
+% \begin{frame}
+%   \frametitle{MLJ Limitations}
+%      \begin{itemize}
+%      \item Feature-sparse data not fully supported
+%      \item Integration with models specific to time series and probabilistic programming
+%         relatively immature
+%      \item No support for online learning, survival analysis,
+%        re-inforcement learning, adversarial learning
+%      \item No support for training models on data that does not fit into memory
+%      \end{itemize}
+% \end{frame}
 
 %%%%
 
@@ -584,14 +614,14 @@
 %   \end{center}
 % \end{frame}
 
-\begin{frame}
-  \frametitle{Scientific types}
-  \vspace{-0.5\baselineskip}
-  \begin{center}
-    \includegraphics[scale=0.4]{scitypes.png}
-  \end{center}%\pause
-%  {\df Require:} Each julia object can represent only one scientific type
-\end{frame}
+% \begin{frame}
+%   \frametitle{Scientific types}
+%   \vspace{-0.5\baselineskip}
+%   \begin{center}
+%     \includegraphics[scale=0.4]{scitypes.png}
+%   \end{center}%\pause
+% %  {\df Require:} Each julia object can represent only one scientific type
+% \end{frame}
 
 % \begin{frame}
 %   \frametitle{Categorical data}
@@ -623,110 +653,110 @@
 % \end{tabular}
 % \end{table}}
 % \end{frame}
-\begin{frame}[plain]
-  \frametitle{Common shortcomings of composition design}
-\begin{itemize}
-\item Composite models do not inherit all the behavior of ordinary
-  models.\pause
-\item Composition limited to non-branching pipelines\pause
-\item Only static (unlearned) target transformations / inverse
-  transformations are supported.\label{four}\pause
-\item Hyper-parameters in homogeneous model ensembles cannot be coupled.\pause
-\item Some sophisticated inhomogeneous ensembling, such as stacking
-  cannot be implemented\pause
-\item Composite models cannot implement multiple operations, for example,
-  both a `predict' and `transform' method.\pause
-\item Nested hyper-parameters or learned parameters not easily accessed.
-\end{itemize}
-\end{frame}
+% \begin{frame}[plain]
+%   \frametitle{Common shortcomings of composition design}
+% \begin{itemize}
+% \item Composite models do not inherit all the behavior of ordinary
+%   models.\pause
+% \item Composition limited to non-branching pipelines\pause
+% \item Only static (unlearned) target transformations / inverse
+%   transformations are supported.\label{four}\pause
+% \item Hyper-parameters in homogeneous model ensembles cannot be coupled.\pause
+% \item Some sophisticated inhomogeneous ensembling, such as stacking
+%   cannot be implemented\pause
+% \item Composite models cannot implement multiple operations, for example,
+%   both a `predict' and `transform' method.\pause
+% \item Nested hyper-parameters or learned parameters not easily accessed.
+% \end{itemize}
+% \end{frame}
 
-\begin{frame}
-  \frametitle{Model composition (aka pipelining)}
-  \vspace{1.5\baselineskip}
-    \begin{center}
-    \includegraphics[scale=0.55]{pipeline.png}
-  \end{center}
-\end{frame}
+% \begin{frame}
+%   \frametitle{Model composition (aka pipelining)}
+%   \vspace{1.5\baselineskip}
+%     \begin{center}
+%     \includegraphics[scale=0.55]{pipeline.png}
+%   \end{center}
+% \end{frame}
 
-\begin{frame}
-  \frametitle{Model composition (aka pipelining)}
-  \vspace{1.5\baselineskip}
-    \begin{center}
-    \includegraphics[scale=0.55]{composite.png}
-  \end{center}
-\end{frame}
+% \begin{frame}
+%   \frametitle{Model composition (aka pipelining)}
+%   \vspace{1.5\baselineskip}
+%     \begin{center}
+%     \includegraphics[scale=0.55]{composite.png}
+%   \end{center}
+% \end{frame}
 
-\begin{frame}
-  \frametitle{Compact syntax for linear pipeline}
-  \vspace{2\baselineskip}
-    \includegraphics[scale=0.55]{S14.png}
+% \begin{frame}
+%   \frametitle{Compact syntax for linear pipeline}
+%   \vspace{2\baselineskip}
+%     \includegraphics[scale=0.55]{S14.png}
 
-    \pause Does not generalize!
-\end{frame}
+%     \pause Does not generalize!
+% \end{frame}
 
-\begin{frame}
-  \frametitle{The dimension reducer}
-    \begin{center}
-    \includegraphics[scale=0.35]{dim_reducer.png}\\
-  \end{center}
-  \begin{center}
-    \includegraphics[scale=0.32]{S2.png}
-  \end{center}
-\end{frame}
+% \begin{frame}
+%   \frametitle{The dimension reducer}
+%     \begin{center}
+%     \includegraphics[scale=0.35]{dim_reducer.png}\\
+%   \end{center}
+%   \begin{center}
+%     \includegraphics[scale=0.32]{S2.png}
+%   \end{center}
+% \end{frame}
 
-\begin{frame}
-  \frametitle{The classifier}
-    \begin{center}
-    \includegraphics[scale=0.35]{classifier.png}\\
-  \end{center}
-  \begin{center}
-    \includegraphics[scale=0.32]{S3.png}
-  \end{center}
-\end{frame}
+% \begin{frame}
+%   \frametitle{The classifier}
+%     \begin{center}
+%     \includegraphics[scale=0.35]{classifier.png}\\
+%   \end{center}
+%   \begin{center}
+%     \includegraphics[scale=0.32]{S3.png}
+%   \end{center}
+% \end{frame}
 
-\begin{frame}
-  \frametitle{Summary of unstreamlined workflow}
-  \vspace{2.5\baselineskip}
-    \begin{center}
-    \includegraphics[scale=0.32]{S4.png}
-  \end{center}
-\end{frame}
+% \begin{frame}
+%   \frametitle{Summary of unstreamlined workflow}
+%   \vspace{2.5\baselineskip}
+%     \begin{center}
+%     \includegraphics[scale=0.32]{S4.png}
+%   \end{center}
+% \end{frame}
 
-\begin{frame}
-  \frametitle{Refactoring as {\df learning network}: Step 1}
-    \begin{center}
-    \includegraphics[scale=0.32]{S5.png}
-  \end{center}
-\end{frame}
+% \begin{frame}
+%   \frametitle{Refactoring as {\df learning network}: Step 1}
+%     \begin{center}
+%     \includegraphics[scale=0.32]{S5.png}
+%   \end{center}
+% \end{frame}
 
-\begin{frame}
-  \frametitle{Refactoring as {\df learning network}: Step 2}
-  \vspace{-0.4\baselineskip}
-    \begin{center}
-    \includegraphics[scale=0.32]{S6.png}
-  \end{center}
-\end{frame}
+% \begin{frame}
+%   \frametitle{Refactoring as {\df learning network}: Step 2}
+%   \vspace{-0.4\baselineskip}
+%     \begin{center}
+%     \includegraphics[scale=0.32]{S6.png}
+%   \end{center}
+% \end{frame}
 
-\begin{frame}
-  \frametitle{{\df Training} a learning network}
-    \begin{center}
-    \includegraphics[scale=0.32]{S7.png}
-  \end{center}
-\end{frame}
+% \begin{frame}
+%   \frametitle{{\df Training} a learning network}
+%     \begin{center}
+%     \includegraphics[scale=0.32]{S7.png}
+%   \end{center}
+% \end{frame}
+
+% % \begin{frame}
+% %   \frametitle{{\df Prediction} in a learning network}
+% %     \begin{center}
+% %     \includegraphics[scale=0.32]{S8.png}
+% %   \end{center}
+% % \end{frame}
 
 % \begin{frame}
 %   \frametitle{{\df Prediction} in a learning network}
 %     \begin{center}
-%     \includegraphics[scale=0.32]{S8.png}
+%     \includegraphics[scale=0.32]{S11.png}
 %   \end{center}
 % \end{frame}
-
-\begin{frame}
-  \frametitle{{\df Prediction} in a learning network}
-    \begin{center}
-    \includegraphics[scale=0.32]{S11.png}
-  \end{center}
-\end{frame}
 
 % \begin{frame}
 %   \frametitle{Summarizing}
@@ -752,35 +782,35 @@
 %   \end{center}
 % \end{frame}
 
-\begin{frame}
-  \frametitle{Macro ``exports'' learning network as standalone model}
-    \begin{center}
-    \includegraphics[scale=0.28]{S9.png}
-  \end{center}
-\end{frame}
-
 % \begin{frame}
-%   \frametitle{Composite is now a model like any other}
+%   \frametitle{Macro ``exports'' learning network as standalone model}
 %     \begin{center}
-%     \includegraphics[scale=0.28]{S13.png}
+%     \includegraphics[scale=0.28]{S9.png}
 %   \end{center}
 % \end{frame}
 
-\begin{frame}
-  \frametitle{Stacking in python}
-  \vspace{-\baselineskip}
-  \begin{center}
-    \includegraphics[scale=0.6]{vecstack.png}
-  \end{center}
-\end{frame}
+% % \begin{frame}
+% %   \frametitle{Composite is now a model like any other}
+% %     \begin{center}
+% %     \includegraphics[scale=0.28]{S13.png}
+% %   \end{center}
+% % \end{frame}
 
-\begin{frame}[plain]
-  \frametitle{Stacking in MLJ}
-  \vspace{-\baselineskip}
-  \begin{center}
-    \includegraphics[scale=0.2]{mlj_stack.png}
-  \end{center}
-\end{frame}
+% \begin{frame}
+%   \frametitle{Stacking in python}
+%   \vspace{-\baselineskip}
+%   \begin{center}
+%     \includegraphics[scale=0.6]{vecstack.png}
+%   \end{center}
+% \end{frame}
+
+% \begin{frame}[plain]
+%   \frametitle{Stacking in MLJ}
+%   \vspace{-\baselineskip}
+%   \begin{center}
+%     \includegraphics[scale=0.2]{mlj_stack.png}
+%   \end{center}
+% \end{frame}
 
 % \begin{frame}
 %   \frametitle{Goals for MLJ}

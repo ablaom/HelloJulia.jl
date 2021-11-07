@@ -129,11 +129,8 @@ self_tuning_pipe = TunedModel(model=pipe,
 # ╔═╡ f208b587-89d4-4d2e-9afd-65a5b5facac9
 md"### Binding to data and evaluating performance"
 
-# ╔═╡ 648ee96d-de93-4de5-b6c8-54f5ed90a964
-md"""
-Loading a selection of features and labels from the Ames
-House Price dataset:
-"""
+# ╔═╡ 0a1cf6fc-b4ce-4f91-b6c8-54f5ed90a964
+md"Creating some synthetic features and labels:"
 
 # ╔═╡ 8e35399a-ac08-4833-9292-fe822525fc77
 X, y = make_regression();
@@ -191,7 +188,7 @@ md"""
 # ╟─b87c1224-317f-43f0-a367-9aa3c6cf34d0
 # ╠═91631447-2049-41bb-bf32-94657e65284e
 # ╟─f208b587-89d4-4d2e-9afd-65a5b5facac9
-# ╟─648ee96d-de93-4de5-b6c8-54f5ed90a964
+# ╟─0a1cf6fc-b4ce-4f91-b6c8-54f5ed90a964
 # ╠═8e35399a-ac08-4833-9292-fe822525fc77
 # ╟─4cc252e7-8d25-4531-ae5e-4b83dcbc9675
 # ╠═b075d51c-b0cc-4393-8a29-32f11452654a

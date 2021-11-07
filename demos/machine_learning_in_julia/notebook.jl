@@ -81,8 +81,7 @@ self_tuning_pipe = TunedModel(model=pipe,
 
 # ### Binding to data and evaluating performance
 
-# Loading a selection of features and labels from the Ames
-# House Price dataset:
+# Creating some synthetic features and labels:
 
 X, y = make_regression();
 
