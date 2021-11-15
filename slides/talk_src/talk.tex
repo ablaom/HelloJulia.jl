@@ -1,3 +1,6 @@
+% 45 minutes including demos of JIT and pkg_composability, exlcluding
+% Julia installation.
+
 \documentclass[t]{beamer}
 \usepackage{color}
 \usepackage{amsmath}
@@ -47,13 +50,6 @@
 \end{frame}
 
 \begin{frame}
-  Resources:
-  \begin{center}
-  {\huge https://github.com/ablaom/HelloJulia.jl}
-  \end{center}
-\end{frame}
-
-\begin{frame}
   \frametitle{Introducing Julia}
   Julia is an open source, general-purpose programming language, in
   the fourth year of its first {\df stable} release 1.0.\pause
@@ -62,9 +58,7 @@
     \begin{itemize}
     \item Julia let's you write {\df fast}
       code {\df fast}.\pause
-    \item Maximally hackable.\pause
-    \item Julia's design makes {\df extending} Julia code easy,
-      promoting a relatively rapid expansion of third party libraries.\pause
+    \item Maximally hackable.
   \end{itemize}
   \end{block}
 \end{frame}
@@ -72,13 +66,57 @@
 % lego analogy
 \includepdf[scale=1.3,pages={1,3}]{lego.pdf}
 
-% code snippet:
+
+\begin{frame}
+  \frametitle{Introducing Julia}
+  Julia is an open source, general-purpose programming language, in
+  the fourth year of its first {\df stable} release 1.0.
+
+  \begin{block}{Key take aways}
+    \begin{itemize}
+    \item Julia let's you write {\df fast}
+      code {\df fast}.
+    \item Maximally hackable.
+    \item Julia's design makes {\df extending} Julia code easy,
+      promoting a relatively rapid expansion of third party libraries.
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Julia's secret sauce}
+    \begin{itemize}
+    \item {\df Just-in-time compilation}
+    \item {\df Multiple dispatch}
+    \item {\df Abstract type system} (typing is dynamic, nominative and parametric)
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{block}{Workshop resources:}
+    {\large\texttt{github.com/ablaom/HelloJulia.jl}}
+    \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{block}{Secret sauce demo:}
+    {\large\texttt{github.com/ablaom/HelloJulia.jl/}}\newline
+    {\large\texttt{blob/dev/demos/secret\_sauce/notebook.ipynb}}
+    \end{block}
+\end{frame}
+%
+\begin{frame}
+  \begin{block}{Package composability demo:}
+    {\large\texttt{github.com/ablaom/HelloJulia.jl/}}\newline
+    {\large\texttt{blob/dev/demos/pkg\_composability/notebook.ipynb}}
+    \end{block}
+\end{frame}
+
 \begin{frame}[plain]
   %  \begin{center}
      \includegraphics[scale=0.25]{mandel.png}
 %   \end{center}
 \end{frame}
-
 % stars
 \begin{frame}[plain]
   %  \begin{center}
@@ -144,8 +182,10 @@
     \item Barrier to {\df understanding algorithms} even if not seeking to modify them
     \item Complicates installation of a complete software stack
     (package {\df dependency hell}, manual interventions)
-  \item Barrier to transparency and reproducibility
-  \item Hampers innovation, development of novel algorithms
+    \item Barrier to transparency and reproducibility
+    \item Hampers innovation, development of novel algorithms
+    \item Barrier to composing packages (e.g., automatic differentiation)
+  itm
   \end{itemize}
 \end{frame}
 
@@ -183,18 +223,6 @@
 %   \end{itemize}
 % \end{frame}
 
-\begin{frame}
-  \frametitle{The secret sauce}
-    \begin{itemize}
-    \item {\df Just-in-time compilation}
-    \item {\df Multiple dispatch}
-    \item {\df Abstract type system} (typing is dynamic, nominative and parametric)
-  \end{itemize}
-\end{frame}
-
-\begin{frame}
-  (secret sauce demo)
-\end{frame}
 
 \begin{frame}
   \frametitle{Other features}
