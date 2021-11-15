@@ -7,11 +7,8 @@ using InteractiveUtils
 # ╔═╡ f6b2d3ed-0205-44aa-9bca-7c69b794f8ce
 md"# Brief sketch of Julia's secret sauce"
 
-# ╔═╡ b7ef88da-2f7e-4412-b795-033f6f2a0674
-md"""
-To launch a live version of this notebook follow [these
-instructions](https://github.com/ablaom/HelloJulia.jl/blob/dev/NOTEBOOKS.md).
-"""
+# ╔═╡ 87e309f9-e75d-41a3-b795-033f6f2a0674
+md"# Notebook from [HelloJulia.jl](https://github.com/ablaom/HelloJulia.jl)"
 
 # ╔═╡ 2d95e9db-a2b9-48b6-935f-ddf6a6bfbbdd
 md"Julia's *secret sauce:*"
@@ -257,7 +254,7 @@ md"""
 
 # ╔═╡ Cell order:
 # ╟─f6b2d3ed-0205-44aa-9bca-7c69b794f8ce
-# ╟─b7ef88da-2f7e-4412-b795-033f6f2a0674
+# ╟─87e309f9-e75d-41a3-b795-033f6f2a0674
 # ╟─2d95e9db-a2b9-48b6-935f-ddf6a6bfbbdd
 # ╟─9d38b890-85c6-4768-af2a-25235e544a31
 # ╟─49d7d413-b98b-4d58-8af5-148d95ea2900
