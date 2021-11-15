@@ -1,6 +1,6 @@
 # # Brief sketch of Julia's secret sauce
 
-# # Notebook from [HelloJulia.jl](https://github.com/ablaom/HelloJulia.jl)
+# Notebook from [HelloJulia.jl](https://github.com/ablaom/HelloJulia.jl)
 
 # Julia's *secret sauce:*
 

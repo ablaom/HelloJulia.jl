@@ -1,5 +1,7 @@
 # # Generate a Mandelbrot set with Julia
 
+# Notebook from [HelloJulia.jl](https://github.com/ablaom/HelloJulia.jl)
+
 # Instantiate package environment:
 
 using Pkg

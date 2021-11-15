@@ -1,5 +1,7 @@
 # # Basic demonstration of Julia package composability
 
+# Notebook from [HelloJulia.jl](https://github.com/ablaom/HelloJulia.jl)
+
 # Instantiate package environment:
 
 using Pkg
