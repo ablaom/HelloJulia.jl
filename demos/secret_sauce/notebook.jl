@@ -1,5 +1,8 @@
 # # Brief sketch of Julia's secret sauce
 
+# To launch a live version of this notebook follow [these
+# instructions](https://github.com/ablaom/HelloJulia.jl/blob/dev/NOTEBOOKS.md).
+
 # Julia's *secret sauce:*
 
 # - **Just-in-time compilation**
