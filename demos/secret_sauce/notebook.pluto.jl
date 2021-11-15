@@ -7,12 +7,12 @@ using InteractiveUtils
 # ╔═╡ f6b2d3ed-0205-44aa-9bca-7c69b794f8ce
 md"# Brief sketch of Julia's secret sauce"
 
-# ╔═╡ 9dc05597-c214-4e59-b795-033f6f2a0674
-md"Julia's *secret sauce*"
+# ╔═╡ 2d95e9db-a2b9-48b6-b795-033f6f2a0674
+md"Julia's *secret sauce:*"
 
-# ╔═╡ fa3699ad-fb3c-41b9-935f-ddf6a6bfbbdd
+# ╔═╡ 9d38b890-85c6-4768-935f-ddf6a6bfbbdd
 md"""
-- **Ahead-of-time compilation**
+- **Just-in-time compilation**
 - **Multiple dispatch**
 - **Abstract types**
 """
@@ -226,8 +226,8 @@ md"""
 
 # ╔═╡ Cell order:
 # ╟─f6b2d3ed-0205-44aa-9bca-7c69b794f8ce
-# ╟─9dc05597-c214-4e59-b795-033f6f2a0674
-# ╟─fa3699ad-fb3c-41b9-935f-ddf6a6bfbbdd
+# ╟─2d95e9db-a2b9-48b6-b795-033f6f2a0674
+# ╟─9d38b890-85c6-4768-935f-ddf6a6bfbbdd
 # ╟─49d7d413-b98b-4d58-af2a-25235e544a31
 # ╠═ce65b4a9-5381-42b4-8af5-148d95ea2900
 # ╟─b479e9f2-7327-4fac-a6bf-47194d7e8e12

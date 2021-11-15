@@ -1,8 +1,8 @@
 # # Brief sketch of Julia's secret sauce
 
-# Julia's *secret sauce*
+# Julia's *secret sauce:*
 
-# - **Ahead-of-time compilation**
+# - **Just-in-time compilation**
 # - **Multiple dispatch**
 # - **Abstract types**
 
