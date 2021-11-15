@@ -59,7 +59,7 @@ typeof(y)
 
 ## add(4, y)
 
-# So we *add* a more specialized version of our function (called a
+# So we add a more specialized version of our function (called a
 # *method*) to handle this case:
 
 add(x::Int, y::Array{Int,2}) = x .+ y
@@ -105,9 +105,8 @@ typeof(rand(2,3))
 
 #-
 
-# These are examples of *concrete* types. But concrete types are
-# *organized* through the use of *abstract types*, in a type
-# heirarchy:
+# These are examples of *concrete* types. But concrete types have
+# *supertypes*, which are *abstract*:
 
 supertype(Int)
 
@@ -119,7 +118,7 @@ supertype(Signed)
 
 supertype(Integer)
 
-#-
+# And we can travel in the other direction:
 
 subtypes(Real)
 
@@ -143,3 +142,11 @@ add(x::Real, y::Matrix) = x .+ y
 #-
 
 add(4.0, rand(Bool, 2, 3))
+
+# Note that abstract types have no instances. The only "information"
+# in an abstract type is what its supertype and subtypes
+# are. Collectively, abstract types and concrete types constitute a
+# tree structure, with the concrete types as leaves. This structure
+# exists to *organize* the concrete types in a way that facilitates
+# extension of functionality. This tree is not static, but can be
+# extended by the programmer.
