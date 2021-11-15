@@ -8,10 +8,10 @@ sandbox/
 /docs/site/
 /docs/Manifest.toml
 .vscode
-/slides/talk_src/*.png
-/slides/talk_src/*.pdf
-/slides/talk_src/*.xml
-/slides/talk_src/_region_
+/slides/src/*.png
+/slides/src/*.pdf
+/slides/src/*.xml
+/slides/src/_region_
 *.aux
 *.bbl
 *.toc
