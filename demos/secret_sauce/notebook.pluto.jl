@@ -86,14 +86,14 @@ y = [1 2; 3 4]
 # ╔═╡ 81d7898d-7e0d-4558-a367-9aa3c6cf34d0
 typeof(y)
 
-# ╔═╡ 2fdb30e5-2db6-4e69-bf32-94657e65284e
+# ╔═╡ e0722c56-bab2-4586-bf32-94657e65284e
 md"""
-But Julia doesn not how to apply `+` to a scalar and a
+Julia doesn't know how to apply `+` to a scalar and a
 matrix. Uncomment the following line to see the error thrown:
 """
 
-# ╔═╡ 47a7a91c-1e3d-46d8-9afd-65a5b5facac9
-md"add(4, y)"
+# ╔═╡ 0c9aae1a-0861-4e8c-9afd-65a5b5facac9
+# add(4, y)
 
 # ╔═╡ 66f9d271-772c-447a-b6c8-54f5ed90a964
 md"""
@@ -140,8 +140,8 @@ But, we're not out of the woods yet. Uncomment to see a new error
 thrown:
 """
 
-# ╔═╡ bc6b5324-3067-4e08-b0e6-441461cc8770
-md"add(4.0, y)"
+# ╔═╡ a2c9884f-021d-4b58-b0e6-441461cc8770
+# add(4.0, y)
 
 # ╔═╡ 61e9eb8d-7c51-46cc-8cb0-de601961bc02
 md"""
@@ -234,8 +234,8 @@ md"""
 # ╟─b502f6a1-bc47-4a24-abd3-cb77d7a79683
 # ╠═b6dd9999-eba6-4c36-879e-dc128f3db7b3
 # ╠═81d7898d-7e0d-4558-a367-9aa3c6cf34d0
-# ╟─2fdb30e5-2db6-4e69-bf32-94657e65284e
-# ╟─47a7a91c-1e3d-46d8-9afd-65a5b5facac9
+# ╟─e0722c56-bab2-4586-bf32-94657e65284e
+# ╠═0c9aae1a-0861-4e8c-9afd-65a5b5facac9
 # ╟─66f9d271-772c-447a-b6c8-54f5ed90a964
 # ╠═658f9270-5eca-415b-9292-fe822525fc77
 # ╟─8a59bfae-158d-4632-ae5e-4b83dcbc9675
@@ -245,7 +245,7 @@ md"""
 # ╠═4a0d9a26-63d1-4e9c-9d87-1d1fbb0e3997
 # ╟─ab84efb1-244a-4545-b950-fddef2a1fb10
 # ╟─87323275-2318-4587-951b-64cb2a36c8e3
-# ╟─bc6b5324-3067-4e08-b0e6-441461cc8770
+# ╠═a2c9884f-021d-4b58-b0e6-441461cc8770
 # ╟─61e9eb8d-7c51-46cc-8cb0-de601961bc02
 # ╟─3645fdc2-5739-4cb0-a87d-950c50fb2955
 # ╟─0553da4d-58d7-4d4c-8448-4bcb089096cd

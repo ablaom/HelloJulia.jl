@@ -54,10 +54,10 @@ y = [1 2; 3 4]
 
 typeof(y)
 
-# But Julia doesn not how to apply `+` to a scalar and a
+# Julia doesn't know how to apply `+` to a scalar and a
 # matrix. Uncomment the following line to see the error thrown:
 
-# add(4, y)
+## add(4, y)
 
 # So we *add* a more specialized version of our function (called a
 # *method*) to handle this case:
@@ -85,7 +85,7 @@ methods(add)
 # But, we're not out of the woods yet. Uncomment to see a new error
 # thrown:
 
-# add(4.0, y)
+## add(4.0, y)
 
 # Oh dear. Do we need to write a special method for every kind of
 # scalar and matrix???!
