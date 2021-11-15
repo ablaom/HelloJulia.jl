@@ -12,9 +12,9 @@ To **run demos** presented in the workshop live, click [here](NOTEBOOKS.md).
 **Acknowledgements.** Some slides used in the presentation for this
 workshop, and included [here](/slides), are based on material
 contributed by Oliver Schultz and Sam Urmy, which is gratefully
-acknowledged. Oscar Smith and Ian Butterworth
+acknowledged. Oscar Smith, Ian Butterworth, and Carsten Bauer
 [helped](https://discourse.julialang.org/t/looking-for-simple-example-to-explain-ahead-of-time-compilation/71471/3)
-contributed the just-in-time compilation demonstration.
+with the just-in-time compilation demonstration.
 
 
 ## Is Julia for me?
