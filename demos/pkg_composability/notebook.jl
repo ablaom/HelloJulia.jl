@@ -22,7 +22,7 @@ a = 5.0u"m^2/s^2"
 
 using Measurements
 
-#-
+#
 
 b = 5.0 ± 1.2 # or measurement(5.0, 1.2)
 

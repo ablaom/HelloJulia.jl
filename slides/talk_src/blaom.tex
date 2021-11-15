@@ -63,17 +63,19 @@
     \item Julia let's you write {\df fast}
       code {\df fast}.\pause
     \item Maximally hackable.\pause
-    \item Julia's design encourages code re-use and extension,
+    \item Julia's design makes {\df extending} Julia code easy,
       promoting a relatively rapid expansion of third party libraries.\pause
-  \item Julia's design is {\df elegant}. Coding in Julia is {\df joyful}.
   \end{itemize}
   \end{block}
 \end{frame}
 
+% lego analogy
+\includepdf[scale=1.3,pages={1,3}]{lego.pdf}
+
 % code snippet:
 \begin{frame}[plain]
   %  \begin{center}
-     \includegraphics[scale=0.21]{mandel.png}
+     \includegraphics[scale=0.25]{mandel.png}
 %   \end{center}
 \end{frame}
 
@@ -98,41 +100,60 @@
 \includepdf[pages=18-21]{julia_for_ecologists.pdf}
 \includepdf[pages=23]{julia_for_ecologists.pdf}
 
-\begin{frame}
-  \frametitle{The Two Language Problem}
-  \begin{itemize}
+% \begin{frame}
+%   \frametitle{The Two Language Problem}
+%   \begin{itemize}
 
-\item   Older programming languages like C and FORTRAN are designed to {\em
-    run} fast. Almost all {\df computationally demanding} tasks
-  (weather forecasting, machine learning, etc) are performed by
-  calling code written in these languages. \pause
+% \item   Older programming languages like C and FORTRAN are designed to {\em
+%     run} fast. Almost all {\df computationally demanding} tasks
+%   (weather forecasting, machine learning, etc) are performed by
+%   calling code written in these languages. \pause
   
-\item ``Scripting'' languages like python, MATLAB, and R allow you
-  quickly {\df wrap} computational tasks into {\df customized and easily
-    modified workflows}. They also accelerate {\df testing and
-    protyping} of new computational algorithms.\pause
+% \item ``Scripting'' languages like python, MATLAB, and R allow you
+%   quickly {\df wrap} computational tasks into {\df customized and easily
+%     modified workflows}. They also accelerate {\df testing and
+%     protyping} of new computational algorithms.\pause
 
-\item These languages are {\df too slow} for computationally intensive tasks.
-\end{itemize}
+% \item These languages are {\df too slow} for computationally intensive tasks.
+% \end{itemize}
+% \end{frame}
+
+\begin{frame}
+  \frametitle{Popular libraries (packages)}
+  These are all pretty mature:
+  \begin{itemize}
+  \item DataFrames.jl and CSV.jl  - {\df in-memory data manipulation}
+  \item Plots.jl (also easy to call R's ggplot())
+  \item $\star$ JuMP.jl - {\df constrained optimization}
+  \item $\star$ DifferentialEquations.jl
+  \item StatsModels.jl, GLM.jl - {\df traditional stats models}
+  \item Flux.jl  - {\df deep learning}
+  \item $\star$ Turing.jl, Soss.jl, ... {\df probabilistic programmming}
+  \item MLJ.jl - multi-pardigm {\df machine learning} platform
+  \item Pluto.jl - {\df ``reactive'' notebooks}
+  \end{itemize}
 \end{frame}
 
 % lines of code versus mean run time:
 \includepdf[pages=11]{julia_for_ecologists.pdf}
   
 \begin{frame}
-  \frametitle{Why  is two languages a problem?}
+  \frametitle{Why  is two languages a problem ?}
   \begin{itemize}
     \item Can't easily modify core algorithms
-    \item Barrier to certain kinds of functionality, e.g., {\df auto-differentiation}
+    \item Barrier to {\df understanding algorithms} even if not seeking to modify them
     \item Complicates installation of a complete software stack
     (package {\df dependency hell}, manual interventions)
-  \item Hampers development of novel algorithms
   \item Barrier to transparency and reproducibility
-  \item Barrier to {\df understanding algorithms} even if not seeking to modify them
+  \item Hampers innovation, development of novel algorithms
   \end{itemize}
 \end{frame}
 
+% slows innovation engineers <--> researchers 
+\includepdf[scale=1.3,pages={1,2,4}]{slows_innovation.pdf}
+
 \begin{frame}[plain]
+  \frametitle{Fast code written fast: DifferentialEquations.jl}
   % \frametitle{DifferentialEquations.jl}
   %  \begin{center}
      \includegraphics[scale=0.27]{de_solver_software_comparsion.pdf}
@@ -142,33 +163,25 @@
 % % data science pipeline
 % \includepdf[pages=3-5]{Sebastian.pdf}
 
-% lego analogy
-\includepdf[scale=1.3,pages={1,3}]{lego.pdf}
-
 % \begin{frame}[plain]
 %     \includegraphics[scale=0.45]{benchmarks.png}
 % \end{frame}
 
 
-\begin{frame}
-  \frametitle{The Expression Problem}
-  As in any kind of architecture, the central concerns of a
-  programming language are {\df form} and {\df function}. Roughly
-  speaking, the {\df Expression Problem} is the problem of how to
-  represent data (form) and how to articulate required behaviour
-  (function) in way that allows {\df extension} of both in an optimal
-  and safe way.\pause
-  \begin{itemize}
-    \item Object oriented languages typically score poorly here (Ruby has a
-      dirty way, Scala a clean workaround).
-    \item Julia scores well. {\df Proof:} \pause Large code-reuse, package composibility
-  \end{itemize}
-\end{frame}
-
-
-\begin{frame}
-  (demo of package composability)
-\end{frame}
+% \begin{frame}
+%   \frametitle{The Expression Problem}
+%   As in any kind of architecture, the central concerns of a
+%   programming language are {\df form} and {\df function}. Roughly
+%   speaking, the {\df Expression Problem} is the problem of how to
+%   represent data (form) and how to articulate required behaviour
+%   (function) in way that allows {\df extension} of both in an optimal
+%   and safe way.\pause
+%   \begin{itemize}
+%     \item Object oriented languages typically score poorly here (Ruby has a
+%       dirty way, Scala a clean workaround).
+%     \item Julia scores well. {\df Proof:} \pause Large code-reuse, package composibility
+%   \end{itemize}
+% \end{frame}
 
 \begin{frame}
   \frametitle{The secret sauce}
@@ -187,7 +200,6 @@
   \frametitle{Other features}
   \begin{itemize}
     \item Fast user-defined composite types (C-like structs)
-    \item Built-in package manager
     \item Lisp-like macros/metaprogramming
     \item Call C functions directly
     \item Can wrap Python, R Java/Scala
@@ -416,20 +428,20 @@
 % \end{frame}
 
 
-\begin{frame}
-  \frametitle{What?}
-  \begin{block}{What is MLJ?}\pause
-     \begin{itemize}
-     \item A toolbox providing a {\df uniform interface} for {\df
-         fitting}, {\df evaluating}, {\df tuning}, and {\df
-         controlling} a broad variety of machine learning models (not
-       just ``deep learning'' models!)
-          \item Provides common {\df preprocessing tasks} (such as data cleaning
-            and type coercion)
-          \item Allows for model {\df composition} (e.g., pipelining, stacking)
-      \end{itemize}
-    \end{block}
-  \end{frame}
+% \begin{frame}
+%   \frametitle{What?}
+%   \begin{block}{What is MLJ?}\pause
+%      \begin{itemize}
+%      \item A toolbox providing a {\df uniform interface} for {\df
+%          fitting}, {\df evaluating}, {\df tuning}, and {\df
+%          controlling} a broad variety of machine learning models (not
+%        just ``deep learning'' models!)
+%           \item Provides common {\df preprocessing tasks} (such as data cleaning
+%             and type coercion)
+%           \item Allows for model {\df composition} (e.g., pipelining, stacking)
+%       \end{itemize}
+%     \end{block}
+%   \end{frame}
 
 % \begin{frame}
 % \frametitle{Toolboxes in other ecosystems}
