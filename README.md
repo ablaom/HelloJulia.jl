@@ -5,18 +5,24 @@ UNDER CONSTRUCTION
 
 Resources used by the author for a short *Introduction to Julia* workshop.
 
-Some slides used in the presentation for this workshop, and included
-[here](/slides), are based on material contributed by Oliver Schultz
-and Sam Urmy, which is gratefully acknowledged.
-
 This page contains useful resources for starting out with Julia.
 
-To run some demos presented in the workshop live, click [here](NOTEBOOKS.md).
+To **run demos** presented in the workshop live, click [here](NOTEBOOKS.md).
+
+**Acknowledgements.** Some slides used in the presentation for this
+workshop, and included [here](/slides), are based on material
+contributed by Oliver Schultz and Sam Urmy, which is gratefully
+acknowledged. Oscar Smith and Ian Butterworth
+[helped](https://discourse.julialang.org/t/looking-for-simple-example-to-explain-ahead-of-time-compilation/71471/3)
+contributed the just-in-time compilation demonstration.
+
 
 ## Is Julia for me?
 
 - [Julia language home page](https://julialang.org) - Good for a quick
   rundown of features and introduction to the broader ecosystem
+  
+- [Slides for this workshop](/slides/slides.pdf)
 
 - [Why Julia?](https://indico.cern.ch/event/1074269/contributions/4539601/attachments/2317518/3945412/why-julia%20slides.pdf) - Motivation and comparison to other languages. Slides from a talk by Oliver Schulz, Max Planck Institute for Physics.  [Alternative link](https://github.com/oschulz/Why-Julia)
 
