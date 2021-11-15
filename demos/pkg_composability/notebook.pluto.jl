@@ -48,10 +48,13 @@ another. That, is neither package is a dependency of the other. And yet the
 following "just works", as if by magic:
 """
 
-# ╔═╡ 3b5b37ed-8098-4ede-8d7e-8e449afd1c48
-sqrt(5.0u"m^2/s^2" ± 0.1u"m^2/s^2")
+# ╔═╡ cddcd722-2cd4-4d95-8d7e-8e449afd1c48
+c = 5.0u"m^2/s^2" ± 0.1u"m^2/s^2"
 
-# ╔═╡ 135dac9b-0bd9-4e1d-a949-7f3bd292fe31
+# ╔═╡ 76009ff9-a8ba-4cba-a949-7f3bd292fe31
+sqrt(c)
+
+# ╔═╡ 135dac9b-0bd9-4e1d-8514-99938a2932db
 md"""
 ---
 
@@ -70,5 +73,6 @@ md"""
 # ╠═bf15f7d4-5ef4-4184-ba1f-6363f43ec697
 # ╠═4c307469-e7bd-4041-95ea-2955abd45275
 # ╟─9e262366-a19c-4d4c-b1b3-dd47e367ba54
-# ╠═3b5b37ed-8098-4ede-8d7e-8e449afd1c48
-# ╟─135dac9b-0bd9-4e1d-a949-7f3bd292fe31
+# ╠═cddcd722-2cd4-4d95-8d7e-8e449afd1c48
+# ╠═76009ff9-a8ba-4cba-a949-7f3bd292fe31
+# ╟─135dac9b-0bd9-4e1d-8514-99938a2932db

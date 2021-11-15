@@ -14,15 +14,15 @@ plotly() # choose plotting backend
 #-
 
 function mandel(z)
-    c = z
-    maxiter = 20
-    for n = 1:maxiter
+    c = z     # starting value and constant shift
+    max_iterations = 20
+    for n = 1:max_iterations
         if abs(z) > 2
             return n-1
         end
         z = z^2 + c
     end
-    return maxiter
+    return max_iterations
 end
 
 #-

@@ -28,7 +28,6 @@ b = 5.0 ± 1.2 # or measurement(5.0, 1.2)
 
 #-
 
-
 sqrt(b)
 
 #-
@@ -36,5 +35,8 @@ sqrt(b)
 # The Unitful and Measurements packages are blissfully ignorant of one
 # another. That, is neither package is a dependency of the other. And yet the
 # following "just works", as if by magic:
+c = 5.0u"m^2/s^2" ± 0.1u"m^2/s^2"
 
-sqrt(5.0u"m^2/s^2" ± 0.1u"m^2/s^2")
+#-
+
+sqrt(c)

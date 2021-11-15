@@ -23,17 +23,17 @@ begin
   plotly() # choose plotting backend
 end
 
-# ╔═╡ c2c918fd-5d34-4ee6-8af5-148d95ea2900
+# ╔═╡ e6ca23dc-5cc4-4ec0-8af5-148d95ea2900
 function mandel(z)
-    c = z
-    maxiter = 20
-    for n = 1:maxiter
+    c = z     # starting value and constant shift
+    max_iterations = 20
+    for n = 1:max_iterations
         if abs(z) > 2
             return n-1
         end
         z = z^2 + c
     end
-    return maxiter
+    return max_iterations
 end
 
 # ╔═╡ 9c765694-8292-4f26-a6bf-47194d7e8e12
@@ -59,7 +59,7 @@ md"""
 # ╟─ec6ad8e5-c854-41db-b795-033f6f2a0674
 # ╠═d09256dd-6c0d-4e28-935f-ddf6a6bfbbdd
 # ╠═045ab7e2-eb64-4301-af2a-25235e544a31
-# ╠═c2c918fd-5d34-4ee6-8af5-148d95ea2900
+# ╠═e6ca23dc-5cc4-4ec0-8af5-148d95ea2900
 # ╠═9c765694-8292-4f26-a6bf-47194d7e8e12
 # ╠═da7f8fbf-e71a-48d6-828a-4cc485149963
 # ╟─135dac9b-0bd9-4e1d-9e54-3f7b3ca87ecb

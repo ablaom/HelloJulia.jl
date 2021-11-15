@@ -20,7 +20,7 @@ To run some demos presented in the workshop live, click [here](NOTEBOOKS.md).
 
 - [Why Julia?](https://indico.cern.ch/event/1074269/contributions/4539601/attachments/2317518/3945412/why-julia%20slides.pdf) - Motivation and comparison to other languages. Slides from a talk by Oliver Schulz, Max Planck Institute for Physics.  [Alternative link](https://github.com/oschulz/Why-Julia)
 
-- [Package search at JuliaHub](https://juliahub.com/ui/Packages) - Good for scouting out existing julia software (and communities) in your area of interest ([alternative search engine](https://juliapackages.com/packages?search=).
+- [Package search at JuliaHub](https://juliahub.com/ui/Packages) - Good for scouting out existing julia software (and communities) in your area of interest ([alternative search engine](https://juliapackages.com/packages?search=)).
 
 - For experienced programmers: Julia is object-oriented but not in the way languages like python or C++. Rather it uses *multiple dispatch*. [This talk](https://www.youtube.com/watch?v=kc9HwsxE1OY) makes the case for this alternative paradigm.
 
