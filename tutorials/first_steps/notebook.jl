@@ -19,7 +19,17 @@ sqrt(1 + 2^3) # do `sqrt(ans)` in REPL
 
 sin(pi)
 
-#-
+# Query a function's document string using `?sin` at the REPL, or in a
+# notebook:
+
+@doc sin
+
+# I've forgotten how the arcsin is called. Is it `asin` or `arcsin`? I
+# can search all doc-strings containing "sine" to locate the method:
+
+apropos("sine")
+
+# Okay, I see it's called `asin`.
 
 asin(1 + 3*im)
 
@@ -328,5 +338,18 @@ savefig("my_first_plot.png")
 
 ### Exercise 1
 
-# Write a function with one argument `v`, which may assume is a
-# vector, that returns
+# Write a function that adds all columns of its matrix input.
+
+### Exercise 2
+
+# Write a function that converts a named tuple to a dictionary. You
+# can create an empty dictionary using `Dict()`.
+
+### Exercise 3
+
+# Generate a 1000 random samples from the standard normal
+# distribution. Create a second such sample, and add the two samples
+# point-wise.  Compute the (sample) mean and variance of the combined
+# samples. In the same plot, show a histogram of the combined samples
+# and a plot of the pdf for normal distribution with zero mean and
+# variance `2`.

@@ -108,6 +108,3 @@ and Best Julia Practices with Julia](https://www.perlego.com/book/1365831/handso
 I wished existed when I started. I learned Julia from the
 [manual](https://docs.julialang.org/en/v1/) which is, however,
 excellent.
-
-
-## Machine learning in Julia
