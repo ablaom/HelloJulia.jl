@@ -411,30 +411,31 @@ begin
   histogram!(samples , normalize=true, alpha=0.4)
 end
 
-# ╔═╡ 2e3fe339-a279-48e8-81e1-74ef03c2e79e
+# ╔═╡ ebe6467e-e767-481b-81e1-74ef03c2e79e
 savefig("my_first_plot.png")
 
+# ╔═╡ a7f061b8-d1ed-4b1f-a04e-0b76409c14a7
+md"# Exercises"
 
-# Exercises
+# ╔═╡ 19dae74b-24bd-428f-b979-3458f2f26667
+md"## Exercise 1"
 
-### Exercise 1
-
-# ╔═╡ c2078856-e4c8-4777-a04e-0b76409c14a7
+# ╔═╡ c2078856-e4c8-4777-97e3-6677afc6ca9f
 md"Write a function that adds all columns of its matrix input."
 
-# ╔═╡ bd980fda-2c47-4c89-b979-3458f2f26667
-### Exercise 2
+# ╔═╡ b04e2fdc-8f1a-4964-b10e-562ce21caa04
+md"## Exercise 2"
 
-# ╔═╡ ee989619-8d1b-4db0-97e3-6677afc6ca9f
+# ╔═╡ ee989619-8d1b-4db0-8f78-ab549ef1544e
 md"""
 Write a function that converts a named tuple to a dictionary. You
 can create an empty dictionary using `Dict()`.
 """
 
-# ╔═╡ 40b30234-8af4-4681-b10e-562ce21caa04
-### Exercise 3
+# ╔═╡ 4f939d4a-e802-4b7d-a8a4-a53f5149481e
+md"## Exercise 3"
 
-# ╔═╡ 2d5c47b7-4270-4b26-8f78-ab549ef1544e
+# ╔═╡ 2d5c47b7-4270-4b26-8704-dbab8e09b4f1
 md"""
 Generate a 1000 random samples from the standard normal
 distribution. Create a second such sample, and add the two samples
@@ -444,7 +445,7 @@ and a plot of the pdf for normal distribution with zero mean and
 variance `2`.
 """
 
-# ╔═╡ 135dac9b-0bd9-4e1d-a8a4-a53f5149481e
+# ╔═╡ 135dac9b-0bd9-4e1d-a02f-27b6c05e4d02
 md"""
 ---
 
@@ -557,10 +558,12 @@ md"""
 # ╠═5db01f65-3d0f-4ba4-b122-214de244406c
 # ╟─2a96dfa7-cf5a-4e7f-8a4b-c83694978e38
 # ╠═aa456fbb-e9da-44d3-a8b6-f7ff516dedc4
-# ╠═2e3fe339-a279-48e8-81e1-74ef03c2e79e
-# ╟─c2078856-e4c8-4777-a04e-0b76409c14a7
-# ╠═bd980fda-2c47-4c89-b979-3458f2f26667
-# ╟─ee989619-8d1b-4db0-97e3-6677afc6ca9f
-# ╠═40b30234-8af4-4681-b10e-562ce21caa04
-# ╟─2d5c47b7-4270-4b26-8f78-ab549ef1544e
-# ╟─135dac9b-0bd9-4e1d-a8a4-a53f5149481e
+# ╠═ebe6467e-e767-481b-81e1-74ef03c2e79e
+# ╟─a7f061b8-d1ed-4b1f-a04e-0b76409c14a7
+# ╟─19dae74b-24bd-428f-b979-3458f2f26667
+# ╟─c2078856-e4c8-4777-97e3-6677afc6ca9f
+# ╟─b04e2fdc-8f1a-4964-b10e-562ce21caa04
+# ╟─ee989619-8d1b-4db0-8f78-ab549ef1544e
+# ╟─4f939d4a-e802-4b7d-a8a4-a53f5149481e
+# ╟─2d5c47b7-4270-4b26-8704-dbab8e09b4f1
+# ╟─135dac9b-0bd9-4e1d-a02f-27b6c05e4d02

@@ -334,18 +334,18 @@ histogram!(samples , normalize=true, alpha=0.4)
 savefig("my_first_plot.png")
 
 
-## Exercises
+# # Exercises
 
-### Exercise 1
+# ## Exercise 1
 
 # Write a function that adds all columns of its matrix input.
 
-### Exercise 2
+# ## Exercise 2
 
 # Write a function that converts a named tuple to a dictionary. You
 # can create an empty dictionary using `Dict()`.
 
-### Exercise 3
+# ## Exercise 3
 
 # Generate a 1000 random samples from the standard normal
 # distribution. Create a second such sample, and add the two samples
