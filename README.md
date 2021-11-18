@@ -1,8 +1,5 @@
 # HelloJulia.jl
 
-UNDER CONSTRUCTION
-
-
 Resources used by the author for a short *Introduction to Julia* workshop.
 
 This page contains useful resources for starting out with Julia.
