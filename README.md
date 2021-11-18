@@ -39,11 +39,14 @@ your machine when starting out:
 
 - *Installing julia compiler:* [Ubuntu](https://ferrolho.github.io/blog/2019-01-26/how-to-install-julia-on-ubuntu) or similar; [Mac, Windows, or other](https://julialang.org/download/)
 
-
 - Open the downloaded application (or run `julia` from a
   terminal/console) to launch the command-line interface for
   interacting with julia (its called the
   [REPL](https://en.wikipedia.org/wiki/Read–eval–print_loop)).
+  
+  	- For windows users tick the option "add julia to PATH" during installation to run julia from the command-line. If you didn't do that follow [these instructions](https://www.juliafordatascience.com/first-steps-1-installing-julia/)
+
+	- Mac users will need to follow [these instructions](https://www.juliafordatascience.com/first-steps-1-installing-julia/) to run julia from the command-line
 
 - At the `julia> ` prompt, type the obligatory `println("Hello
   world!")` to check the REPL is alive.
@@ -55,7 +58,7 @@ Once you are familiar with basic interaction using the REPL, you will want to:
 - Hook your Julia installation up with an editor or integrated
   development environment (IDE) so you can efficiently edit, run and
   debug longer julia scripts. See [these
-  options](https://julialang.org). If you don't have an existing
+  options](https://julialang.org) (scroll down to "Editors and IDEs" and "Essential Tools"). If you don't have an existing
   preference I recommend VS Code. I prefer emacs, but it is much older
   and has a steeper learning curve.
 
@@ -85,7 +88,7 @@ channel](https://julialang.org/slack/). Also useful:
 Many people use R, python or MATLAB packages with a minimum of actual
 programming knowledge and the same applies to Julia. However, to start
 deepening your Julia programming knowledge, you could try some of the
-resources at this [Julia org page](https://julialang.org/learning/). I
+resources at this [Julia org page](https://julialang.org/learning/) (e.g., [juliaAcademy](https://juliaacademy.com)). I
 have also heard that [Think
 Julia](https://benlauwens.github.io/ThinkJulia.jl/latest/book.html) is
 a pretty good ab initio introduction to programming.
