@@ -40,9 +40,10 @@ Once you are familiar with basic interaction using the REPL, you will want to:
 - Hook your Julia installation up with an editor or integrated
   development environment (IDE) so you can efficiently edit, run and
   debug longer julia scripts. See [these
-  options](https://julialang.org). If you don't have an existing
-  preference I recommend VS Code. I prefer emacs, but it is much older
-  and has a steeper learning curve.
+  options](https://julialang.org) (scroll down to "Editors and IDEs"
+  and "Essential Tools"). If you don't have an existing preference I
+  recommend VS Code. I prefer emacs, but it is much older and has a
+  steeper learning curve.
 
 - Or, interact with Julia using a notebook. Here you have two options:
   - Juptyer notebooks (used also for R and python) - follow [these
@@ -70,8 +71,9 @@ channel](https://julialang.org/slack/). Also useful:
 Many people use R, python or MATLAB packages with a minimum of actual
 programming knowledge and the same applies to Julia. However, to start
 deepening your Julia programming knowledge, you could try some of the
-resources at this [Julia org page](https://julialang.org/learning/). I
-have also heard that [Think
+resources at this [Julia org page](https://julialang.org/learning/)
+(e.g., [juliaAcademy](https://juliaacademy.com)). I have also heard
+that the book [Think
 Julia](https://benlauwens.github.io/ThinkJulia.jl/latest/book.html) is
 a pretty good ab initio introduction to programming.
 
