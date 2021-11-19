@@ -205,10 +205,8 @@ first(df, 3)
 # That's it! Remember also that you can drop columns or make
 # subselections with `select` and `select!`.
 
-
-# ## Split-Apply-Combine
-#
-# This is a shorter version of the [DataFrames.jl
+# The remainder of this tutorial is an abbreviated version of a
+# [DataFrames.jl
 # tutorial](http://juliadata.github.io/DataFrames.jl/latest/man/split_apply_combine/).
 
 iris = OpenML.load(61) |> DataFrame;

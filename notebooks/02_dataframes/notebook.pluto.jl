@@ -313,11 +313,10 @@ That's it! Remember also that you can drop columns or make
 subselections with `select` and `select!`.
 """
 
-# ╔═╡ 2c34e1f6-75b5-43ca-b7cc-46f4ef988c68
+# ╔═╡ 8fb350ab-8631-4335-b7cc-46f4ef988c68
 md"""
-## Split-Apply-Combine
-
-This is a shorter version of the [DataFrames.jl
+The remainder of this tutorial is an abbreviated version of a
+[DataFrames.jl
 tutorial](http://juliadata.github.io/DataFrames.jl/latest/man/split_apply_combine/).
 """
 
@@ -557,7 +556,7 @@ md"""
 # ╟─3c144b2c-87bf-438a-a1cb-54e34396a855
 # ╠═2616d636-de3e-4c05-8037-0de5806e1a54
 # ╟─e38109ec-ebf4-423a-9961-a09632c33fb0
-# ╟─2c34e1f6-75b5-43ca-b7cc-46f4ef988c68
+# ╟─8fb350ab-8631-4335-b7cc-46f4ef988c68
 # ╠═c23a0e49-62ee-4eba-90fb-7f2721f6fcc7
 # ╟─6d10c87e-5886-41ee-af65-ccd25ecb9818
 # ╟─01381aa7-f9f9-4560-8890-979691212d9b
