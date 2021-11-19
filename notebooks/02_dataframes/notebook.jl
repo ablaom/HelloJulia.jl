@@ -41,8 +41,9 @@ typeof(table)
 
 df = DataFrame(table);
 
-# Intuitively a DataFrame is just a wrapper around a number of
-# columns (features) each of which is a vector of some type with a name.
+# A `DataFrame` is essentially just a wrapper around a number of
+# vectors with names, conceptualized as a table with the vectors as
+# columns.
 
 # Lets' look the first few rows (observations) of `df`:
 
@@ -218,7 +219,7 @@ first(iris, 3)
 # to groups of rows.  This can be very convenient to run specific
 # analyses for specific groups without copying the data.
 
-# The basic usage is `groupby(iris, cols)` where `cols` specifies one or
+# The basic usage is `groupby(df, cols)` where `cols` specifies one or
 # several columns to use for the grouping.
 
 # Consider a simple example: in `iris` there is a `Species` column

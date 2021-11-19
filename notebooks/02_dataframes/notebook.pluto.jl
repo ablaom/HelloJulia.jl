@@ -72,10 +72,11 @@ obvious way:
 # ╔═╡ 943a5fd8-56fc-420e-8514-99938a2932db
 df = DataFrame(table);
 
-# ╔═╡ 6f0e545a-f1b8-4bb1-a0de-1721c1bc2df2
+# ╔═╡ fbb4977e-f176-43ed-a0de-1721c1bc2df2
 md"""
-Intuitively a DataFrame is just a wrapper around a number of
-columns (features) each of which is a vector of some type with a name.
+A `DataFrame` is essentially just a wrapper around a number of
+vectors with names, conceptualized as a table with the vectors as
+columns.
 """
 
 # ╔═╡ 7fe10a23-640b-4bf5-bca8-7eec7950fd82
@@ -335,9 +336,9 @@ to groups of rows.  This can be very convenient to run specific
 analyses for specific groups without copying the data.
 """
 
-# ╔═╡ 01381aa7-f9f9-4560-8890-979691212d9b
+# ╔═╡ 9d0800b7-fa7a-4c4b-8890-979691212d9b
 md"""
-The basic usage is `groupby(iris, cols)` where `cols` specifies one or
+The basic usage is `groupby(df, cols)` where `cols` specifies one or
 several columns to use for the grouping.
 """
 
@@ -500,7 +501,7 @@ md"""
 # ╠═53aa7f8d-b0c7-4446-8d7e-8e449afd1c48
 # ╟─5aff5a3c-405a-41d8-a949-7f3bd292fe31
 # ╠═943a5fd8-56fc-420e-8514-99938a2932db
-# ╟─6f0e545a-f1b8-4bb1-a0de-1721c1bc2df2
+# ╟─fbb4977e-f176-43ed-a0de-1721c1bc2df2
 # ╟─7fe10a23-640b-4bf5-bca8-7eec7950fd82
 # ╠═33e40309-c671-4f7a-9873-1b1430e635cc
 # ╟─ce8785e8-a6e2-4e1b-b43e-d0ebe87da176
@@ -559,7 +560,7 @@ md"""
 # ╟─8fb350ab-8631-4335-b7cc-46f4ef988c68
 # ╠═c23a0e49-62ee-4eba-90fb-7f2721f6fcc7
 # ╟─6d10c87e-5886-41ee-af65-ccd25ecb9818
-# ╟─01381aa7-f9f9-4560-8890-979691212d9b
+# ╟─9d0800b7-fa7a-4c4b-8890-979691212d9b
 # ╟─3414a5db-2bd9-4df4-a6fa-eaf14df5d44b
 # ╠═fbdc3ba2-fd93-473e-8025-5084804a9f6c
 # ╟─cd771149-a832-42a7-9e90-09023d201062
