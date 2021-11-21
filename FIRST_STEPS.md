@@ -17,3 +17,4 @@ your machine when starting out:
   
 - At the `julia> ` prompt, type the obligatory `println("Hello
   world!")` to check the REPL is alive and kicking.
+

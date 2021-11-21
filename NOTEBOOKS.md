@@ -1,16 +1,7 @@
 Notebooks for demos in the workshop (and some others) can be run by
 following the following instructions:
 
-- *Installing julia compiler:*
-  [Ubuntu](https://ferrolho.github.io/blog/2019-01-26/how-to-install-julia-on-ubun)
-  or similar; [Mac, Windows, or
-  other](https://julialang.org/download/). This tutorial has been
-  tested on Julia 1.6.
-    
-- Open the downloaded application (or run `julia` from a
-  terminal/console) to launch the command-line interface for
-  interacting with julia (its called the
-  [REPL](https://en.wikipedia.org/wiki/Read–eval–print_loop)).
+- [Install the Julia compiler](FIRST_STEPS.md)
 
 - Type the following at the `julia>` prompt:
 
