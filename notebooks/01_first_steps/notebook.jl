@@ -121,7 +121,11 @@ t[3]
 
 # Tuples also come in a *named* variety:
 
-(; i = 1, x = 2.0, animal="cat")
+t = (; i = 1, x = 2.0, animal="cat")
+
+#-
+
+t.x
 
 # ## Strings and relatives
 
