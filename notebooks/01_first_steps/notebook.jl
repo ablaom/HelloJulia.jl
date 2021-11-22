@@ -307,7 +307,7 @@ y = rand(30)
 using Pkg                        # built-in package manager
 Pkg.activate("env", shared=true) # create a new pkg env
 
-# Add some packages to your enviroment (latest compatible versions
+# Add some packages to your environment (latest compatible versions
 # added by default):
 
 Pkg.add("Distributions")
@@ -317,6 +317,7 @@ Pkg.add("Plots")
 
 using Distributions
 using Plots
+using Statistics # part of standard library
 
 N = 1000
 samples = rand(Normal(), N);   # equivalent to Julia's built-in `randn(d)`
@@ -335,10 +336,10 @@ g = fit(Gamma, samples)
 
 f(x) = pdf(g, x)
 
-x = 0:0.1:4 # floats from 0 to 4 in steps of 0.1
-y = f.(x)   # apply f element-wise to x
+xs = 0:0.1:4 # floats from 0 to 4 in steps of 0.1
+ys = f.(xs)  # apply f element-wise to xs
 
-plot(x, y, xrange=(0,4), yrange=(0,0.2))
+plot(xs, ys, xrange=(0,4), yrange=(0,0.2))
 histogram!(samples , normalize=true, alpha=0.4)
 
 #-
@@ -357,9 +358,13 @@ savefig("my_first_plot.png")
 # Generate a 1000 random samples from the standard normal
 # distribution. Create a second such sample, and add the two samples
 # point-wise.  Compute the (sample) mean and variance of the combined
-# samples. In the same plot, show a frequency-normalized histogram of
-# the combined samples and a plot of the pdf for normal distribution
-# with zero mean and variance `2`.
+# samples. In the same
+# plot, show a frequency-normalized histogram of the combined samples
+# and a plot of the pdf for normal distribution with zero mean and
+# variance `2`.
+
+# You can use `std` to compute the standard deviation and `sqrt` to
+# compute square roots.
 
 # ## Exercise 3
 

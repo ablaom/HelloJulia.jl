@@ -375,9 +375,9 @@ begin
   Pkg.activate("env", shared=true) # create a new pkg env
 end
 
-# ╔═╡ 240929b4-eb02-42a5-b98c-3df1f31879bf
+# ╔═╡ f7215fcd-0f87-4b4a-b98c-3df1f31879bf
 md"""
-Add some packages to your enviroment (latest compatible versions
+Add some packages to your environment (latest compatible versions
 added by default):
 """
 
@@ -390,10 +390,11 @@ end
 # ╔═╡ 64a59295-2630-40c2-b122-214de244406c
 md"To load the code for use:"
 
-# ╔═╡ b480add5-8651-4720-8a4b-c83694978e38
+# ╔═╡ d7762852-3e53-4cca-8a4b-c83694978e38
 begin
   using Distributions
   using Plots
+  using Statistics # part of standard library
   
   N = 1000
   samples = rand(Normal(), N);   # equivalent to Julia's built-in `randn(d)`
@@ -409,14 +410,14 @@ g = fit(Gamma, samples)
 # ╔═╡ 2a96dfa7-cf5a-4e7f-a04e-0b76409c14a7
 md"## Plotting"
 
-# ╔═╡ aa456fbb-e9da-44d3-b979-3458f2f26667
+# ╔═╡ c89ff154-d5a1-401f-b979-3458f2f26667
 begin
   f(x) = pdf(g, x)
   
-  x = 0:0.1:4 # floats from 0 to 4 in steps of 0.1
-  y = f.(x)   # apply f element-wise to x
+  xs = 0:0.1:4 # floats from 0 to 4 in steps of 0.1
+  ys = f.(xs)  # apply f element-wise to xs
   
-  plot(x, y, xrange=(0,4), yrange=(0,0.2))
+  plot(xs, ys, xrange=(0,4), yrange=(0,0.2))
   histogram!(samples , normalize=true, alpha=0.4)
 end
 
@@ -435,38 +436,45 @@ md"Write a function named `total` that adds the elements of its vector input."
 # ╔═╡ b04e2fdc-8f1a-4964-8704-dbab8e09b4f1
 md"## Exercise 2"
 
-# ╔═╡ 860bb453-c2f1-446d-a02f-27b6c05e4d02
+# ╔═╡ 2b88d9c5-61a4-4e1f-a02f-27b6c05e4d02
 md"""
 Generate a 1000 random samples from the standard normal
 distribution. Create a second such sample, and add the two samples
 point-wise.  Compute the (sample) mean and variance of the combined
-samples. In the same plot, show a frequency-normalized histogram of
-the combined samples and a plot of the pdf for normal distribution
-with zero mean and variance `2`.
+samples. In the same
+plot, show a frequency-normalized histogram of the combined samples
+and a plot of the pdf for normal distribution with zero mean and
+variance `2`.
 """
 
-# ╔═╡ 4f939d4a-e802-4b7d-bea4-3d467d48781c
+# ╔═╡ b899ecf2-1e43-4783-bea4-3d467d48781c
+md"""
+You can use `std` to compute the standard deviation and `sqrt` to
+compute square roots.
+"""
+
+# ╔═╡ 4f939d4a-e802-4b7d-97c5-2979af8a507d
 md"## Exercise 3"
 
-# ╔═╡ 63f410ea-c37a-4761-97c5-2979af8a507d
+# ╔═╡ 63f410ea-c37a-4761-b639-63c76c72c513
 md"The following shows that named tuples share some behaviour with dictionaries:"
 
-# ╔═╡ cb2c42bf-21b5-4e04-b639-63c76c72c513
+# ╔═╡ cb2c42bf-21b5-4e04-8f5a-e1ee9eb5c15c
 begin
   t = (x = 1, y = "cat", z = 4.5)
   keys(t)
 end
 
-# ╔═╡ b8996fa3-c046-4fb1-8f5a-e1ee9eb5c15c
+# ╔═╡ b8996fa3-c046-4fb1-adc5-e671db8bca5d
 t[:y]
 
-# ╔═╡ 6584c100-ffd6-4fa1-adc5-e671db8bca5d
+# ╔═╡ 6584c100-ffd6-4fa1-86f1-0ea38de21abb
 md"""
 Write a function called `dict` that converts a named tuple to an
 actual dictionary. You can create an empty dictionary using `Dict()`.
 """
 
-# ╔═╡ 135dac9b-0bd9-4e1d-86f1-0ea38de21abb
+# ╔═╡ 135dac9b-0bd9-4e1d-a55c-0cb44ab816d7
 md"""
 ---
 
@@ -574,23 +582,24 @@ md"""
 # ╟─e7c2edc1-91cb-4ef1-a38a-beb5c7157b57
 # ╟─ab20d999-4cfa-4104-81f5-507803ea9ed6
 # ╠═c5e1e96d-691f-4366-9b21-6d4eb642d87e
-# ╟─240929b4-eb02-42a5-b98c-3df1f31879bf
+# ╟─f7215fcd-0f87-4b4a-b98c-3df1f31879bf
 # ╠═fdd4c037-11f7-4777-92b7-4ceba56e97ad
 # ╟─64a59295-2630-40c2-b122-214de244406c
-# ╠═b480add5-8651-4720-8a4b-c83694978e38
+# ╠═d7762852-3e53-4cca-8a4b-c83694978e38
 # ╠═f618c762-a936-433f-a8b6-f7ff516dedc4
 # ╠═5db01f65-3d0f-4ba4-81e1-74ef03c2e79e
 # ╟─2a96dfa7-cf5a-4e7f-a04e-0b76409c14a7
-# ╠═aa456fbb-e9da-44d3-b979-3458f2f26667
+# ╠═c89ff154-d5a1-401f-b979-3458f2f26667
 # ╠═ebe6467e-e767-481b-97e3-6677afc6ca9f
 # ╟─a7f061b8-d1ed-4b1f-b10e-562ce21caa04
 # ╟─19dae74b-24bd-428f-8f78-ab549ef1544e
 # ╟─3af8467f-4988-44dc-a8a4-a53f5149481e
 # ╟─b04e2fdc-8f1a-4964-8704-dbab8e09b4f1
-# ╟─860bb453-c2f1-446d-a02f-27b6c05e4d02
-# ╟─4f939d4a-e802-4b7d-bea4-3d467d48781c
-# ╟─63f410ea-c37a-4761-97c5-2979af8a507d
-# ╠═cb2c42bf-21b5-4e04-b639-63c76c72c513
-# ╠═b8996fa3-c046-4fb1-8f5a-e1ee9eb5c15c
-# ╟─6584c100-ffd6-4fa1-adc5-e671db8bca5d
-# ╟─135dac9b-0bd9-4e1d-86f1-0ea38de21abb
+# ╟─2b88d9c5-61a4-4e1f-a02f-27b6c05e4d02
+# ╟─b899ecf2-1e43-4783-bea4-3d467d48781c
+# ╟─4f939d4a-e802-4b7d-97c5-2979af8a507d
+# ╟─63f410ea-c37a-4761-b639-63c76c72c513
+# ╠═cb2c42bf-21b5-4e04-8f5a-e1ee9eb5c15c
+# ╠═b8996fa3-c046-4fb1-adc5-e671db8bca5d
+# ╟─6584c100-ffd6-4fa1-86f1-0ea38de21abb
+# ╟─135dac9b-0bd9-4e1d-a55c-0cb44ab816d7

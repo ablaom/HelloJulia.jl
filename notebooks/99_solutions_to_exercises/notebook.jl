@@ -1,5 +1,21 @@
 # # Solutions to exercises
 
+# ## Setup
+
+# Inspect Julia version:
+
+VERSION
+
+# The following instantiates a package environment.
+
+# The package environment has been created using **Julia 1.6** and may not
+# instantiate properly for other Julia versions.
+
+using Pkg
+Pkg.activate("env")
+Pkg.instantiate()
+
+
 # ## Exercise 1
 
 # Write a function named `total` that adds the elements of its vector input.
@@ -29,6 +45,35 @@ total(1:10)
 # samples. In the same plot, show a frequency-normalized histogram of
 # the combined samples and a plot of the pdf for normal distribution
 # with zero mean and variance `2`.
+
+# ### Solution
+
+using Distributions, Plots, Statistics
+
+samples1 = randn(1000); # or rand(Normal(), 1000)
+samples2 = randn(1000);
+
+samples = samples1 .+ samples2;
+
+mu = mean(samples)
+var = std(samples)^2
+
+@show mu var
+
+#-
+
+d = Normal(0, sqrt(2))
+f(x) = pdf(d, x)
+
+xs = -5:(0.1):5
+ys = f.(xs);
+
+using Plots
+
+plt = histogram(samples, normalize=true)
+plot!(xs, ys)
+plt
+
 
 # ## Exercise 3
 
@@ -63,4 +108,3 @@ dict(t)
 # Or alternatively:
 
 dict(t) = Dict(k => t[k] for k in keys(t))
-
