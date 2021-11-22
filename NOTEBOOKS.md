@@ -3,7 +3,7 @@ following the following instructions:
 
 - [Install the Julia compiler](FIRST_STEPS.md)
 
-- Type the following at the `julia>` prompt:
+- **In a new Julia session** type the following at the `julia>` prompt:
 
 ```julia
 using Pkg

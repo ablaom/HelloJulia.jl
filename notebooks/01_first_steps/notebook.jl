@@ -121,7 +121,7 @@ t[3]
 
 # Tuples also come in a *named* variety:
 
-t = (; i = 1, x = 2.0, animal="cat")
+t = (i = 1, x = 2.0, animal="cat")
 
 #-
 
@@ -342,9 +342,22 @@ savefig("my_first_plot.png")
 
 # ## Exercise 1
 
-# Write a function that adds all columns of its matrix input.
+# Write a function that adds the elements of its vector input.
 
 # ## Exercise 2
+
+# One can extract the names in a named tuple like this:
+
+t = (x = 1, y = "cat", z = 4.5)
+keys(t)
+
+#-
+
+# And here's code to print these out:
+
+for k in keys(t)
+    println(t)
+end
 
 # Write a function that converts a named tuple to a dictionary. You
 # can create an empty dictionary using `Dict()`.
@@ -354,6 +367,6 @@ savefig("my_first_plot.png")
 # Generate a 1000 random samples from the standard normal
 # distribution. Create a second such sample, and add the two samples
 # point-wise.  Compute the (sample) mean and variance of the combined
-# samples. In the same plot, show a histogram of the combined samples
-# and a plot of the pdf for normal distribution with zero mean and
-# variance `2`.
+# samples. In the same plot, show a frequency-normalized histogram of
+# the combined samples and a plot of the pdf for normal distribution
+# with zero mean and variance `2`.
