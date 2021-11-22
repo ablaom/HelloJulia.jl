@@ -40,6 +40,10 @@ asin(1 + 3*im)
 
 v = [3, 5, 7]
 
+#-
+
+length(v)
+
 # A "row vector" is a 1 x n array:
 
 row = [3 5 7]
@@ -55,6 +59,10 @@ A = [3 5 7
 #-
 
 size(A)
+
+#-
+
+length(A)
 
 # Accessing elements (Julia indices start at 1 not 0):
 
@@ -342,27 +350,9 @@ savefig("my_first_plot.png")
 
 # ## Exercise 1
 
-# Write a function that adds the elements of its vector input.
+# Write a function named `total` that adds the elements of its vector input.
 
 # ## Exercise 2
-
-# One can extract the names in a named tuple like this:
-
-t = (x = 1, y = "cat", z = 4.5)
-keys(t)
-
-#-
-
-# And here's code to print these out:
-
-for k in keys(t)
-    println(t)
-end
-
-# Write a function that converts a named tuple to a dictionary. You
-# can create an empty dictionary using `Dict()`.
-
-# ## Exercise 3
 
 # Generate a 1000 random samples from the standard normal
 # distribution. Create a second such sample, and add the two samples
@@ -370,3 +360,19 @@ end
 # samples. In the same plot, show a frequency-normalized histogram of
 # the combined samples and a plot of the pdf for normal distribution
 # with zero mean and variance `2`.
+
+# ## Exercise 3
+
+# The following shows that named tuples share some behaviour with dictionaries:
+
+t = (x = 1, y = "cat", z = 4.5)
+keys(t)
+
+#-
+
+t[:y]
+
+#-
+
+# Write a function called `dict` that converts a named tuple to an
+# actual dictionary. You can create an empty dictionary using `Dict()`.

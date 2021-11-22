@@ -64,110 +64,116 @@ md"One dimensional vectors:"
 # ╔═╡ cad4d998-43d7-421b-9873-1b1430e635cc
 v = [3, 5, 7]
 
-# ╔═╡ 26ce1939-e595-496a-b43e-d0ebe87da176
+# ╔═╡ 5c43b0f6-30f4-4ef7-b43e-d0ebe87da176
+length(v)
+
+# ╔═╡ 26ce1939-e595-496a-9009-4cfb2012998f
 md"A \"row vector\" is a 1 x n array:"
 
-# ╔═╡ d66140c7-958b-4347-9009-4cfb2012998f
+# ╔═╡ d66140c7-958b-4347-abd3-cb77d7a79683
 row = [3 5 7]
 
-# ╔═╡ 7aee99b6-3c6e-4a71-abd3-cb77d7a79683
+# ╔═╡ 7aee99b6-3c6e-4a71-879e-dc128f3db7b3
 md"Multiple row vectors separated by semicolons or new lines define matrices:"
 
-# ╔═╡ 96c1adb9-1b29-433d-879e-dc128f3db7b3
+# ╔═╡ 96c1adb9-1b29-433d-a367-9aa3c6cf34d0
 A = [3 5 7
      2 4 6
      1 3 5]
 
-# ╔═╡ ef6a776c-8c63-4d30-a367-9aa3c6cf34d0
+# ╔═╡ ef6a776c-8c63-4d30-bf32-94657e65284e
 size(A)
 
-# ╔═╡ b97d12e6-2346-410b-bf32-94657e65284e
+# ╔═╡ 4bb2001b-3b46-40f3-9afd-65a5b5facac9
+length(A)
+
+# ╔═╡ b97d12e6-2346-410b-b6c8-54f5ed90a964
 md"Accessing elements (Julia indices start at 1 not 0):"
 
-# ╔═╡ 177a30bb-473a-4e5e-9afd-65a5b5facac9
+# ╔═╡ 177a30bb-473a-4e5e-9292-fe822525fc77
 A[1, 2]
 
-# ╔═╡ 109564cb-ea6f-4264-b6c8-54f5ed90a964
+# ╔═╡ 109564cb-ea6f-4264-ae5e-4b83dcbc9675
 A[1, 2] == A[2]
 
-# ╔═╡ 26714555-a4ad-49cb-9292-fe822525fc77
+# ╔═╡ 26714555-a4ad-49cb-8a29-32f11452654a
 A[:, 2] # 2nd column
 
-# ╔═╡ d00b2507-e891-4ec5-ae5e-4b83dcbc9675
+# ╔═╡ d00b2507-e891-4ec5-a5f1-151fcbe229a2
 md"Changing elements:"
 
-# ╔═╡ 4d1dd37a-194e-4ed2-8a29-32f11452654a
+# ╔═╡ 4d1dd37a-194e-4ed2-81bc-2d5603785a09
 A[1, 1] = 42
 
-# ╔═╡ 38477997-58dd-4248-a5f1-151fcbe229a2
+# ╔═╡ 38477997-58dd-4248-9d87-1d1fbb0e3997
 inv(A) # inverse
 
-# ╔═╡ e61c7ae2-8204-4a20-81bc-2d5603785a09
+# ╔═╡ e61c7ae2-8204-4a20-b950-fddef2a1fb10
 isapprox(inv(A)*v, A\v) # but RHS more efficient
 
-# ╔═╡ d38b7040-bb41-44be-9d87-1d1fbb0e3997
+# ╔═╡ d38b7040-bb41-44be-951b-64cb2a36c8e3
 md"## \"Variables\" in Julia *point* to objects"
 
-# ╔═╡ 9f1e3326-b738-4b60-b950-fddef2a1fb10
+# ╔═╡ 9f1e3326-b738-4b60-b0e6-441461cc8770
 md"Corollary: all passing of function arguments is pass by reference"
 
-# ╔═╡ 494f9e7c-e53a-4c65-951b-64cb2a36c8e3
+# ╔═╡ 494f9e7c-e53a-4c65-8cb0-de601961bc02
 md"Like Python; Unlike R, C or FORTRAN."
 
-# ╔═╡ 259bf65c-6868-47b0-b0e6-441461cc8770
+# ╔═╡ 259bf65c-6868-47b0-a87d-950c50fb2955
 begin
   w = v
   
   w
 end
 
-# ╔═╡ 6ef57fdd-3188-4b19-8cb0-de601961bc02
+# ╔═╡ 6ef57fdd-3188-4b19-8448-4bcb089096cd
 v[1] = 42
 
-# ╔═╡ ef2473e2-bb35-4bd7-a87d-950c50fb2955
+# ╔═╡ ef2473e2-bb35-4bd7-a012-a84240254fb6
 v
 
-# ╔═╡ 76dc6ac8-03fe-4c6e-8448-4bcb089096cd
+# ╔═╡ 76dc6ac8-03fe-4c6e-bbdd-9799f7bb2e60
 w
 
-# ╔═╡ 5b3a3587-31f7-4a00-a012-a84240254fb6
+# ╔═╡ 5b3a3587-31f7-4a00-97a7-88e3af4f10ee
 md"## Tuples"
 
-# ╔═╡ 82f84505-336f-4845-bbdd-9799f7bb2e60
+# ╔═╡ 82f84505-336f-4845-b372-8c9866e51852
 md"Similar to vectors but of fixed length and immutable (cannot be changed)"
 
-# ╔═╡ 42d147e9-cbf9-4456-97a7-88e3af4f10ee
+# ╔═╡ 42d147e9-cbf9-4456-8f3d-b82f1e7b6f7a
 begin
   t = (1, 2.0, "cat")
   typeof(t)
 end
 
-# ╔═╡ 8c7dcea2-e879-405c-b372-8c9866e51852
+# ╔═╡ 8c7dcea2-e879-405c-ab04-579e5608ae53
 t[3]
 
-# ╔═╡ f85e0bbc-9db0-4a9f-8f3d-b82f1e7b6f7a
+# ╔═╡ f85e0bbc-9db0-4a9f-86cf-35420d9e6995
 md"Tuples also come in a *named* variety:"
 
-# ╔═╡ 24bf6b46-ac6d-4d5c-ab04-579e5608ae53
-t = (; i = 1, x = 2.0, animal="cat")
+# ╔═╡ d4688c37-14a2-4056-a29a-8d0445351914
+t = (i = 1, x = 2.0, animal="cat")
 
-# ╔═╡ 1fb03e63-7232-4381-86cf-35420d9e6995
+# ╔═╡ 1fb03e63-7232-4381-be65-28d0fcca50a8
 t.x
 
-# ╔═╡ 166a1850-cddb-4f72-a29a-8d0445351914
+# ╔═╡ 166a1850-cddb-4f72-9a2e-c468345d87d1
 md"## Strings and relatives"
 
-# ╔═╡ 44ef9d71-f75b-4140-be65-28d0fcca50a8
+# ╔═╡ 44ef9d71-f75b-4140-b5fa-cb79ebf595ef
 begin
   a_string = "the cat"
   a_character = 't'
   a_symbol = :t
 end
 
-# ╔═╡ ff4b5618-4be7-4111-9a2e-c468345d87d1
+# ╔═╡ ff4b5618-4be7-4111-91c5-524da38aa391
 a_string[1] == a_character
 
-# ╔═╡ fb16016a-87d7-4e9f-b5fa-cb79ebf595ef
+# ╔═╡ fb16016a-87d7-4e9f-ad90-b4405b216771
 md"""
 A `Symbol` is string-like but
 [interned](https://en.wikipedia.org/wiki/String_interning). Generally
@@ -175,89 +181,89 @@ use `String` for ordinary textual data, but use `Symbol` for
 language reflection (metaprogramming). For example:
 """
 
-# ╔═╡ 20ba7245-15ed-417e-91c5-524da38aa391
+# ╔═╡ 20ba7245-15ed-417e-895b-997a92b731e0
 isdefined(Main, :z)
 
-# ╔═╡ 542ec737-2c88-4293-ad90-b4405b216771
+# ╔═╡ 542ec737-2c88-4293-a525-e9b04a4bd246
 begin
   z = 1 + 2im
   isdefined(Main, :z)
 end
 
-# ╔═╡ 8b1e2b91-947c-4046-895b-997a92b731e0
+# ╔═╡ 8b1e2b91-947c-4046-80f0-ba7781e173cf
 z.im
 
-# ╔═╡ 3dcab89a-20ca-462a-a525-e9b04a4bd246
+# ╔═╡ 3dcab89a-20ca-462a-9cbc-9a2c39793333
 fieldnames(typeof(z))
 
-# ╔═╡ 65eb310b-82e8-4a1d-80f0-ba7781e173cf
+# ╔═╡ 65eb310b-82e8-4a1d-b887-2b16710e5502
 md"Symbols are generalized by *expressions*:"
 
-# ╔═╡ 35998a8b-6fda-4a2f-9cbc-9a2c39793333
+# ╔═╡ 35998a8b-6fda-4a2f-9452-5298a8a4a401
 begin
   ex = :(z == 3)
   eval(ex)
 end
 
-# ╔═╡ 2db5e586-237b-45aa-b887-2b16710e5502
+# ╔═╡ 2db5e586-237b-45aa-b017-96f1602f2cad
 md"If this is confusing, forget it for now."
 
-# ╔═╡ 8b1c08d9-f8dd-4ec9-9452-5298a8a4a401
+# ╔═╡ 8b1c08d9-f8dd-4ec9-8be2-2a4017c45345
 md"## Dictionaries"
 
-# ╔═╡ 4942a061-18dd-41d0-b017-96f1602f2cad
+# ╔═╡ 4942a061-18dd-41d0-a7ad-80d84f5b0070
 d = Dict('a' => "ant", 'z' => "zebra")
 
-# ╔═╡ d1fb9147-4a06-44fa-8be2-2a4017c45345
+# ╔═╡ d1fb9147-4a06-44fa-8378-5aa686f0b407
 d['a']
 
-# ╔═╡ 4f4bf27c-b2f9-4c15-a7ad-80d84f5b0070
+# ╔═╡ 4f4bf27c-b2f9-4c15-9f43-49763e8691a1
 begin
   d['b'] = "bat"
   d
 end
 
-# ╔═╡ 29d71401-66e5-484e-8378-5aa686f0b407
+# ╔═╡ 29d71401-66e5-484e-bb0e-3a45761c733a
 keys(d)
 
-# ╔═╡ 4b80c58d-646a-405b-9f43-49763e8691a1
+# ╔═╡ 4b80c58d-646a-405b-9979-7044b2f2df33
 md"The expression 'a' => \"ant\" is itself a stand-alone object:"
 
-# ╔═╡ 44914181-9dd8-49b4-bb0e-3a45761c733a
+# ╔═╡ 44914181-9dd8-49b4-b2a1-fbbde543f620
 begin
   pair = 'a' => "ant"
   
   first(pair)
 end
 
-# ╔═╡ 63badfd3-c501-4d7c-9979-7044b2f2df33
+# ╔═╡ 63badfd3-c501-4d7c-910b-f8a9a217eff2
 md"## Functions"
 
-# ╔═╡ e089aa5e-8d6e-48a4-b2a1-fbbde543f620
+# ╔═╡ e089aa5e-8d6e-48a4-aa36-d2e8546da46a
 md"Three ways to define a generic function:"
 
-# ╔═╡ c4c0e393-0c62-4e8e-910b-f8a9a217eff2
+# ╔═╡ c4c0e393-0c62-4e8e-88a1-a2bf91434413
 begin
   foo(x) = x^2 # METHOD 1 (inline)
   foo(3)
 end
 
-# ╔═╡ 115b6c86-a0f2-4546-aa36-d2e8546da46a
-md"or"
-
-# ╔═╡ 3c8e1237-ff55-4dd0-88a1-a2bf91434413
-3 |> foo
-
 # ╔═╡ 115b6c86-a0f2-4546-a1cb-54e34396a855
 md"or"
 
-# ╔═╡ 169c078b-2f81-4b5e-8037-0de5806e1a54
-3 |> x -> x^2 # METHOD 2 (anonymous)
+# ╔═╡ 3c8e1237-ff55-4dd0-8037-0de5806e1a54
+3 |> foo
 
 # ╔═╡ 115b6c86-a0f2-4546-9961-a09632c33fb0
 md"or"
 
-# ╔═╡ 1d690f10-1e44-4e9a-b7cc-46f4ef988c68
+# ╔═╡ 169c078b-2f81-4b5e-b7cc-46f4ef988c68
+3 |> x -> x^2 # METHOD 2 (anonymous)
+
+# ╔═╡ 115b6c86-a0f2-4546-90fb-7f2721f6fcc7
+md"or"
+
+# ╔═╡ 1d690f10-1e44-4e9a-af65-ccd25ecb9818
 begin
   function foo2(x) # METHOD 3 (verbose)
       y = x
@@ -269,16 +275,16 @@ begin
   foo2(3)
 end
 
-# ╔═╡ 7a568a60-5212-4c87-90fb-7f2721f6fcc7
+# ╔═╡ 7a568a60-5212-4c87-8890-979691212d9b
 md"## Basic iteration"
 
-# ╔═╡ 77d49aef-9644-41c2-af65-ccd25ecb9818
+# ╔═╡ 77d49aef-9644-41c2-a6fa-eaf14df5d44b
 md"Here are three ways to square the integers from 1 to 10."
 
-# ╔═╡ c3d721a1-ae10-4c0b-8890-979691212d9b
+# ╔═╡ c3d721a1-ae10-4c0b-8025-5084804a9f6c
 md"METHOD 1 (explicit loop):"
 
-# ╔═╡ d9016c54-9656-4684-a6fa-eaf14df5d44b
+# ╔═╡ d9016c54-9656-4684-9e90-09023d201062
 begin
   squares = [] # or Int[] if performance matters
   for x in 1:10
@@ -288,103 +294,103 @@ begin
   squares
 end
 
-# ╔═╡ a707446f-b9f3-4405-8025-5084804a9f6c
+# ╔═╡ a707446f-b9f3-4405-b7bb-2f33ef765cc0
 md"METHOD 2 (comprehension):"
 
-# ╔═╡ f86cc305-d2b6-4be3-9e90-09023d201062
+# ╔═╡ f86cc305-d2b6-4be3-9625-01172c4a0081
 [x^2 for x in 1:10]
 
-# ╔═╡ a0c15cdb-6294-47bc-b7bb-2f33ef765cc0
+# ╔═╡ a0c15cdb-6294-47bc-af4f-11c7de9e21dd
 md"METHOD 3 (map):"
 
-# ╔═╡ 7d2bb0cb-fe63-443b-9625-01172c4a0081
+# ╔═╡ 7d2bb0cb-fe63-443b-8dba-241d9b744683
 map(x -> x^2, 1:10)
 
-# ╔═╡ 4455b804-b818-4fa0-af4f-11c7de9e21dd
+# ╔═╡ 4455b804-b818-4fa0-a6e5-2f0b4dca5c59
 md"METHOD 4 (broadcasting with dot syntax):"
 
-# ╔═╡ 87188f88-6519-4ffd-8dba-241d9b744683
+# ╔═╡ 87188f88-6519-4ffd-8550-20498aa03ed0
 (1:10) .^ 2
 
-# ╔═╡ d1f615d1-644a-4358-a6e5-2f0b4dca5c59
+# ╔═╡ d1f615d1-644a-4358-9e7b-5b943cf6b560
 md"## Random numbers"
 
-# ╔═╡ da033108-0b83-4ee8-8550-20498aa03ed0
+# ╔═╡ da033108-0b83-4ee8-bce6-0a1379cc1259
 typeof(2)
 
-# ╔═╡ c494e441-4853-4a6d-9e7b-5b943cf6b560
+# ╔═╡ c494e441-4853-4a6d-9608-b5032c116833
 rand() # sample a Float64 uniformly from interval [0, 1]
 
-# ╔═╡ 2063cdaf-dbb9-4587-bce6-0a1379cc1259
+# ╔═╡ 2063cdaf-dbb9-4587-b473-4aa968e6937a
 rand(3, 4) # do that 12 times and put in a 3 x 4 array
 
-# ╔═╡ a2a2be72-f9fe-4e2c-9608-b5032c116833
+# ╔═╡ a2a2be72-f9fe-4e2c-8d9e-644a1b3cc6b6
 randn(3, 4) # use normal distribution instead
 
-# ╔═╡ 6deb462e-668e-475d-b473-4aa968e6937a
+# ╔═╡ 6deb462e-668e-475d-ac0a-23ded81445da
 rand(Int8) # random elment of type Int8
 
-# ╔═╡ 112438a5-ef2f-4c5d-8d9e-644a1b3cc6b6
+# ╔═╡ 112438a5-ef2f-4c5d-8535-1a088a6a3228
 rand(['a', 'b', 'c'], 10) # 10 random elements from a vector
 
-# ╔═╡ b87a9e77-1e26-4a1f-ac0a-23ded81445da
+# ╔═╡ b87a9e77-1e26-4a1f-a39f-7893c73eef39
 md"Some standard libraries are needed to do more, for example:"
 
-# ╔═╡ cc2371a4-26be-4325-8535-1a088a6a3228
+# ╔═╡ cc2371a4-26be-4325-bcca-51a27994a151
 using Random
 
-# ╔═╡ 9ac1f1af-bfdc-4499-a39f-7893c73eef39
+# ╔═╡ 9ac1f1af-bfdc-4499-9b33-09b4b6661170
 randstring(30)
 
-# ╔═╡ 3a2fb476-5685-40aa-bcca-51a27994a151
+# ╔═╡ 3a2fb476-5685-40aa-b45d-88d068bb0fa2
 using Statistics
 
-# ╔═╡ 01f39450-9ce3-46c1-9b33-09b4b6661170
+# ╔═╡ 01f39450-9ce3-46c1-92c8-6db3a590d963
 begin
   y = rand(30)
   @show mean(y) quantile(y, 0.75);
 end
 
-# ╔═╡ bd256b23-4c27-4ca0-b45d-88d068bb0fa2
+# ╔═╡ bd256b23-4c27-4ca0-abf5-96f457eb2bdf
 md"""
 (Use the macro @show before stuff you want printed prefixed by
 *what* it is that is being printed.)
 """
 
-# ╔═╡ 133e6f93-bb0b-460d-92c8-6db3a590d963
+# ╔═╡ 133e6f93-bb0b-460d-8a60-2e0214c059f5
 md"""
 For sampling from more general distributions we need
 Distributions.jl package which is not part of the standard library.
 """
 
-# ╔═╡ e7c2edc1-91cb-4ef1-abf5-96f457eb2bdf
+# ╔═╡ e7c2edc1-91cb-4ef1-a38a-beb5c7157b57
 md"## Loading packages"
 
-# ╔═╡ ab20d999-4cfa-4104-8a60-2e0214c059f5
+# ╔═╡ ab20d999-4cfa-4104-81f5-507803ea9ed6
 md"If not in the REPL:"
 
-# ╔═╡ c5e1e96d-691f-4366-a38a-beb5c7157b57
+# ╔═╡ c5e1e96d-691f-4366-9b21-6d4eb642d87e
 begin
   using Pkg                        # built-in package manager
   Pkg.activate("env", shared=true) # create a new pkg env
 end
 
-# ╔═╡ 240929b4-eb02-42a5-81f5-507803ea9ed6
+# ╔═╡ 240929b4-eb02-42a5-b98c-3df1f31879bf
 md"""
 Add some packages to your enviroment (latest compatible versions
 added by default):
 """
 
-# ╔═╡ fdd4c037-11f7-4777-9b21-6d4eb642d87e
+# ╔═╡ fdd4c037-11f7-4777-92b7-4ceba56e97ad
 begin
   Pkg.add("Distributions")
   Pkg.add("Plots")
 end
 
-# ╔═╡ 64a59295-2630-40c2-b98c-3df1f31879bf
+# ╔═╡ 64a59295-2630-40c2-b122-214de244406c
 md"To load the code for use:"
 
-# ╔═╡ b480add5-8651-4720-92b7-4ceba56e97ad
+# ╔═╡ b480add5-8651-4720-8a4b-c83694978e38
 begin
   using Distributions
   using Plots
@@ -394,16 +400,16 @@ begin
   samples = (samples).^2;        # square element-wise
 end
 
-# ╔═╡ f618c762-a936-433f-b122-214de244406c
+# ╔═╡ f618c762-a936-433f-a8b6-f7ff516dedc4
 g = fit(Gamma, samples)
 
-# ╔═╡ 5db01f65-3d0f-4ba4-8a4b-c83694978e38
+# ╔═╡ 5db01f65-3d0f-4ba4-81e1-74ef03c2e79e
 @show mean(g) median(g) pdf(g, 1)
 
-# ╔═╡ 2a96dfa7-cf5a-4e7f-a8b6-f7ff516dedc4
+# ╔═╡ 2a96dfa7-cf5a-4e7f-a04e-0b76409c14a7
 md"## Plotting"
 
-# ╔═╡ aa456fbb-e9da-44d3-81e1-74ef03c2e79e
+# ╔═╡ aa456fbb-e9da-44d3-b979-3458f2f26667
 begin
   f(x) = pdf(g, x)
   
@@ -414,41 +420,53 @@ begin
   histogram!(samples , normalize=true, alpha=0.4)
 end
 
-# ╔═╡ ebe6467e-e767-481b-a04e-0b76409c14a7
+# ╔═╡ ebe6467e-e767-481b-97e3-6677afc6ca9f
 savefig("my_first_plot.png")
 
-# ╔═╡ a7f061b8-d1ed-4b1f-b979-3458f2f26667
+# ╔═╡ a7f061b8-d1ed-4b1f-b10e-562ce21caa04
 md"# Exercises"
 
-# ╔═╡ 19dae74b-24bd-428f-97e3-6677afc6ca9f
+# ╔═╡ 19dae74b-24bd-428f-8f78-ab549ef1544e
 md"## Exercise 1"
 
-# ╔═╡ c2078856-e4c8-4777-b10e-562ce21caa04
-md"Write a function that adds all columns of its matrix input."
+# ╔═╡ 3af8467f-4988-44dc-a8a4-a53f5149481e
+md"Write a function named `total` that adds the elements of its vector input."
 
-# ╔═╡ b04e2fdc-8f1a-4964-8f78-ab549ef1544e
+# ╔═╡ b04e2fdc-8f1a-4964-8704-dbab8e09b4f1
 md"## Exercise 2"
 
-# ╔═╡ ee989619-8d1b-4db0-a8a4-a53f5149481e
-md"""
-Write a function that converts a named tuple to a dictionary. You
-can create an empty dictionary using `Dict()`.
-"""
-
-# ╔═╡ 4f939d4a-e802-4b7d-8704-dbab8e09b4f1
-md"## Exercise 3"
-
-# ╔═╡ 2d5c47b7-4270-4b26-a02f-27b6c05e4d02
+# ╔═╡ 860bb453-c2f1-446d-a02f-27b6c05e4d02
 md"""
 Generate a 1000 random samples from the standard normal
 distribution. Create a second such sample, and add the two samples
 point-wise.  Compute the (sample) mean and variance of the combined
-samples. In the same plot, show a histogram of the combined samples
-and a plot of the pdf for normal distribution with zero mean and
-variance `2`.
+samples. In the same plot, show a frequency-normalized histogram of
+the combined samples and a plot of the pdf for normal distribution
+with zero mean and variance `2`.
 """
 
-# ╔═╡ 135dac9b-0bd9-4e1d-bea4-3d467d48781c
+# ╔═╡ 4f939d4a-e802-4b7d-bea4-3d467d48781c
+md"## Exercise 3"
+
+# ╔═╡ 63f410ea-c37a-4761-97c5-2979af8a507d
+md"The following shows that named tuples share some behaviour with dictionaries:"
+
+# ╔═╡ cb2c42bf-21b5-4e04-b639-63c76c72c513
+begin
+  t = (x = 1, y = "cat", z = 4.5)
+  keys(t)
+end
+
+# ╔═╡ b8996fa3-c046-4fb1-8f5a-e1ee9eb5c15c
+t[:y]
+
+# ╔═╡ 6584c100-ffd6-4fa1-adc5-e671db8bca5d
+md"""
+Write a function called `dict` that converts a named tuple to an
+actual dictionary. You can create an empty dictionary using `Dict()`.
+"""
+
+# ╔═╡ 135dac9b-0bd9-4e1d-86f1-0ea38de21abb
 md"""
 ---
 
@@ -473,101 +491,106 @@ md"""
 # ╟─c00b48c5-d35b-409a-a0de-1721c1bc2df2
 # ╟─3694faf5-d9a4-4089-bca8-7eec7950fd82
 # ╠═cad4d998-43d7-421b-9873-1b1430e635cc
-# ╟─26ce1939-e595-496a-b43e-d0ebe87da176
-# ╠═d66140c7-958b-4347-9009-4cfb2012998f
-# ╟─7aee99b6-3c6e-4a71-abd3-cb77d7a79683
-# ╠═96c1adb9-1b29-433d-879e-dc128f3db7b3
-# ╠═ef6a776c-8c63-4d30-a367-9aa3c6cf34d0
-# ╟─b97d12e6-2346-410b-bf32-94657e65284e
-# ╠═177a30bb-473a-4e5e-9afd-65a5b5facac9
-# ╠═109564cb-ea6f-4264-b6c8-54f5ed90a964
-# ╠═26714555-a4ad-49cb-9292-fe822525fc77
-# ╟─d00b2507-e891-4ec5-ae5e-4b83dcbc9675
-# ╠═4d1dd37a-194e-4ed2-8a29-32f11452654a
-# ╠═38477997-58dd-4248-a5f1-151fcbe229a2
-# ╠═e61c7ae2-8204-4a20-81bc-2d5603785a09
-# ╟─d38b7040-bb41-44be-9d87-1d1fbb0e3997
-# ╟─9f1e3326-b738-4b60-b950-fddef2a1fb10
-# ╟─494f9e7c-e53a-4c65-951b-64cb2a36c8e3
-# ╠═259bf65c-6868-47b0-b0e6-441461cc8770
-# ╠═6ef57fdd-3188-4b19-8cb0-de601961bc02
-# ╠═ef2473e2-bb35-4bd7-a87d-950c50fb2955
-# ╠═76dc6ac8-03fe-4c6e-8448-4bcb089096cd
-# ╟─5b3a3587-31f7-4a00-a012-a84240254fb6
-# ╟─82f84505-336f-4845-bbdd-9799f7bb2e60
-# ╠═42d147e9-cbf9-4456-97a7-88e3af4f10ee
-# ╠═8c7dcea2-e879-405c-b372-8c9866e51852
-# ╟─f85e0bbc-9db0-4a9f-8f3d-b82f1e7b6f7a
-# ╠═24bf6b46-ac6d-4d5c-ab04-579e5608ae53
-# ╠═1fb03e63-7232-4381-86cf-35420d9e6995
-# ╟─166a1850-cddb-4f72-a29a-8d0445351914
-# ╠═44ef9d71-f75b-4140-be65-28d0fcca50a8
-# ╠═ff4b5618-4be7-4111-9a2e-c468345d87d1
-# ╟─fb16016a-87d7-4e9f-b5fa-cb79ebf595ef
-# ╠═20ba7245-15ed-417e-91c5-524da38aa391
-# ╠═542ec737-2c88-4293-ad90-b4405b216771
-# ╠═8b1e2b91-947c-4046-895b-997a92b731e0
-# ╠═3dcab89a-20ca-462a-a525-e9b04a4bd246
-# ╟─65eb310b-82e8-4a1d-80f0-ba7781e173cf
-# ╠═35998a8b-6fda-4a2f-9cbc-9a2c39793333
-# ╟─2db5e586-237b-45aa-b887-2b16710e5502
-# ╟─8b1c08d9-f8dd-4ec9-9452-5298a8a4a401
-# ╠═4942a061-18dd-41d0-b017-96f1602f2cad
-# ╠═d1fb9147-4a06-44fa-8be2-2a4017c45345
-# ╠═4f4bf27c-b2f9-4c15-a7ad-80d84f5b0070
-# ╠═29d71401-66e5-484e-8378-5aa686f0b407
-# ╟─4b80c58d-646a-405b-9f43-49763e8691a1
-# ╠═44914181-9dd8-49b4-bb0e-3a45761c733a
-# ╟─63badfd3-c501-4d7c-9979-7044b2f2df33
-# ╟─e089aa5e-8d6e-48a4-b2a1-fbbde543f620
-# ╠═c4c0e393-0c62-4e8e-910b-f8a9a217eff2
-# ╟─115b6c86-a0f2-4546-aa36-d2e8546da46a
-# ╠═3c8e1237-ff55-4dd0-88a1-a2bf91434413
+# ╠═5c43b0f6-30f4-4ef7-b43e-d0ebe87da176
+# ╟─26ce1939-e595-496a-9009-4cfb2012998f
+# ╠═d66140c7-958b-4347-abd3-cb77d7a79683
+# ╟─7aee99b6-3c6e-4a71-879e-dc128f3db7b3
+# ╠═96c1adb9-1b29-433d-a367-9aa3c6cf34d0
+# ╠═ef6a776c-8c63-4d30-bf32-94657e65284e
+# ╠═4bb2001b-3b46-40f3-9afd-65a5b5facac9
+# ╟─b97d12e6-2346-410b-b6c8-54f5ed90a964
+# ╠═177a30bb-473a-4e5e-9292-fe822525fc77
+# ╠═109564cb-ea6f-4264-ae5e-4b83dcbc9675
+# ╠═26714555-a4ad-49cb-8a29-32f11452654a
+# ╟─d00b2507-e891-4ec5-a5f1-151fcbe229a2
+# ╠═4d1dd37a-194e-4ed2-81bc-2d5603785a09
+# ╠═38477997-58dd-4248-9d87-1d1fbb0e3997
+# ╠═e61c7ae2-8204-4a20-b950-fddef2a1fb10
+# ╟─d38b7040-bb41-44be-951b-64cb2a36c8e3
+# ╟─9f1e3326-b738-4b60-b0e6-441461cc8770
+# ╟─494f9e7c-e53a-4c65-8cb0-de601961bc02
+# ╠═259bf65c-6868-47b0-a87d-950c50fb2955
+# ╠═6ef57fdd-3188-4b19-8448-4bcb089096cd
+# ╠═ef2473e2-bb35-4bd7-a012-a84240254fb6
+# ╠═76dc6ac8-03fe-4c6e-bbdd-9799f7bb2e60
+# ╟─5b3a3587-31f7-4a00-97a7-88e3af4f10ee
+# ╟─82f84505-336f-4845-b372-8c9866e51852
+# ╠═42d147e9-cbf9-4456-8f3d-b82f1e7b6f7a
+# ╠═8c7dcea2-e879-405c-ab04-579e5608ae53
+# ╟─f85e0bbc-9db0-4a9f-86cf-35420d9e6995
+# ╠═d4688c37-14a2-4056-a29a-8d0445351914
+# ╠═1fb03e63-7232-4381-be65-28d0fcca50a8
+# ╟─166a1850-cddb-4f72-9a2e-c468345d87d1
+# ╠═44ef9d71-f75b-4140-b5fa-cb79ebf595ef
+# ╠═ff4b5618-4be7-4111-91c5-524da38aa391
+# ╟─fb16016a-87d7-4e9f-ad90-b4405b216771
+# ╠═20ba7245-15ed-417e-895b-997a92b731e0
+# ╠═542ec737-2c88-4293-a525-e9b04a4bd246
+# ╠═8b1e2b91-947c-4046-80f0-ba7781e173cf
+# ╠═3dcab89a-20ca-462a-9cbc-9a2c39793333
+# ╟─65eb310b-82e8-4a1d-b887-2b16710e5502
+# ╠═35998a8b-6fda-4a2f-9452-5298a8a4a401
+# ╟─2db5e586-237b-45aa-b017-96f1602f2cad
+# ╟─8b1c08d9-f8dd-4ec9-8be2-2a4017c45345
+# ╠═4942a061-18dd-41d0-a7ad-80d84f5b0070
+# ╠═d1fb9147-4a06-44fa-8378-5aa686f0b407
+# ╠═4f4bf27c-b2f9-4c15-9f43-49763e8691a1
+# ╠═29d71401-66e5-484e-bb0e-3a45761c733a
+# ╟─4b80c58d-646a-405b-9979-7044b2f2df33
+# ╠═44914181-9dd8-49b4-b2a1-fbbde543f620
+# ╟─63badfd3-c501-4d7c-910b-f8a9a217eff2
+# ╟─e089aa5e-8d6e-48a4-aa36-d2e8546da46a
+# ╠═c4c0e393-0c62-4e8e-88a1-a2bf91434413
 # ╟─115b6c86-a0f2-4546-a1cb-54e34396a855
-# ╠═169c078b-2f81-4b5e-8037-0de5806e1a54
+# ╠═3c8e1237-ff55-4dd0-8037-0de5806e1a54
 # ╟─115b6c86-a0f2-4546-9961-a09632c33fb0
-# ╠═1d690f10-1e44-4e9a-b7cc-46f4ef988c68
-# ╟─7a568a60-5212-4c87-90fb-7f2721f6fcc7
-# ╟─77d49aef-9644-41c2-af65-ccd25ecb9818
-# ╟─c3d721a1-ae10-4c0b-8890-979691212d9b
-# ╠═d9016c54-9656-4684-a6fa-eaf14df5d44b
-# ╟─a707446f-b9f3-4405-8025-5084804a9f6c
-# ╠═f86cc305-d2b6-4be3-9e90-09023d201062
-# ╟─a0c15cdb-6294-47bc-b7bb-2f33ef765cc0
-# ╠═7d2bb0cb-fe63-443b-9625-01172c4a0081
-# ╟─4455b804-b818-4fa0-af4f-11c7de9e21dd
-# ╠═87188f88-6519-4ffd-8dba-241d9b744683
-# ╟─d1f615d1-644a-4358-a6e5-2f0b4dca5c59
-# ╠═da033108-0b83-4ee8-8550-20498aa03ed0
-# ╠═c494e441-4853-4a6d-9e7b-5b943cf6b560
-# ╠═2063cdaf-dbb9-4587-bce6-0a1379cc1259
-# ╠═a2a2be72-f9fe-4e2c-9608-b5032c116833
-# ╠═6deb462e-668e-475d-b473-4aa968e6937a
-# ╠═112438a5-ef2f-4c5d-8d9e-644a1b3cc6b6
-# ╟─b87a9e77-1e26-4a1f-ac0a-23ded81445da
-# ╠═cc2371a4-26be-4325-8535-1a088a6a3228
-# ╠═9ac1f1af-bfdc-4499-a39f-7893c73eef39
-# ╠═3a2fb476-5685-40aa-bcca-51a27994a151
-# ╠═01f39450-9ce3-46c1-9b33-09b4b6661170
-# ╟─bd256b23-4c27-4ca0-b45d-88d068bb0fa2
-# ╟─133e6f93-bb0b-460d-92c8-6db3a590d963
-# ╟─e7c2edc1-91cb-4ef1-abf5-96f457eb2bdf
-# ╟─ab20d999-4cfa-4104-8a60-2e0214c059f5
-# ╠═c5e1e96d-691f-4366-a38a-beb5c7157b57
-# ╟─240929b4-eb02-42a5-81f5-507803ea9ed6
-# ╠═fdd4c037-11f7-4777-9b21-6d4eb642d87e
-# ╟─64a59295-2630-40c2-b98c-3df1f31879bf
-# ╠═b480add5-8651-4720-92b7-4ceba56e97ad
-# ╠═f618c762-a936-433f-b122-214de244406c
-# ╠═5db01f65-3d0f-4ba4-8a4b-c83694978e38
-# ╟─2a96dfa7-cf5a-4e7f-a8b6-f7ff516dedc4
-# ╠═aa456fbb-e9da-44d3-81e1-74ef03c2e79e
-# ╠═ebe6467e-e767-481b-a04e-0b76409c14a7
-# ╟─a7f061b8-d1ed-4b1f-b979-3458f2f26667
-# ╟─19dae74b-24bd-428f-97e3-6677afc6ca9f
-# ╟─c2078856-e4c8-4777-b10e-562ce21caa04
-# ╟─b04e2fdc-8f1a-4964-8f78-ab549ef1544e
-# ╟─ee989619-8d1b-4db0-a8a4-a53f5149481e
-# ╟─4f939d4a-e802-4b7d-8704-dbab8e09b4f1
-# ╟─2d5c47b7-4270-4b26-a02f-27b6c05e4d02
-# ╟─135dac9b-0bd9-4e1d-bea4-3d467d48781c
+# ╠═169c078b-2f81-4b5e-b7cc-46f4ef988c68
+# ╟─115b6c86-a0f2-4546-90fb-7f2721f6fcc7
+# ╠═1d690f10-1e44-4e9a-af65-ccd25ecb9818
+# ╟─7a568a60-5212-4c87-8890-979691212d9b
+# ╟─77d49aef-9644-41c2-a6fa-eaf14df5d44b
+# ╟─c3d721a1-ae10-4c0b-8025-5084804a9f6c
+# ╠═d9016c54-9656-4684-9e90-09023d201062
+# ╟─a707446f-b9f3-4405-b7bb-2f33ef765cc0
+# ╠═f86cc305-d2b6-4be3-9625-01172c4a0081
+# ╟─a0c15cdb-6294-47bc-af4f-11c7de9e21dd
+# ╠═7d2bb0cb-fe63-443b-8dba-241d9b744683
+# ╟─4455b804-b818-4fa0-a6e5-2f0b4dca5c59
+# ╠═87188f88-6519-4ffd-8550-20498aa03ed0
+# ╟─d1f615d1-644a-4358-9e7b-5b943cf6b560
+# ╠═da033108-0b83-4ee8-bce6-0a1379cc1259
+# ╠═c494e441-4853-4a6d-9608-b5032c116833
+# ╠═2063cdaf-dbb9-4587-b473-4aa968e6937a
+# ╠═a2a2be72-f9fe-4e2c-8d9e-644a1b3cc6b6
+# ╠═6deb462e-668e-475d-ac0a-23ded81445da
+# ╠═112438a5-ef2f-4c5d-8535-1a088a6a3228
+# ╟─b87a9e77-1e26-4a1f-a39f-7893c73eef39
+# ╠═cc2371a4-26be-4325-bcca-51a27994a151
+# ╠═9ac1f1af-bfdc-4499-9b33-09b4b6661170
+# ╠═3a2fb476-5685-40aa-b45d-88d068bb0fa2
+# ╠═01f39450-9ce3-46c1-92c8-6db3a590d963
+# ╟─bd256b23-4c27-4ca0-abf5-96f457eb2bdf
+# ╟─133e6f93-bb0b-460d-8a60-2e0214c059f5
+# ╟─e7c2edc1-91cb-4ef1-a38a-beb5c7157b57
+# ╟─ab20d999-4cfa-4104-81f5-507803ea9ed6
+# ╠═c5e1e96d-691f-4366-9b21-6d4eb642d87e
+# ╟─240929b4-eb02-42a5-b98c-3df1f31879bf
+# ╠═fdd4c037-11f7-4777-92b7-4ceba56e97ad
+# ╟─64a59295-2630-40c2-b122-214de244406c
+# ╠═b480add5-8651-4720-8a4b-c83694978e38
+# ╠═f618c762-a936-433f-a8b6-f7ff516dedc4
+# ╠═5db01f65-3d0f-4ba4-81e1-74ef03c2e79e
+# ╟─2a96dfa7-cf5a-4e7f-a04e-0b76409c14a7
+# ╠═aa456fbb-e9da-44d3-b979-3458f2f26667
+# ╠═ebe6467e-e767-481b-97e3-6677afc6ca9f
+# ╟─a7f061b8-d1ed-4b1f-b10e-562ce21caa04
+# ╟─19dae74b-24bd-428f-8f78-ab549ef1544e
+# ╟─3af8467f-4988-44dc-a8a4-a53f5149481e
+# ╟─b04e2fdc-8f1a-4964-8704-dbab8e09b4f1
+# ╟─860bb453-c2f1-446d-a02f-27b6c05e4d02
+# ╟─4f939d4a-e802-4b7d-bea4-3d467d48781c
+# ╟─63f410ea-c37a-4761-97c5-2979af8a507d
+# ╠═cb2c42bf-21b5-4e04-b639-63c76c72c513
+# ╠═b8996fa3-c046-4fb1-8f5a-e1ee9eb5c15c
+# ╟─6584c100-ffd6-4fa1-adc5-e671db8bca5d
+# ╟─135dac9b-0bd9-4e1d-86f1-0ea38de21abb
