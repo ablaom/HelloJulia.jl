@@ -20,8 +20,11 @@ md"""
 - **Abstract types**
 """
 
-# ╔═╡ 49d7d413-b98b-4d58-8af5-148d95ea2900
-md"The following is not needed if running from the REPL:"
+# ╔═╡ 0f8e75ba-badf-45a4-8af5-148d95ea2900
+md"""
+If your just copying code into Julia's REPL, then you can ignore the
+following four lines:
+"""
 
 # ╔═╡ ce65b4a9-5381-42b4-a6bf-47194d7e8e12
 begin
@@ -125,8 +128,8 @@ So we add a more specialized version of our function (called a
 *method*) to handle this case:
 """
 
-# ╔═╡ 658f9270-5eca-415b-9d87-1d1fbb0e3997
-add(x::Int, y::Array{Int,2}) = x .+ y
+# ╔═╡ bdf46021-f4d3-45c6-9d87-1d1fbb0e3997
+add(x::Int64, y::Matrix{Int64}) = x .+ y
 
 # ╔═╡ 8a59bfae-158d-4632-b950-fddef2a1fb10
 md"""
@@ -204,8 +207,8 @@ These are examples of *concrete* types. But concrete types have
 *supertypes*, which are *abstract*:
 """
 
-# ╔═╡ f00a74c6-f29b-4fd5-b5fa-cb79ebf595ef
-supertype(Int)
+# ╔═╡ 1cf1fc9e-208e-4689-b5fa-cb79ebf595ef
+supertype(Int64)
 
 # ╔═╡ 37b26b0a-ece2-45f3-91c5-524da38aa391
 supertype(Signed)
@@ -263,7 +266,7 @@ md"""
 # ╟─eb23f2c6-61f4-4a82-b795-033f6f2a0674
 # ╟─2d95e9db-a2b9-48b6-935f-ddf6a6bfbbdd
 # ╟─9d38b890-85c6-4768-af2a-25235e544a31
-# ╟─49d7d413-b98b-4d58-8af5-148d95ea2900
+# ╟─0f8e75ba-badf-45a4-8af5-148d95ea2900
 # ╠═ce65b4a9-5381-42b4-a6bf-47194d7e8e12
 # ╟─b479e9f2-7327-4fac-828a-4cc485149963
 # ╟─f5dc834c-8820-465e-9e54-3f7b3ca87ecb
@@ -289,7 +292,7 @@ md"""
 # ╟─e0722c56-bab2-4586-8a29-32f11452654a
 # ╠═0c9aae1a-0861-4e8c-a5f1-151fcbe229a2
 # ╟─9e999f31-7659-4d0d-81bc-2d5603785a09
-# ╠═658f9270-5eca-415b-9d87-1d1fbb0e3997
+# ╠═bdf46021-f4d3-45c6-9d87-1d1fbb0e3997
 # ╟─8a59bfae-158d-4632-b950-fddef2a1fb10
 # ╠═0b64f309-47bf-4a30-951b-64cb2a36c8e3
 # ╟─0fcf0345-8ccd-4ae8-b0e6-441461cc8770
@@ -306,7 +309,7 @@ md"""
 # ╠═58047fc3-2773-4979-a29a-8d0445351914
 # ╠═e38e2f65-cc4e-49b8-be65-28d0fcca50a8
 # ╟─6674ce39-d112-4307-9a2e-c468345d87d1
-# ╠═f00a74c6-f29b-4fd5-b5fa-cb79ebf595ef
+# ╠═1cf1fc9e-208e-4689-b5fa-cb79ebf595ef
 # ╠═37b26b0a-ece2-45f3-91c5-524da38aa391
 # ╠═f602d1f0-c159-42c3-ad90-b4405b216771
 # ╟─d550f1fc-fd5d-48ec-895b-997a92b731e0

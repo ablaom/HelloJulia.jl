@@ -8,7 +8,8 @@
 # - **Multiple dispatch**
 # - **Abstract types**
 
-# The following is not needed if running from the REPL:
+# If your just copying code into Julia's REPL, then you can ignore the
+# following four lines:
 
 using Pkg
 Pkg.activate(temp=true)
@@ -60,7 +61,7 @@ y = rand(3)
 
 # Fast :-).
 
-# Just-in-time compilation exists in other languages (eg, Java). 
+# Just-in-time compilation exists in other languages (eg, Java).
 
 
 # ## Multiple dispatch
@@ -79,7 +80,7 @@ typeof(y)
 # So we add a more specialized version of our function (called a
 # *method*) to handle this case:
 
-add(x::Int, y::Array{Int,2}) = x .+ y
+add(x::Int64, y::Matrix{Int64}) = x .+ y
 
 # Here we are using the built-in broadcasted version of `+` which adds
 # the scalar `x` to each element of `y`. Now this works:
@@ -130,7 +131,7 @@ typeof(rand(2,3))
 # These are examples of *concrete* types. But concrete types have
 # *supertypes*, which are *abstract*:
 
-supertype(Int)
+supertype(Int64)
 
 #-
 
