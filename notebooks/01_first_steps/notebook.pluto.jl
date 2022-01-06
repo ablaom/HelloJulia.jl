@@ -1,8 +1,36 @@
 ### A Pluto.jl notebook ###
-# v0.16.0
+# v0.17.5
 
 using Markdown
 using InteractiveUtils
+
+# ╔═╡ c5e1e96d-691f-4366-9b21-6d4eb642d87e
+begin
+  using Pkg                        # built-in package manager
+  Pkg.activate("env", shared=true) # create a new pkg env
+end
+
+# ╔═╡ fdd4c037-11f7-4777-92b7-4ceba56e97ad
+begin
+  Pkg.add("Distributions")
+  Pkg.add("Plots")
+end
+
+# ╔═╡ cc2371a4-26be-4325-bcca-51a27994a151
+using Random
+
+# ╔═╡ cf7971b2-b57f-4386-b45d-88d068bb0fa2
+using Statistics  # part of standard library
+
+# ╔═╡ b480add5-8651-4720-8a4b-c83694978e38
+begin
+  using Distributions
+  using Plots
+  
+  N = 1000
+  samples = rand(Normal(), N);   # equivalent to Julia's built-in `randn(d)`
+  samples = (samples).^2;        # square element-wise
+end
 
 # ╔═╡ 142b62e1-364e-45d6-9bca-7c69b794f8ce
 md"# Tutorial 1"
@@ -142,23 +170,23 @@ md"## Tuples"
 # ╔═╡ 82f84505-336f-4845-b372-8c9866e51852
 md"Similar to vectors but of fixed length and immutable (cannot be changed)"
 
-# ╔═╡ 42d147e9-cbf9-4456-8f3d-b82f1e7b6f7a
+# ╔═╡ 5b71f2a1-5567-4e59-8f3d-b82f1e7b6f7a
 begin
-  t = (1, 2.0, "cat")
-  typeof(t)
+  t1 = (1, 2.0, "cat")
+  typeof(t1)
 end
 
-# ╔═╡ 8c7dcea2-e879-405c-ab04-579e5608ae53
-t[3]
+# ╔═╡ 249c3a08-3ca6-463e-ab04-579e5608ae53
+t1[3]
 
 # ╔═╡ f85e0bbc-9db0-4a9f-86cf-35420d9e6995
 md"Tuples also come in a *named* variety:"
 
-# ╔═╡ d4688c37-14a2-4056-a29a-8d0445351914
-t = (i = 1, x = 2.0, animal="cat")
+# ╔═╡ b8b91bc0-0a63-4695-a29a-8d0445351914
+t2 = (i = 1, x = 2.0, animal="cat")
 
-# ╔═╡ 1fb03e63-7232-4381-be65-28d0fcca50a8
-t.x
+# ╔═╡ e0e4f0da-69c7-4941-be65-28d0fcca50a8
+t2.x
 
 # ╔═╡ 166a1850-cddb-4f72-9a2e-c468345d87d1
 md"## Strings and relatives"
@@ -336,14 +364,8 @@ rand(['a', 'b', 'c'], 10) # 10 random elements from a vector
 # ╔═╡ b87a9e77-1e26-4a1f-a39f-7893c73eef39
 md"Some standard libraries are needed to do more, for example:"
 
-# ╔═╡ cc2371a4-26be-4325-bcca-51a27994a151
-using Random
-
 # ╔═╡ 9ac1f1af-bfdc-4499-9b33-09b4b6661170
 randstring(30)
-
-# ╔═╡ 3a2fb476-5685-40aa-b45d-88d068bb0fa2
-using Statistics
 
 # ╔═╡ 01f39450-9ce3-46c1-92c8-6db3a590d963
 begin
@@ -369,37 +391,14 @@ md"## Loading packages"
 # ╔═╡ ab20d999-4cfa-4104-81f5-507803ea9ed6
 md"If not in the REPL:"
 
-# ╔═╡ c5e1e96d-691f-4366-9b21-6d4eb642d87e
-begin
-  using Pkg                        # built-in package manager
-  Pkg.activate("env", shared=true) # create a new pkg env
-end
-
 # ╔═╡ f7215fcd-0f87-4b4a-b98c-3df1f31879bf
 md"""
 Add some packages to your environment (latest compatible versions
 added by default):
 """
 
-# ╔═╡ fdd4c037-11f7-4777-92b7-4ceba56e97ad
-begin
-  Pkg.add("Distributions")
-  Pkg.add("Plots")
-end
-
 # ╔═╡ 64a59295-2630-40c2-b122-214de244406c
 md"To load the code for use:"
-
-# ╔═╡ d7762852-3e53-4cca-8a4b-c83694978e38
-begin
-  using Distributions
-  using Plots
-  using Statistics # part of standard library
-  
-  N = 1000
-  samples = rand(Normal(), N);   # equivalent to Julia's built-in `randn(d)`
-  samples = (samples).^2;        # square element-wise
-end
 
 # ╔═╡ f618c762-a936-433f-a8b6-f7ff516dedc4
 g = fit(Gamma, samples)
@@ -523,11 +522,11 @@ md"""
 # ╠═76dc6ac8-03fe-4c6e-bbdd-9799f7bb2e60
 # ╟─5b3a3587-31f7-4a00-97a7-88e3af4f10ee
 # ╟─82f84505-336f-4845-b372-8c9866e51852
-# ╠═42d147e9-cbf9-4456-8f3d-b82f1e7b6f7a
-# ╠═8c7dcea2-e879-405c-ab04-579e5608ae53
+# ╠═5b71f2a1-5567-4e59-8f3d-b82f1e7b6f7a
+# ╠═249c3a08-3ca6-463e-ab04-579e5608ae53
 # ╟─f85e0bbc-9db0-4a9f-86cf-35420d9e6995
-# ╠═d4688c37-14a2-4056-a29a-8d0445351914
-# ╠═1fb03e63-7232-4381-be65-28d0fcca50a8
+# ╠═b8b91bc0-0a63-4695-a29a-8d0445351914
+# ╠═e0e4f0da-69c7-4941-be65-28d0fcca50a8
 # ╟─166a1850-cddb-4f72-9a2e-c468345d87d1
 # ╠═44ef9d71-f75b-4140-b5fa-cb79ebf595ef
 # ╠═ff4b5618-4be7-4111-91c5-524da38aa391
@@ -575,7 +574,7 @@ md"""
 # ╟─b87a9e77-1e26-4a1f-a39f-7893c73eef39
 # ╠═cc2371a4-26be-4325-bcca-51a27994a151
 # ╠═9ac1f1af-bfdc-4499-9b33-09b4b6661170
-# ╠═3a2fb476-5685-40aa-b45d-88d068bb0fa2
+# ╠═cf7971b2-b57f-4386-b45d-88d068bb0fa2
 # ╠═01f39450-9ce3-46c1-92c8-6db3a590d963
 # ╟─bd256b23-4c27-4ca0-abf5-96f457eb2bdf
 # ╟─133e6f93-bb0b-460d-8a60-2e0214c059f5
@@ -585,7 +584,7 @@ md"""
 # ╟─f7215fcd-0f87-4b4a-b98c-3df1f31879bf
 # ╠═fdd4c037-11f7-4777-92b7-4ceba56e97ad
 # ╟─64a59295-2630-40c2-b122-214de244406c
-# ╠═d7762852-3e53-4cca-8a4b-c83694978e38
+# ╠═b480add5-8651-4720-8a4b-c83694978e38
 # ╠═f618c762-a936-433f-a8b6-f7ff516dedc4
 # ╠═5db01f65-3d0f-4ba4-81e1-74ef03c2e79e
 # ╟─2a96dfa7-cf5a-4e7f-a04e-0b76409c14a7

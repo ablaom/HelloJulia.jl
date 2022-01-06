@@ -120,20 +120,20 @@ w
 
 # Similar to vectors but of fixed length and immutable (cannot be changed)
 
-t = (1, 2.0, "cat")
-typeof(t)
+t1 = (1, 2.0, "cat")
+typeof(t1)
 
 #-
 
-t[3]
+t1[3]
 
 # Tuples also come in a *named* variety:
 
-t = (i = 1, x = 2.0, animal="cat")
+t2 = (i = 1, x = 2.0, animal="cat")
 
 #-
 
-t.x
+t2.x
 
 # ## Strings and relatives
 
@@ -286,7 +286,7 @@ randstring(30)
 
 #-
 
-using Statistics
+using Statistics  # part of standard library
 
 #-
 
@@ -317,7 +317,6 @@ Pkg.add("Plots")
 
 using Distributions
 using Plots
-using Statistics # part of standard library
 
 N = 1000
 samples = rand(Normal(), N);   # equivalent to Julia's built-in `randn(d)`
