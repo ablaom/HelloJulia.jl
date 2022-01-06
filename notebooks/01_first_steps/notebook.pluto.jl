@@ -1,36 +1,8 @@
 ### A Pluto.jl notebook ###
-# v0.17.5
+# v0.16.0
 
 using Markdown
 using InteractiveUtils
-
-# ╔═╡ c5e1e96d-691f-4366-9b21-6d4eb642d87e
-begin
-  using Pkg                        # built-in package manager
-  Pkg.activate("env", shared=true) # create a new pkg env
-end
-
-# ╔═╡ fdd4c037-11f7-4777-92b7-4ceba56e97ad
-begin
-  Pkg.add("Distributions")
-  Pkg.add("Plots")
-end
-
-# ╔═╡ cc2371a4-26be-4325-bcca-51a27994a151
-using Random
-
-# ╔═╡ cf7971b2-b57f-4386-b45d-88d068bb0fa2
-using Statistics  # part of standard library
-
-# ╔═╡ b480add5-8651-4720-8a4b-c83694978e38
-begin
-  using Distributions
-  using Plots
-  
-  N = 1000
-  samples = rand(Normal(), N);   # equivalent to Julia's built-in `randn(d)`
-  samples = (samples).^2;        # square element-wise
-end
 
 # ╔═╡ 142b62e1-364e-45d6-9bca-7c69b794f8ce
 md"# Tutorial 1"
@@ -364,8 +336,14 @@ rand(['a', 'b', 'c'], 10) # 10 random elements from a vector
 # ╔═╡ b87a9e77-1e26-4a1f-a39f-7893c73eef39
 md"Some standard libraries are needed to do more, for example:"
 
+# ╔═╡ cc2371a4-26be-4325-bcca-51a27994a151
+using Random
+
 # ╔═╡ 9ac1f1af-bfdc-4499-9b33-09b4b6661170
 randstring(30)
+
+# ╔═╡ cf7971b2-b57f-4386-b45d-88d068bb0fa2
+using Statistics  # part of standard library
 
 # ╔═╡ 01f39450-9ce3-46c1-92c8-6db3a590d963
 begin
@@ -391,14 +369,36 @@ md"## Loading packages"
 # ╔═╡ ab20d999-4cfa-4104-81f5-507803ea9ed6
 md"If not in the REPL:"
 
+# ╔═╡ c5e1e96d-691f-4366-9b21-6d4eb642d87e
+begin
+  using Pkg                        # built-in package manager
+  Pkg.activate("env", shared=true) # create a new pkg env
+end
+
 # ╔═╡ f7215fcd-0f87-4b4a-b98c-3df1f31879bf
 md"""
 Add some packages to your environment (latest compatible versions
 added by default):
 """
 
+# ╔═╡ fdd4c037-11f7-4777-92b7-4ceba56e97ad
+begin
+  Pkg.add("Distributions")
+  Pkg.add("Plots")
+end
+
 # ╔═╡ 64a59295-2630-40c2-b122-214de244406c
 md"To load the code for use:"
+
+# ╔═╡ b480add5-8651-4720-8a4b-c83694978e38
+begin
+  using Distributions
+  using Plots
+  
+  N = 1000
+  samples = rand(Normal(), N);   # equivalent to Julia's built-in `randn(d)`
+  samples = (samples).^2;        # square element-wise
+end
 
 # ╔═╡ f618c762-a936-433f-a8b6-f7ff516dedc4
 g = fit(Gamma, samples)
