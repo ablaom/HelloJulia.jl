@@ -8,7 +8,7 @@ IJulia = "7073ff75-c697-5162-941a-fcdaad2a7d2a"
 
 [compat]
 IJulia = "1"
-julia = "1.6"
+julia = ">=1.6, <1.7"
 
 [extras]
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
