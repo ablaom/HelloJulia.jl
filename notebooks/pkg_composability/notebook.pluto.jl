@@ -1,8 +1,21 @@
 ### A Pluto.jl notebook ###
-# v0.16.0
+# v0.17.5
 
 using Markdown
 using InteractiveUtils
+
+# ╔═╡ 754d60ac-4cb0-443a-af2a-25235e544a31
+begin
+  using Pkg
+  Pkg.activate(@__DIR__)
+  Pkg.instantiate()
+end
+
+# ╔═╡ 0256dc40-e8b0-40a8-a6bf-47194d7e8e12
+using Unitful
+
+# ╔═╡ 0f76a79f-8675-4ec1-ba1f-6363f43ec697
+using Measurements
 
 # ╔═╡ 4dbb0300-d546-48dd-9bca-7c69b794f8ce
 md"# Basic demonstration of Julia package composability"
@@ -13,18 +26,8 @@ md"Notebook from [HelloJulia.jl](https://github.com/ablaom/HelloJulia.jl)"
 # ╔═╡ ec6ad8e5-c854-41db-935f-ddf6a6bfbbdd
 md"Instantiate package environment:"
 
-# ╔═╡ d09256dd-6c0d-4e28-af2a-25235e544a31
-begin
-  using Pkg
-  Pkg.activate("env")
-  Pkg.instantiate()
-end
-
 # ╔═╡ b35b6a58-0335-4dab-8af5-148d95ea2900
 md"The Unitiful package allows you to **bind physical units** to numerical data:"
-
-# ╔═╡ 0256dc40-e8b0-40a8-a6bf-47194d7e8e12
-using Unitful
 
 # ╔═╡ a2808946-3e6a-4c31-828a-4cc485149963
 a = 5.0u"m^2/s^2"
@@ -34,9 +37,6 @@ md"""
 The using Measurements package allows you to **propogate uncertainties**
 in numerical computations:
 """
-
-# ╔═╡ 0f76a79f-8675-4ec1-ba1f-6363f43ec697
-using Measurements
 
 # ╔═╡ bf15f7d4-5ef4-4184-95ea-2955abd45275
 b = 5.0 ± 1.2 # or measurement(5.0, 1.2)
@@ -68,7 +68,7 @@ md"""
 # ╟─4dbb0300-d546-48dd-9bca-7c69b794f8ce
 # ╟─eb23f2c6-61f4-4a82-b795-033f6f2a0674
 # ╟─ec6ad8e5-c854-41db-935f-ddf6a6bfbbdd
-# ╠═d09256dd-6c0d-4e28-af2a-25235e544a31
+# ╠═754d60ac-4cb0-443a-af2a-25235e544a31
 # ╟─b35b6a58-0335-4dab-8af5-148d95ea2900
 # ╠═0256dc40-e8b0-40a8-a6bf-47194d7e8e12
 # ╠═a2808946-3e6a-4c31-828a-4cc485149963
