@@ -5,7 +5,7 @@
 # Instantiate package environment:
 
 using Pkg
-Pkg.activate("env")
+Pkg.activate(@__DIR__)
 Pkg.instantiate()
 
 #-

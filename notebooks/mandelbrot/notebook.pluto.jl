@@ -13,10 +13,10 @@ md"Notebook from [HelloJulia.jl](https://github.com/ablaom/HelloJulia.jl)"
 # ╔═╡ ec6ad8e5-c854-41db-935f-ddf6a6bfbbdd
 md"Instantiate package environment:"
 
-# ╔═╡ d09256dd-6c0d-4e28-af2a-25235e544a31
+# ╔═╡ 754d60ac-4cb0-443a-af2a-25235e544a31
 begin
   using Pkg
-  Pkg.activate("env")
+  Pkg.activate(@__DIR__)
   Pkg.instantiate()
 end
 
@@ -61,7 +61,7 @@ md"""
 # ╟─e7a4bf7b-f5f5-4564-9bca-7c69b794f8ce
 # ╟─eb23f2c6-61f4-4a82-b795-033f6f2a0674
 # ╟─ec6ad8e5-c854-41db-935f-ddf6a6bfbbdd
-# ╠═d09256dd-6c0d-4e28-af2a-25235e544a31
+# ╠═754d60ac-4cb0-443a-af2a-25235e544a31
 # ╠═045ab7e2-eb64-4301-8af5-148d95ea2900
 # ╠═e6ca23dc-5cc4-4ec0-a6bf-47194d7e8e12
 # ╠═9c765694-8292-4f26-828a-4cc485149963
