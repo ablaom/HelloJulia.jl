@@ -39,7 +39,7 @@ static | binder
 [Package composability](notebooks/pkg_composability/notebook.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ablaom/HelloJulia.jl/dev?labpath=notebooks%2Fpkg_composability%2Fnotebook.ipynb)
 [01 - First_steps](notebooks/01_first_steps/notebook.unexecuted.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ablaom/HelloJulia.jl/dev?labpath=notebooks%2F01_first_steps%2Fnotebook.unexectued.ipynb)
 [02 - Data Frames](notebooks/02_dataframes/notebook.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ablaom/HelloJulia.jl/dev?labpath=notebooks%2Fdataframes%2Fnotebook.ipynb)
-[Mandelbrot set demo](notebooks/mandelbrot/notebook.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ablaom/HelloJulia.jl/dev?labpath=notebooks%2Fmandel_brot%2Fnotebook.ipynb)
+[Mandelbrot set demo](notebooks/mandelbrot/notebook.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ablaom/HelloJulia.jl/dev?labpath=notebooks%2Fmandelbrot%2Fnotebook.ipynb)
 
 
 ---
