@@ -27,9 +27,6 @@ Clone this repository locally and navigate to the appropriate sub-folder of
 `/notebooks`. Open the file with `.jl` extension in your Julia-enabled
 IDE.
 
----
-
-[![Build Status](https://github.com/ablaom/HelloJulia.jl/workflows/CI/badge.svg)](https://github.com/ablaom/HelloJulia.jl/actions) 
 
 ### Static and Binder versions
 
@@ -51,3 +48,7 @@ installation, but can be slow to load.
 
 These can be slow to load.
 
+
+---
+
+[![Build Status](https://github.com/ablaom/HelloJulia.jl/workflows/CI/badge.svg)](https://github.com/ablaom/HelloJulia.jl/actions) 
