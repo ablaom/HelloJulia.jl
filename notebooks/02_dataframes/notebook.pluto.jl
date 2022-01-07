@@ -39,10 +39,10 @@ The package environment has been created using **Julia 1.6** and may not
 instantiate properly for other Julia versions.
 """
 
-# ╔═╡ d09256dd-6c0d-4e28-ba1f-6363f43ec697
+# ╔═╡ 754d60ac-4cb0-443a-ba1f-6363f43ec697
 begin
   using Pkg
-  Pkg.activate("env")
+  Pkg.activate(@__DIR__)
   Pkg.instantiate()
 end
 
@@ -495,7 +495,7 @@ md"""
 # ╠═f6d4f8c4-e441-45c4-a6bf-47194d7e8e12
 # ╟─45740c4d-b789-45dc-828a-4cc485149963
 # ╟─42b0f1e1-16c9-4238-9e54-3f7b3ca87ecb
-# ╠═d09256dd-6c0d-4e28-ba1f-6363f43ec697
+# ╠═754d60ac-4cb0-443a-ba1f-6363f43ec697
 # ╟─43248462-d1ab-44a6-95ea-2955abd45275
 # ╟─368564ee-157f-44dc-b1b3-dd47e367ba54
 # ╠═53aa7f8d-b0c7-4446-8d7e-8e449afd1c48

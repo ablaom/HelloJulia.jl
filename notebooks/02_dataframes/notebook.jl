@@ -20,7 +20,7 @@ VERSION
 # instantiate properly for other Julia versions.
 
 using Pkg
-Pkg.activate("env")
+Pkg.activate(@__DIR__)
 Pkg.instantiate()
 
 
