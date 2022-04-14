@@ -9,6 +9,8 @@ following the following instructions:
 
 ```julia
 using Pkg
+Pkg.activate(temp=true)
+Pkg.develop(https://github.com/jbrea/PrecompilePlutoCourse.jl)
 Pkg.develop(url="https://github.com/ablaom/HelloJulia.jl")
 Pkg.activate(joinpath(Pkg.devdir(), "HelloJulia"))
 Pkg.instantiate()
@@ -19,6 +21,11 @@ go()
 
 Navigate to the folder of interest and choose the file called
 `notebook.unexecuted.ipynb`.
+
+
+### To run Pluto notebooks instead
+
+Substitute `go()` above with `pluto()`. 
 
 
 ### To run as script in your editor (for more experienced users)
@@ -33,13 +40,13 @@ IDE.
 The binder versions are live Jupyter notebooks not requiring Julia
 installation, but can be slow to load.
 
-static | binder
--------|-------
-[Julia's secret sauce](notebooks/secret_sauce/notebook.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ablaom/HelloJulia.jl/dev?labpath=notebooks%2Fsecret_sauce%2Fnotebook.ipynb)
-[Package composability](notebooks/pkg_composability/notebook.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ablaom/HelloJulia.jl/dev?labpath=notebooks%2Fpkg_composability%2Fnotebook.ipynb)
-[01 - First_steps](notebooks/01_first_steps/notebook.unexecuted.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ablaom/HelloJulia.jl/dev?labpath=notebooks%2F01_first_steps%2Fnotebook.unexecuted.ipynb)
-[02 - Data Frames](notebooks/02_dataframes/notebook.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ablaom/HelloJulia.jl/dev?labpath=notebooks%2F02_dataframes%2Fnotebook.ipynb)
-[Mandelbrot set demo](notebooks/mandelbrot/notebook.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ablaom/HelloJulia.jl/dev?labpath=notebooks%2Fmandelbrot%2Fnotebook.ipynb)
+Juptyer | Pluto | binder
+--------|-------|---------
+[Julia's secret sauce](notebooks/secret_sauce/notebook.ipynb) || [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ablaom/HelloJulia.jl/dev?labpath=notebooks%2Fsecret_sauce%2Fnotebook.ipynb)
+[Package composability](notebooks/pkg_composability/notebook.ipynb) || [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ablaom/HelloJulia.jl/dev?labpath=notebooks%2Fpkg_composability%2Fnotebook.ipynb)
+[01 - First_steps](notebooks/01_first_steps/notebook.unexecuted.ipynb) || [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ablaom/HelloJulia.jl/dev?labpath=notebooks%2F01_first_steps%2Fnotebook.unexecuted.ipynb)
+[02 - Data Frames](notebooks/02_dataframes/notebook.ipynb) || [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ablaom/HelloJulia.jl/dev?labpath=notebooks%2F02_dataframes%2Fnotebook.ipynb)
+[Mandelbrot set demo](notebooks/mandelbrot/notebook.ipynb) | [Pluto version](notebooks/mandelbrot/notebook.html) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ablaom/HelloJulia.jl/dev?labpath=notebooks%2Fmandelbrot%2Fnotebook.ipynb)
 
 
 ---
