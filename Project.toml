@@ -5,6 +5,8 @@ version = "0.1.0"
 
 [deps]
 IJulia = "7073ff75-c697-5162-941a-fcdaad2a7d2a"
+Pluto = "c3e4b0f8-55cb-11ea-2926-15256bba5781"
+PrecompilePlutoCourse = "031ef55e-ae57-4a95-aa50-04a4c1cc4953"
 
 [compat]
 IJulia = "1"
