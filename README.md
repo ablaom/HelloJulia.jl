@@ -25,7 +25,9 @@ To **run demos and tutorials** presented in the workshop:
 
 ## First steps
 
-See [here](/FIRST_STEPS.md) on how to install Julia on your computer.
+See [here](/FIRST_STEPS.md) on how to install Julia on your
+computer. To install and run the demos and tutorials in this
+respository, click [here](INSTALLATION.md)
 
 
 ## Advanced setup
