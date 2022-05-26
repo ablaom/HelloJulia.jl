@@ -6,7 +6,7 @@ This page contains useful resources for starting out with Julia.
 
 To **run demos and tutorials** presented in the workshop:
 
-[![here](https://img.shields.io/badge/run-demos%2Ftutorials-informational)](NOTEBOOKS.md)
+[![here](https://img.shields.io/badge/run-demos%2Ftutorials-informational)](INSTALLATION.md)
 
 
 ## Is Julia for me?

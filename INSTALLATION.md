@@ -31,7 +31,7 @@ interest
   `notebook.ipynb` to see pre-executed version)
 
 
-### Option 2: To run as Pluto notebooks
+## Option 2: To run as Pluto notebooks
 
 - When running for the first time, enter
 
@@ -53,7 +53,7 @@ pluto()
 ```
 
 
-### Option 3: Static and Binder versions
+## Option 3: Static and Binder versions
 
 The binder versions are live Jupyter notebooks not requiring Julia
 installation, but may be slow to load.
@@ -67,7 +67,7 @@ Juptyer | binder
 [02 - Data Frames](notebooks/02_dataframes/notebook.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ablaom/HelloJulia.jl/dev?labpath=notebooks%2F02_dataframes%2Fnotebook.ipynb)
 
 
-### Option 4: To run as script in your editor
+## Option 4: To run as script in your editor
 
 For more experienced users and instructors.
 
