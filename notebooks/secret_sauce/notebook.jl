@@ -62,17 +62,17 @@ y = rand(3)
 
 # ## Multiple dispatch
 
-y = [1 2; 3 4]
+A = [1 2; 3 4]
 
 #-
 
-typeof(y)
+typeof(A)
 
 # Julia doesn't know how to apply `+` to a scalar and a
 # matrix. Uncomment the following line (by removing the "#" symbol) to
 # see the error thrown:
 
-## add(4, y)
+## add(4, A)
 
 # So we add a more specialized version of our function (called a
 # *method*) to handle this case:
@@ -82,7 +82,7 @@ add(x::Int64, y::Matrix{Int64}) = x .+ y
 # Here we are using the built-in broadcasted version of `+` which adds
 # the scalar `x` to each element of `y`. Now this works:
 
-add(4, y)
+add(4, A)
 
 # This is essentially what multiple dispatch is about. We use *all*
 # the arguments of a function to determine what specific method to
@@ -105,7 +105,7 @@ methods(add)
 # But, we're not out of the woods yet. Uncomment to see a new error
 # thrown:
 
-## add(4.0, y)
+## add(4.0, A)
 
 # Oh dear. Do we need to write a special method for every kind of
 # scalar and matrix???!

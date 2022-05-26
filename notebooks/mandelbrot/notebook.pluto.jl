@@ -1,13 +1,13 @@
 ### A Pluto.jl notebook ###
-# v0.19.0
+# v0.19.5
 
 using Markdown
 using InteractiveUtils
 
-# ╔═╡ 754d60ac-4cb0-443a-af2a-25235e544a31
+# ╔═╡ 4474fd86-9496-44c7-af2a-25235e544a31
 begin
   using Pkg
-  Pkg.activate(@__DIR__)
+  Pkg.activate(joinpath(@__DIR__, "..", ".."))
   Pkg.instantiate()
 end
 
@@ -17,8 +17,8 @@ begin
   CairoMakie.activate!(type = "svg")
 end
 
-# ╔═╡ e7a4bf7b-f5f5-4564-9bca-7c69b794f8ce
-md"# Generate a Mandelbrot set with Julia"
+# ╔═╡ eb79ecc5-d91f-45d2-9bca-7c69b794f8ce
+md"# Fractals using Julia"
 
 # ╔═╡ eb23f2c6-61f4-4a82-b795-033f6f2a0674
 md"Notebook from [HelloJulia.jl](https://github.com/ablaom/HelloJulia.jl)"
@@ -65,10 +65,10 @@ md"""
 """
 
 # ╔═╡ Cell order:
-# ╟─e7a4bf7b-f5f5-4564-9bca-7c69b794f8ce
+# ╟─eb79ecc5-d91f-45d2-9bca-7c69b794f8ce
 # ╟─eb23f2c6-61f4-4a82-b795-033f6f2a0674
 # ╟─ec6ad8e5-c854-41db-935f-ddf6a6bfbbdd
-# ╠═754d60ac-4cb0-443a-af2a-25235e544a31
+# ╠═4474fd86-9496-44c7-af2a-25235e544a31
 # ╟─e2dd3622-41bb-4ec7-8af5-148d95ea2900
 # ╠═fd21ac37-974b-452a-a6bf-47194d7e8e12
 # ╠═0acdb4d2-3952-40df-828a-4cc485149963

@@ -5,7 +5,7 @@
 # Instantiate package environment:
 
 using Pkg
-Pkg.activate(@__DIR__)
+Pkg.activate(joinpath(@__DIR__, "..", ".."))
 Pkg.instantiate()
 
 
@@ -15,9 +15,11 @@ using Unitful
 
 #-
 
-a = 5.0u"m^2/s^2"
+A = 5.0u"m^2/s^2"
 
 #-
+
+sqrt(A)
 
 # The using Measurements package allows you to **propogate uncertainties**
 # in numerical computations:
@@ -37,6 +39,7 @@ sqrt(b)
 # The Unitful and Measurements packages are blissfully ignorant of one
 # another. That, is neither package is a dependency of the other. And yet the
 # following "just works", as if by magic:
+
 c = 5.0u"m^2/s^2" ± 0.1u"m^2/s^2"
 
 #-

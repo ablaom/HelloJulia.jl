@@ -1,11 +1,11 @@
-# # Generate a Mandelbrot set with Julia
+# # Fractals using Julia
 
 # Notebook from [HelloJulia.jl](https://github.com/ablaom/HelloJulia.jl)
 
 # Instantiate package environment:
 
 using Pkg
-Pkg.activate(@__DIR__)
+Pkg.activate(joinpath(@__DIR__, "..", ".."))
 Pkg.instantiate()
 
 #-

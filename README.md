@@ -4,7 +4,9 @@ Resources used by the author for a short *Introduction to Julia* workshop.
 
 This page contains useful resources for starting out with Julia.
 
-To **run demos** presented in the workshop live, click [here](NOTEBOOKS.md).
+To **run demos and tutorials** presented in the workshop:
+
+[![here](https://img.shields.io/badge/run-demos%2Ftutorials-informational)](NOTEBOOKS.md).
 
 **Acknowledgements.** Some slides used in the presentation for this
 workshop, and included [here](/slides), are based on material
@@ -16,7 +18,7 @@ with the just-in-time compilation demonstration.
 
 ## Is Julia for me?
 
-- [Julia language home page](https://julialang.org) - Good for a quick
+	- [Julia language home page](https://julialang.org) - Good for a quick
   rundown of features and introduction to the broader ecosystem
   
 - [Slides for this workshop](/slides/slides.pdf)

@@ -19,19 +19,12 @@ sqrt(1 + 2^3) # do `sqrt(ans)` in REPL
 
 sin(pi)
 
-# Query a function's document string using `?sin` at the REPL, or in a
-# notebook:
+# Query a function's document:
 
 @doc sin
 
-# I've forgotten how the arcsin is called. Is it `asin` or `arcsin`? I
-# can search all doc-strings containing "sine" to locate the method:
-
-apropos("sine")
-
-# Okay, I see it's called `asin`.
-
-asin(1 + 3*im)
+# At the REPL, you can instead do `?sin`. And you can search for all
+# doc-strings referring to "sine" witn `apropos("sine")`.
 
 
 # ## Arrays
@@ -68,17 +61,20 @@ length(A)
 
 A[1, 2]
 
-#-
-
-A[1, 2] == A[2]
-
-#-
+# Get the second column:
 
 A[:, 2] # 2nd column
 
 # Changing elements:
 
 A[1, 1] = 42
+
+#-
+
+# Matrices can also be indexed as if columns where concatenated into a
+# single vector (which is how they are stored internally):
+
+A[2, 1] == A[2]
 
 #-
 
@@ -91,24 +87,25 @@ isapprox(inv(A)*v, A\v) # but RHS more efficient
 
 # ## "Variables" in Julia *point* to objects
 
-# Corollary: all passing of function arguments is pass by reference
-
+# Corollary: all passing of function arguments is pass by reference.
 
 # Like Python; Unlike R, C or FORTRAN.
 
-#-
+u = [3, 5, 7]
 
-w = v
+w = u
+
+#-
 
 w
 
 #-
 
-v[1] = 42
+u[1] = 42
 
 #-
 
-v
+u
 
 #-
 
@@ -155,6 +152,9 @@ isdefined(Main, :z)
 #-
 
 z = 1 + 2im
+
+#-
+
 isdefined(Main, :z)
 
 #-
@@ -193,7 +193,6 @@ keys(d)
 # The expression 'a' => "ant" is itself a stand-alone object:
 
 pair = 'a' => "ant"
-
 first(pair)
 
 
@@ -286,12 +285,16 @@ randstring(30)
 
 #-
 
-using Statistics  # part of standard library
+using Statistics
 
 #-
 
 y = rand(30)
-@show mean(y) quantile(y, 0.75);
+mean(y)
+
+#-
+
+quantile(y, 0.75);
 
 # (Use the macro @show before stuff you want printed prefixed by
 # *what* it is that is being printed.)
@@ -305,18 +308,24 @@ y = rand(30)
 # If not in the REPL:
 
 using Pkg                        # built-in package manager
+Pkg.status()                     # list packages in active environment
 Pkg.activate("env", shared=true) # create a new pkg env
 
 # Add some packages to your environment (latest compatible versions
 # added by default):
 
 Pkg.add("Distributions")
-Pkg.add("Plots")
+Pkg.add("ElectronDisplay") #src
+Pkg.add("CairoMakie")
+Pkg.status()
 
 # To load the code for use:
 
 using Distributions
-using Plots
+
+using ElectronDisplay #src
+using CairoMakie
+CairoMakie.activate!(type = "svg")
 
 N = 1000
 samples = rand(Normal(), N);   # equivalent to Julia's built-in `randn(d)`
@@ -328,7 +337,15 @@ g = fit(Gamma, samples)
 
 #-
 
-@show mean(g) median(g) pdf(g, 1)
+mean(g)
+
+#-
+
+median(g)
+
+#-
+
+pdf(g, 1)
 
 
 # ## Plotting
@@ -338,12 +355,13 @@ f(x) = pdf(g, x)
 xs = 0:0.1:4 # floats from 0 to 4 in steps of 0.1
 ys = f.(xs)  # apply f element-wise to xs
 
-plot(xs, ys, xrange=(0,4), yrange=(0,0.2))
-histogram!(samples , normalize=true, alpha=0.4)
+fig = lines(xs, ys)
+hist!(samples, normalization=:pdf, bins=40, alpha=0.4)
+current_figure()
 
 #-
 
-savefig("my_first_plot.png")
+save("my_first_plot.svg", fig)
 
 
 # # Exercises

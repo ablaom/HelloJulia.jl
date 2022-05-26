@@ -1,5 +1,8 @@
 # Installing Julia
 
+**Important** When following the following steps, be sure the version
+of Julia you install is **version 1.7.x**, where **x** is any integer.
+
 While Julia can be run in the cloud (see e.g.,
 [here](https://juliahub.com/ui/Home)) we recommend installing Julia on
 your machine when starting out:

@@ -1,3 +1,4 @@
+precompile/hellojulia.so
 .ipynb_checkpoints
 *~
 #*
@@ -7,10 +8,7 @@ sandbox/
 /docs/site/
 /docs/Manifest.toml
 .vscode
-/slides/src/*.png
-/slides/src/*.pdf
-/slides/src/*.xml
-/slides/src/_region_
+/slides/src
 *.aux
 *.bbl
 *.toc

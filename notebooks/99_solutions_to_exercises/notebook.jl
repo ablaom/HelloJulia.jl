@@ -2,17 +2,10 @@
 
 # ## Setup
 
-# Inspect Julia version:
-
-VERSION
-
 # The following instantiates a package environment.
 
-# The package environment has been created using **Julia 1.6** and may not
-# instantiate properly for other Julia versions.
-
 using Pkg
-Pkg.activate(@__DIR__)
+Pkg.activate(joinpath(@__DIR__, "..", ".."))
 Pkg.instantiate()
 
 
@@ -48,7 +41,7 @@ total(1:10)
 
 # ### Solution
 
-using Distributions, Plots, Statistics
+using Distributions, Statistics
 
 samples1 = randn(1000); # or rand(Normal(), 1000)
 samples2 = randn(1000);
@@ -68,11 +61,13 @@ f(x) = pdf(d, x)
 xs = -5:(0.1):5
 ys = f.(xs);
 
-using Plots
+using CairoMakie
+using ElectronDisplay #src
+CairoMakie.activate!(type = "svg") #nb
 
-plt = histogram(samples, normalize=true)
-plot!(xs, ys)
-plt
+fig = hist(samples, normalization=:pdf)
+lines!(xs, ys)
+current_figure()
 
 
 # ## Exercise 3
@@ -105,6 +100,6 @@ end
 
 dict(t)
 
-# Or alternatively:
+# A slicker way to do the same thing is:
 
-dict(t) = Dict(k => t[k] for k in keys(t))
+dict2(t) = Dict(k => t[k] for k in keys(t))

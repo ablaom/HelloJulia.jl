@@ -1,4 +1,6 @@
-# # Introduction to DataFrames.jl
+# # Tutorial 2
+
+# An introduction to data frames
 
 # Loosely based on [this
 # tutorial](https://juliaai.github.io/DataScienceTutorials.jl/data/dataframe/)
@@ -10,17 +12,8 @@
 
 # ## Setup
 
-# Inspect Julia version:
-
-VERSION
-
-# The following instantiates a package environment.
-
-# The package environment has been created using **Julia 1.6** and may not
-# instantiate properly for other Julia versions.
-
 using Pkg
-Pkg.activate(@__DIR__)
+Pkg.activate(joinpath(@__DIR__, "..", ".."))
 Pkg.instantiate()
 
 
@@ -69,7 +62,7 @@ row = df[5, :]
 
 #-
 
-number = row.age
+number2 = row.age
 
 
 # ## Selecting multiple rows
@@ -254,11 +247,11 @@ describe(subdf_setosa, :min, :mean, :max)
 # transformations of an existing one.  Here's an example taken from
 # the official doc (see `?combine`):
 
-df = DataFrame(a=1:3, b=4:6)
+df3 = DataFrame(a=1:3, b=4:6)
 
 #-
 
-combine(df, :a => sum, nrow)
+combine(df3, :a => sum, nrow)
 
 # What happened here is that the derived DataFrame has two columns
 # obtained respectively by (1) computing the sum of the first column
@@ -267,14 +260,14 @@ combine(df, :a => sum, nrow)
 # The transformation can produce one or several values, and `combine` will
 # try to accomodate this with appropriate packing:
 
-foo(v) = v[1:2]
-combine(df, :a => maximum, :b => foo)
+goo(v) = v[1:2]
+combine(df3, :a => maximum, :b => goo)
 
 # Here the maximum value of `a` is copied twice so that the two
 # columns have the same number of rows.
 
 bar(v) = v[end-1:end]
-combine(df, :a => foo, :b => bar)
+combine(df3, :a => goo, :b => bar)
 
 
 # ## `combine` with `groupby`
@@ -295,14 +288,14 @@ combine(groupby(iris, :class), :petallength => mean)
 # You can do this for several columns/statistics at the time and give
 # new column names to the results:
 
-gdf = groupby(iris, :class)
-combine(gdf, :petallength => mean => :MPL, :petallength => std => :SPL)
+gdf3 = groupby(iris, :class)
+combine(gdf3, :petallength => mean => :MPL, :petallength => std => :SPL)
 
 # So here we assign the names `:MPL` and `:SPL` to the derived
 # columns.  If you want to apply something on all columns apart from
 # the grouping one, using `names` and `Not` comes in handy:
 
-combine(gdf, names(iris, Not(:class)) .=> std)
+combine(gdf3, names(iris, Not(:class)) .=> std)
 
 # where
 
