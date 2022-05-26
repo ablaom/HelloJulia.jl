@@ -12,7 +12,7 @@ following the following instructions.
 ```julia
 using Pkg
 Pkg.activate(temp=true)
-Pkg.add("https://github.com/jbrea/PrecompilePlutoCourse.jl")
+Pkg.add(url="https://github.com/jbrea/PrecompilePlutoCourse.jl")
 Pkg.develop(url="https://github.com/ablaom/HelloJulia.jl")
 Pkg.activate(joinpath(Pkg.devdir(), "HelloJulia"))
 Pkg.instantiate()

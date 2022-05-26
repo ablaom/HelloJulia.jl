@@ -24,7 +24,7 @@ sin(pi)
 @doc sin
 
 # At the REPL, you can instead do `?sin`. And you can search for all
-# doc-strings referring to "sine" witn `apropos("sine")`.
+# doc-strings referring to "sine" with `apropos("sine")`.
 
 
 # ## Arrays
