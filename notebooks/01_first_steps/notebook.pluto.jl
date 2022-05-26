@@ -37,10 +37,10 @@ md"Query a function's document:"
 # ╔═╡ 048a1195-1107-46e9-95ea-2955abd45275
 @doc sin
 
-# ╔═╡ 14c1a855-9c72-4d14-b1b3-dd47e367ba54
+# ╔═╡ b6d865b7-c2f6-4c65-b1b3-dd47e367ba54
 md"""
 At the REPL, you can instead do `?sin`. And you can search for all
-doc-strings referring to "sine" witn `apropos("sine")`.
+doc-strings referring to "sine" with `apropos("sine")`.
 """
 
 # ╔═╡ c00b48c5-d35b-409a-8d7e-8e449afd1c48
@@ -504,7 +504,7 @@ md"""
 # ╠═dc16182e-b6b3-47ee-9e54-3f7b3ca87ecb
 # ╟─d8abfd9d-2625-49b8-ba1f-6363f43ec697
 # ╠═048a1195-1107-46e9-95ea-2955abd45275
-# ╟─14c1a855-9c72-4d14-b1b3-dd47e367ba54
+# ╟─b6d865b7-c2f6-4c65-b1b3-dd47e367ba54
 # ╟─c00b48c5-d35b-409a-8d7e-8e449afd1c48
 # ╟─3694faf5-d9a4-4089-a949-7f3bd292fe31
 # ╠═cad4d998-43d7-421b-8514-99938a2932db
