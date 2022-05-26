@@ -1,7 +1,22 @@
 # Demos and Tutorials
 
-We recommend that tutorials and demos in the workshop be run by
-following the following instructions. 
+For a quick static view of the demos and tutorials, click on a link in
+the first column. 
+
+To run a tutorial without installing anything, click on the binder
+link. These notebooks are ephemeral, and can be very slow to load, and
+are therefore not recommended for in-depth study. Rather, complete
+[Setup](#setup) and choose one of the options that follow.
+
+
+Juptyer | binder
+--------|---------
+[Mandelbrot set demo](notebooks/mandelbrot/notebook.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ablaom/HelloJulia.jl/dev?labpath=notebooks%2Fmandelbrot%2Fnotebook.ipynb)
+[Julia's secret sauce](notebooks/secret_sauce/notebook.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ablaom/HelloJulia.jl/dev?labpath=notebooks%2Fsecret_sauce%2Fnotebook.ipynb)
+[Package composability](notebooks/pkg_composability/notebook.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ablaom/HelloJulia.jl/dev?labpath=notebooks%2Fpkg_composability%2Fnotebook.ipynb)
+[01 - First_steps](notebooks/01_first_steps/notebook.unexecuted.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ablaom/HelloJulia.jl/dev?labpath=notebooks%2F01_first_steps%2Fnotebook.unexecuted.ipynb)
+[02 - Data Frames](notebooks/02_dataframes/notebook.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ablaom/HelloJulia.jl/dev?labpath=notebooks%2F02_dataframes%2Fnotebook.ipynb)
+
 
 ## Setup
 
@@ -52,22 +67,7 @@ using HelloJulia
 pluto()
 ```
 
-
-## Option 3: Static and Binder versions
-
-The binder versions are live Jupyter notebooks not requiring Julia
-installation, but may be slow to load.
-
-Juptyer | binder
---------|---------
-[Mandelbrot set demo](notebooks/mandelbrot/notebook.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ablaom/HelloJulia.jl/dev?labpath=notebooks%2Fmandelbrot%2Fnotebook.ipynb)
-[Julia's secret sauce](notebooks/secret_sauce/notebook.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ablaom/HelloJulia.jl/dev?labpath=notebooks%2Fsecret_sauce%2Fnotebook.ipynb)
-[Package composability](notebooks/pkg_composability/notebook.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ablaom/HelloJulia.jl/dev?labpath=notebooks%2Fpkg_composability%2Fnotebook.ipynb)
-[01 - First_steps](notebooks/01_first_steps/notebook.unexecuted.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ablaom/HelloJulia.jl/dev?labpath=notebooks%2F01_first_steps%2Fnotebook.unexecuted.ipynb)
-[02 - Data Frames](notebooks/02_dataframes/notebook.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ablaom/HelloJulia.jl/dev?labpath=notebooks%2F02_dataframes%2Fnotebook.ipynb)
-
-
-## Option 4: To run as script in your editor
+## Option 3: To run as script in your editor
 
 For more experienced users and instructors.
 
