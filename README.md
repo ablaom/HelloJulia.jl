@@ -11,7 +11,7 @@ To **run demos and tutorials** presented in the workshop:
 
 ## Is Julia for me?
 
-	- [Julia language home page](https://julialang.org) - Good for a quick
+- [Julia language home page](https://julialang.org) - Good for a quick
   rundown of features and introduction to the broader ecosystem
   
 - [Slides for this workshop](/slides/slides.pdf)
