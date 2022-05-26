@@ -12,7 +12,7 @@ following the following instructions.
 ```julia
 using Pkg
 Pkg.activate(temp=true)
-Pkg.develop(https://github.com/jbrea/PrecompilePlutoCourse.jl)
+Pkg.add("https://github.com/jbrea/PrecompilePlutoCourse.jl")
 Pkg.develop(url="https://github.com/ablaom/HelloJulia.jl")
 Pkg.activate(joinpath(Pkg.devdir(), "HelloJulia"))
 Pkg.instantiate()
@@ -44,7 +44,13 @@ creates a Julia system image tailored to the tutorial content.)
 
 - Quit Julia with `control-D` and restart.
 
-- Enter `pluto()` at the `julia>`  prompt.
+Run the following commands each time you want to run the notebooks:
+
+```julia
+using Pkg; Pkg.activate(joinpath(Pkg.devdir(), "MLCourse"))
+using HelloJulia
+pluto()
+```
 
 
 ### Option 3: Static and Binder versions
