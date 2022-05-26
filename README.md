@@ -4,19 +4,14 @@ Resources used by the author for a short *Introduction to Julia* workshop.
 
 This page contains useful resources for starting out with Julia.
 
-To **run demos** presented in the workshop live, click [here](NOTEBOOKS.md).
+To **run demos and tutorials** presented in the workshop:
 
-**Acknowledgements.** Some slides used in the presentation for this
-workshop, and included [here](/slides), are based on material
-contributed by Oliver Schultz and Sam Urmy, which is gratefully
-acknowledged. Oscar Smith, Ian Butterworth, and Carsten Bauer
-[helped](https://discourse.julialang.org/t/looking-for-simple-example-to-explain-ahead-of-time-compilation/71471/3)
-with the just-in-time compilation demonstration.
+[![here](https://img.shields.io/badge/run-demos%2Ftutorials-informational)](NOTEBOOKS.md)
 
 
 ## Is Julia for me?
 
-- [Julia language home page](https://julialang.org) - Good for a quick
+	- [Julia language home page](https://julialang.org) - Good for a quick
   rundown of features and introduction to the broader ecosystem
   
 - [Slides for this workshop](/slides/slides.pdf)
@@ -95,3 +90,10 @@ and Best Julia Practices with Julia](https://www.perlego.com/book/1365831/handso
 I wished existed when I started. I learned Julia from the
 [manual](https://docs.julialang.org/en/v1/) which is, however,
 excellent.
+
+**Acknowledgements.** Some slides used in the presentation for this
+workshop, and included [here](/slides), are based on material
+contributed by Oliver Schultz and Sam Urmy, which is gratefully
+acknowledged. Oscar Smith, Ian Butterworth, and Carsten Bauer
+[helped](https://discourse.julialang.org/t/looking-for-simple-example-to-explain-ahead-of-time-compilation/71471/3)
+with the just-in-time compilation demonstration. The live tutorial deployment is based on [PrecompilePlutoCourse.jl](https://github.com/jbrea/PrecompilePlutoCourse.jl).

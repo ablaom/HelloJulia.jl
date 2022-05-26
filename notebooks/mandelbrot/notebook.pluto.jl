@@ -1,11 +1,24 @@
 ### A Pluto.jl notebook ###
-# v0.16.0
+# v0.19.5
 
 using Markdown
 using InteractiveUtils
 
-# ╔═╡ e7a4bf7b-f5f5-4564-9bca-7c69b794f8ce
-md"# Generate a Mandelbrot set with Julia"
+# ╔═╡ 4474fd86-9496-44c7-af2a-25235e544a31
+begin
+  using Pkg
+  Pkg.activate(joinpath(@__DIR__, "..", ".."))
+  Pkg.instantiate()
+end
+
+# ╔═╡ fd21ac37-974b-452a-a6bf-47194d7e8e12
+begin
+  using CairoMakie
+  CairoMakie.activate!(type = "svg")
+end
+
+# ╔═╡ eb79ecc5-d91f-45d2-9bca-7c69b794f8ce
+md"# Fractals using Julia"
 
 # ╔═╡ eb23f2c6-61f4-4a82-b795-033f6f2a0674
 md"Notebook from [HelloJulia.jl](https://github.com/ablaom/HelloJulia.jl)"
@@ -13,21 +26,11 @@ md"Notebook from [HelloJulia.jl](https://github.com/ablaom/HelloJulia.jl)"
 # ╔═╡ ec6ad8e5-c854-41db-935f-ddf6a6bfbbdd
 md"Instantiate package environment:"
 
-# ╔═╡ 754d60ac-4cb0-443a-af2a-25235e544a31
-begin
-  using Pkg
-  Pkg.activate(@__DIR__)
-  Pkg.instantiate()
-end
+# ╔═╡ e2dd3622-41bb-4ec7-8af5-148d95ea2900
+md"Load plotting package and set in-line display type:"
 
-# ╔═╡ 045ab7e2-eb64-4301-8af5-148d95ea2900
-begin
-  using Plots
-  plotly() # choose plotting backend
-end
-
-# ╔═╡ e6ca23dc-5cc4-4ec0-a6bf-47194d7e8e12
-function mandel(z)
+# ╔═╡ 0acdb4d2-3952-40df-828a-4cc485149963
+function mandelbrot(z)
     c = z     # starting value and constant shift
     max_iterations = 20
     for n = 1:max_iterations
@@ -39,18 +42,22 @@ function mandel(z)
     return max_iterations
 end
 
-# ╔═╡ 9c765694-8292-4f26-828a-4cc485149963
+# ╔═╡ ef1f39ed-5a24-4b57-9e54-3f7b3ca87ecb
 begin
-  xs = -2.5:0.005:0.75
-  ys = -1.5:0.005:1.5
-  z = [mandel(x + im*y) for y in ys, x in xs]
-  heatmap(xs, ys, z)
+  xs = -2.5:0.01:0.75
+  ys = -1.5:0.01:1.5
+  
+  fig = heatmap(xs, ys, (x, y) -> mandelbrot(x + im*y),
+          colormap = Reverse(:deep))
 end
 
-# ╔═╡ da7f8fbf-e71a-48d6-9e54-3f7b3ca87ecb
-savefig("mandelbrot.html")
+# ╔═╡ b7dc0b70-d371-4289-ba1f-6363f43ec697
+save("mandelbrot.svg", fig);
 
-# ╔═╡ 135dac9b-0bd9-4e1d-ba1f-6363f43ec697
+# ╔═╡ d734e051-6c92-4296-95ea-2955abd45275
+md"![](mandelbrot.svg)"
+
+# ╔═╡ 135dac9b-0bd9-4e1d-b1b3-dd47e367ba54
 md"""
 ---
 
@@ -58,12 +65,14 @@ md"""
 """
 
 # ╔═╡ Cell order:
-# ╟─e7a4bf7b-f5f5-4564-9bca-7c69b794f8ce
+# ╟─eb79ecc5-d91f-45d2-9bca-7c69b794f8ce
 # ╟─eb23f2c6-61f4-4a82-b795-033f6f2a0674
 # ╟─ec6ad8e5-c854-41db-935f-ddf6a6bfbbdd
-# ╠═754d60ac-4cb0-443a-af2a-25235e544a31
-# ╠═045ab7e2-eb64-4301-8af5-148d95ea2900
-# ╠═e6ca23dc-5cc4-4ec0-a6bf-47194d7e8e12
-# ╠═9c765694-8292-4f26-828a-4cc485149963
-# ╠═da7f8fbf-e71a-48d6-9e54-3f7b3ca87ecb
-# ╟─135dac9b-0bd9-4e1d-ba1f-6363f43ec697
+# ╠═4474fd86-9496-44c7-af2a-25235e544a31
+# ╟─e2dd3622-41bb-4ec7-8af5-148d95ea2900
+# ╠═fd21ac37-974b-452a-a6bf-47194d7e8e12
+# ╠═0acdb4d2-3952-40df-828a-4cc485149963
+# ╠═ef1f39ed-5a24-4b57-9e54-3f7b3ca87ecb
+# ╠═b7dc0b70-d371-4289-ba1f-6363f43ec697
+# ╟─d734e051-6c92-4296-95ea-2955abd45275
+# ╟─135dac9b-0bd9-4e1d-b1b3-dd47e367ba54

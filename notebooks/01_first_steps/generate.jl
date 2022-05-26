@@ -1,4 +1,4 @@
-# execute this julia file to generate the notebooks from ../tutorial.jl
+# execute this julia file to generate the notebooks from notebook.jl
 
-joinpath(@__DIR__, "..", "..", "generate.jl") |> include
-generate(@__DIR__, execute=false) # problem with apropos in notebook
+joinpath(@__DIR__, "..", "..", "src", "_generate.jl") |> include
+generate(@__DIR__, execute=false) # problem with apropos in Juptyer notebook

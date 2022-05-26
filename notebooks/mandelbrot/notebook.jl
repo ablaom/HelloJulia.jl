@@ -1,21 +1,22 @@
-# # Generate a Mandelbrot set with Julia
+# # Fractals using Julia
 
 # Notebook from [HelloJulia.jl](https://github.com/ablaom/HelloJulia.jl)
 
 # Instantiate package environment:
 
 using Pkg
-Pkg.activate(@__DIR__)
+Pkg.activate(joinpath(@__DIR__, "..", ".."))
 Pkg.instantiate()
 
 #-
 
-using Plots
-plotly() # choose plotting backend
+# Load plotting package and set in-line display type:
+using CairoMakie
+CairoMakie.activate!(type = "svg") #nb
 
 #-
 
-function mandel(z)
+function mandelbrot(z)
     c = z     # starting value and constant shift
     max_iterations = 20
     for n = 1:max_iterations
@@ -29,11 +30,14 @@ end
 
 #-
 
-xs = -2.5:0.005:0.75
-ys = -1.5:0.005:1.5
-z = [mandel(x + im*y) for y in ys, x in xs]
-heatmap(xs, ys, z)
+xs = -2.5:0.01:0.75
+ys = -1.5:0.01:1.5
+
+fig = heatmap(xs, ys, (x, y) -> mandelbrot(x + im*y),
+        colormap = Reverse(:deep))
 
 #-
 
-savefig("mandelbrot.html")
+save("mandelbrot.svg", fig);
+
+# ![](mandelbrot.svg) #nb
