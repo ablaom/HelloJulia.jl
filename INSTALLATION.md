@@ -64,7 +64,7 @@ tailored to the notebook content.)
 - Run the following commands each time you want to run the notebooks:
 
 ```julia
-using Pkg; Pkg.activate(joinpath(Pkg.devdir(), "MLCourse"))
+using Pkg; Pkg.activate(joinpath(Pkg.devdir(), "HelloJulia"))
 using HelloJulia
 pluto()
 ```
