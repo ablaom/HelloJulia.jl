@@ -75,6 +75,7 @@ For more experienced users and instructors.
 Clone this repository locally and navigate to the appropriate
 sub-folder of `/notebooks`. Open the file `notebook.jl` in your
 Julia-enabled IDE.
+
 ---
 
 [![Build Status](https://github.com/ablaom/HelloJulia.jl/workflows/CI/badge.svg)](https://github.com/ablaom/HelloJulia.jl/actions) 
