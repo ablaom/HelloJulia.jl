@@ -1,9 +1,9 @@
 # Demos and Tutorials
 
-For a quick static view of the demos and tutorials, click on a link in
-the first column. 
+For a quick static view of the demo and tutorial notebooks, click on a
+link in the first column.
 
-To run a tutorial without installing anything, click on the binder
+To run a notebook without installing anything, click on the binder
 link. These notebooks are ephemeral, and can be very slow to load, and
 are therefore not recommended for in-depth study. Rather, complete
 [Setup](#setup) and choose one of the options that follow.
@@ -54,8 +54,9 @@ interest
 julia> setup()
 ```
 
-This will take several minutes but speeds up using the notebooks. (It
-creates a Julia system image tailored to the tutorial content.)
+ignoring any "ld: warning" you get. This will take several minutes but
+speeds up using the notebooks. (It creates a Julia system image
+tailored to the notebook content.)
 
 - Quit Julia with `control-D` and restart.
 
