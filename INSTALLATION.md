@@ -48,7 +48,8 @@ interest
 
 ## Option 2: To run as Pluto notebooks
 
-- When running for the first time, enter
+- When running for the first time, enter (immediately after
+  [Setup](#setup)):
 
 ```julia
 julia> setup()
@@ -60,7 +61,7 @@ tailored to the notebook content.)
 
 - Quit Julia with `control-D` and restart.
 
-Run the following commands each time you want to run the notebooks:
+- Run the following commands each time you want to run the notebooks:
 
 ```julia
 using Pkg; Pkg.activate(joinpath(Pkg.devdir(), "MLCourse"))
