@@ -1,8 +1,40 @@
 ### A Pluto.jl notebook ###
-# v0.16.0
+# v0.19.5
 
 using Markdown
 using InteractiveUtils
+
+# ╔═╡ ba8d00b0-8ec2-409a-92b7-4ceba56e97ad
+begin
+  using Pkg                        # built-in package manager
+  Pkg.status()                     # list packages in active environment
+  Pkg.activate("env", shared=true) # create a new pkg env
+end
+
+# ╔═╡ 68c22caf-b951-4500-8a4b-c83694978e38
+begin
+  Pkg.add("Distributions")
+  Pkg.add("CairoMakie")
+  Pkg.status()
+end
+
+# ╔═╡ cc2371a4-26be-4325-9b33-09b4b6661170
+using Random
+
+# ╔═╡ 3a2fb476-5685-40aa-92c8-6db3a590d963
+using Statistics
+
+# ╔═╡ 237c338d-45af-4585-81e1-74ef03c2e79e
+begin
+  using Distributions
+  
+  using CairoMakie
+  CairoMakie.activate!(type = "svg")
+  
+  N = 1000
+  samples = rand(Normal(), N);   # equivalent to Julia's built-in `randn(d)`
+  samples = (samples).^2;        # square element-wise
+end
 
 # ╔═╡ 142b62e1-364e-45d6-9bca-7c69b794f8ce
 md"# Tutorial 1"
@@ -335,14 +367,8 @@ rand(['a', 'b', 'c'], 10) # 10 random elements from a vector
 # ╔═╡ b87a9e77-1e26-4a1f-bcca-51a27994a151
 md"Some standard libraries are needed to do more, for example:"
 
-# ╔═╡ cc2371a4-26be-4325-9b33-09b4b6661170
-using Random
-
 # ╔═╡ 9ac1f1af-bfdc-4499-b45d-88d068bb0fa2
 randstring(30)
-
-# ╔═╡ 3a2fb476-5685-40aa-92c8-6db3a590d963
-using Statistics
 
 # ╔═╡ 974b70c1-2df2-40c6-abf5-96f457eb2bdf
 begin
@@ -371,40 +397,14 @@ md"## Loading packages"
 # ╔═╡ ab20d999-4cfa-4104-b98c-3df1f31879bf
 md"If not in the REPL:"
 
-# ╔═╡ ba8d00b0-8ec2-409a-92b7-4ceba56e97ad
-begin
-  using Pkg                        # built-in package manager
-  Pkg.status()                     # list packages in active environment
-  Pkg.activate("env", shared=true) # create a new pkg env
-end
-
 # ╔═╡ f7215fcd-0f87-4b4a-b122-214de244406c
 md"""
 Add some packages to your environment (latest compatible versions
 added by default):
 """
 
-# ╔═╡ 68c22caf-b951-4500-8a4b-c83694978e38
-begin
-  Pkg.add("Distributions")
-  Pkg.add("CairoMakie")
-  Pkg.status()
-end
-
 # ╔═╡ 64a59295-2630-40c2-a8b6-f7ff516dedc4
 md"To load the code for use:"
-
-# ╔═╡ 237c338d-45af-4585-81e1-74ef03c2e79e
-begin
-  using Distributions
-  
-  using CairoMakie
-  CairoMakie.activate!(type = "svg")
-  
-  N = 1000
-  samples = rand(Normal(), N);   # equivalent to Julia's built-in `randn(d)`
-  samples = (samples).^2;        # square element-wise
-end
 
 # ╔═╡ f618c762-a936-433f-a04e-0b76409c14a7
 g = fit(Gamma, samples)
