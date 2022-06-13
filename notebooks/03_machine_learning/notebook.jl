@@ -44,7 +44,11 @@ scitype(3.143f0)
 
 # Here are common "scalar" scitypes:
 
-# ![](assets/scitypes.png)
+html"""
+<div style="text-align: left";>
+	<img src="https://github.com/ablaom/MLJTutorial.jl/blob/dev/notebooks/01_data_representation/scitypes.png?raw=true">
+</div>
+"""
 
 # There are also container scitypes. For example, the scitype of any
 # vector is `AbstractVector{S}`, where `S` is the scitype of its
@@ -184,8 +188,11 @@ small_tree = Tree(maxDepth=3)
 # tree trained on (some part of) the Titanic data set, which suggests
 # how prediction works:
 
-# ![](assets/tree.png)
-
+html"""
+<div style="text-align: left";>
+	<img src="https://upload.wikimedia.org/wikipedia/commons/5/58/Decision_Tree_-_survival_of_passengers_on_the_Titanic.jpg">
+</div>
+"""
 
 # ## The fit/predict worflow
 
