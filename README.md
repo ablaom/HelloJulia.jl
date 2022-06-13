@@ -1,8 +1,16 @@
 # HelloJulia.jl
 
-Resources used by the author for a short *Introduction to Julia* workshop.
+Resources used by the author for a short *Introduction to Julia*
+workshop, and a longer *Getting started with Julia and machine
+learning* workshop. Tutorials 1 and 2, and some of the demos, are
+suitable for a one-hour workshop. Add the remaining material for a 3
+hour workshop. 
 
-This page contains useful resources for starting out with Julia.
+Users are not assumed to have any familiarity with Julia but should be
+know some basic linear algebra and statistics (especially for the
+extended version).
+
+This README page summarizes some useful resources for starting out with Julia.
 
 To **run demos and tutorials** presented in the workshop:
 
