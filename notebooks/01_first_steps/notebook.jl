@@ -225,7 +225,7 @@ foo2(3)
 
 # ## Basic iteration
 
-# Here are three ways to square the integers from 1 to 10.
+# Here are four ways to square the integers from 1 to 10.
 
 # METHOD 1 (explicit loop):
 

@@ -9,6 +9,8 @@ const NOTEBOOKS = [
      joinpath("01_first_steps", "notebook.pluto.jl")),
     ("Tutorial 2. An introduction to data frames",
      joinpath("02_dataframes", "notebook.pluto.jl")),
+    ("Tutorial 3. An introduction to machine learning",
+     joinpath("03_machine_learning", "notebook.pluto.jl")),
     ("Solutions to exercises",
      joinpath("99_solutions_to_exercises", "notebook.pluto.jl")),
 ]
