@@ -18,6 +18,10 @@ const stop = PrecompilePlutoCourse.stop
 const setup = PrecompilePlutoCourse.create_sysimage
 
 function __init__()
+    if haskey(ENV, "TEST_MLJBASE")
+        ENV["TEST_MLJBASE"] = "false"
+    end
+
     VERSION in Pkg.Types.VersionSpec(JULIA_VERSION) ||
         @warn "This version of HelloJulia.jl should be run "*
         "under Julia $(JULIA_VERSION.major).$(JULIA_VERSION.minor), "*

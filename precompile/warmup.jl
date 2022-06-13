@@ -6,6 +6,10 @@ const WARMUP_PLUTO_NOTEBOOK = joinpath(
     "notebook.pluto.jl"
 )
 
+if haskey(ENV, "TEST_MLJBASE")
+    ENV["TEST_MLJBASE"] = "false"
+end
+
 using Pkg
 Pkg.activate(joinpath(@__DIR__, ".."))
 
