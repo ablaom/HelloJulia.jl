@@ -6,12 +6,21 @@ const WARMUP_PLUTO_NOTEBOOK = joinpath(
     "notebook.pluto.jl"
 )
 
+if haskey(ENV, "TEST_MLJBASE")
+    ENV["TEST_MLJBASE"] = "false"
+end
+
 using Pkg
 Pkg.activate(joinpath(@__DIR__, ".."))
 
 using Pluto
+using MLJ
+import BetaML
+using DataFrames
 using CairoMakie
 CairoMakie.activate!(type="svg")
+
+Tree = BetaML.Trees.DecisionTreeClassifier
 
 redirect_stdout(Pipe()) do
 
@@ -51,6 +60,13 @@ ys = -1.5:0.01:1.5
 heatmap(xs, ys, (x, y) -> mandelbrot(x + im*y),
         colormap = Reverse(:deep))
 
+# some MLJ:
+X0, y = make_blobs()
+X = DataFrame(X0)
+model = Tree()
+mach = machine(model, X, y)
+fit!(mach, verbosity=0)
+predict(mach, X)
 
 # @info "Starting HTTP server"
 # next, we'll run the HTTP server which needs a bit of nasty code

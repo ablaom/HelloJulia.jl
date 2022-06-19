@@ -277,8 +277,8 @@ end
 # ╔═╡ 7a568a60-5212-4c87-a6fa-eaf14df5d44b
 md"## Basic iteration"
 
-# ╔═╡ 77d49aef-9644-41c2-8025-5084804a9f6c
-md"Here are three ways to square the integers from 1 to 10."
+# ╔═╡ 3e371473-56dc-452a-8025-5084804a9f6c
+md"Here are four ways to square the integers from 1 to 10."
 
 # ╔═╡ c3d721a1-ae10-4c0b-9e90-09023d201062
 md"METHOD 1 (explicit loop):"
@@ -569,7 +569,7 @@ md"""
 # ╟─115b6c86-a0f2-4546-af65-ccd25ecb9818
 # ╠═1d690f10-1e44-4e9a-8890-979691212d9b
 # ╟─7a568a60-5212-4c87-a6fa-eaf14df5d44b
-# ╟─77d49aef-9644-41c2-8025-5084804a9f6c
+# ╟─3e371473-56dc-452a-8025-5084804a9f6c
 # ╟─c3d721a1-ae10-4c0b-9e90-09023d201062
 # ╠═d9016c54-9656-4684-b7bb-2f33ef765cc0
 # ╟─a707446f-b9f3-4405-9625-01172c4a0081

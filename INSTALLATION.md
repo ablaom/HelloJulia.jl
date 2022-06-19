@@ -20,7 +20,7 @@ Juptyer | binder
 
 ## Setup
 
-- [Install the Julia compiler](FIRST_STEPS.md)
+- [Install a correct version of the Julia compiler](FIRST_STEPS.md).
 
 - **In a new Julia session** type the following at the `julia>` prompt:
 
