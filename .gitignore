@@ -13,4 +13,4 @@ sandbox/
 *.bbl
 *.toc
 *.out
-
+notebooks/01_first_steps/my_first_plot.svg
