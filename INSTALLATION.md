@@ -15,8 +15,8 @@ Juptyer | binder
 [Julia's secret sauce](notebooks/secret_sauce/notebook.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ablaom/HelloJulia.jl/dev?labpath=notebooks%2Fsecret_sauce%2Fnotebook.ipynb)
 [Package composability](notebooks/pkg_composability/notebook.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ablaom/HelloJulia.jl/dev?labpath=notebooks%2Fpkg_composability%2Fnotebook.ipynb)
 [01 - First_steps](notebooks/01_first_steps/notebook.unexecuted.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ablaom/HelloJulia.jl/dev?labpath=notebooks%2F01_first_steps%2Fnotebook.unexecuted.ipynb)
-[02 - Data Frames](notebooks/02_dataframes/notebook.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ablaom/HelloJulia.jl/dev?labpath=notebooks%2F02_dataframes%2Fnotebook.ipynb)
-
+[02 - DataFrames](notebooks/02_dataframes/notebook.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ablaom/HelloJulia.jl/dev?labpath=notebooks%2F02_dataframes%2Fnotebook.ipynb)
+[03 - Machine learning](notebooks/03_machine_learning/notebook.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ablaom/HelloJulia.jl/dev?labpath=notebooks%2F03_machine_learning%2Fnotebook.ipynb)
 
 ## Setup
 
