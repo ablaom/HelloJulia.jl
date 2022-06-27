@@ -25,11 +25,13 @@ Juptyer | binder
 - **In a new Julia session** type the following at the `julia>` prompt:
 
 ```julia
+ENV["JULIA_PKG_PRECOMPILE_AUTO"]=0
 using Pkg
 Pkg.activate(temp=true)
 Pkg.develop(url="https://github.com/ablaom/HelloJulia.jl")
 Pkg.activate(joinpath(Pkg.devdir(), "HelloJulia"))
 Pkg.instantiate()
+ENV["JULIA_PKG_PRECOMPILE_AUTO"]=1
 
 using HelloJulia
 
@@ -40,7 +42,7 @@ using HelloJulia
 - Enter `go()` at the `julia>` prompt
 
 - In the browser window that should appear, navigate to the folder of
-interest 
+interest
 
 - Choose the file called `notebook.unexecuted.ipynb` (or
   `notebook.ipynb` to see pre-executed version)
