@@ -32,6 +32,7 @@ Pkg.activate(joinpath(Pkg.devdir(), "HelloJulia"))
 Pkg.instantiate()
 
 using HelloJulia
+
 ```
 
 ## Option 1: To run as Jupyter notebooks
