@@ -7,12 +7,13 @@ const NOTEBOOKS = joinpath(ROOT, "notebooks")
 
 # need Pluto here?
 import IJulia, PrecompilePlutoCourse, Pluto, Pkg
-export go, start, pluto, setup, stop, jupyter
+export go, start, pluto, setup, stop, jupyter, jupiter
 
 
 go() = IJulia.notebook(dir=NOTEBOOKS)
 
 const jupyter = go
+const jupiter = go
 const pluto = PrecompilePlutoCourse.start
 const stop = PrecompilePlutoCourse.stop
 const setup = PrecompilePlutoCourse.create_sysimage
