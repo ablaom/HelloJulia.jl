@@ -99,8 +99,8 @@ Matrices can also be indexed as if columns where concatenated into a
 single vector (which is how they are stored internally):
 """
 
-# ╔═╡ 488fc97f-87c1-4801-a5f1-151fcbe229a2
-A[2, 1] == A[2]
+# ╔═╡ e43cabe7-48a5-4c51-a5f1-151fcbe229a2
+A[2, 3] == A[8]
 
 # ╔═╡ 38477997-58dd-4248-81bc-2d5603785a09
 inv(A) # inverse
@@ -173,28 +173,28 @@ end
 # ╔═╡ ff4b5618-4be7-4111-91c5-524da38aa391
 a_string[1] == a_character
 
-# ╔═╡ fb16016a-87d7-4e9f-ad90-b4405b216771
+# ╔═╡ b2af25ee-1007-4e6d-ad90-b4405b216771
 md"""
 A `Symbol` is string-like but
-[interned](https://en.wikipedia.org/wiki/String_interning). Generally
-use `String` for ordinary textual data, but use `Symbol` for
-language reflection (metaprogramming). For example:
+[interned](https://en.wikipedia.org/wiki/String_interning). Generally use `String` for
+ordinary textual data, but use `Symbol` for language reflection (metaprogramming) - for
+example when referring to the *name* of a variable, as opposed to its value:
 """
 
-# ╔═╡ 20ba7245-15ed-417e-895b-997a92b731e0
-isdefined(Main, :z)
+# ╔═╡ 7b5d88e0-e6ea-4568-895b-997a92b731e0
+names = keys(t2)
 
-# ╔═╡ 697eed84-bdd2-49cd-a525-e9b04a4bd246
-z = 1 + 2im
+# ╔═╡ 1498397f-1c26-42ff-a525-e9b04a4bd246
+:x in names
 
 # ╔═╡ 20ba7245-15ed-417e-80f0-ba7781e173cf
 isdefined(Main, :z)
 
-# ╔═╡ 8b1e2b91-947c-4046-9cbc-9a2c39793333
-z.im
+# ╔═╡ 697eed84-bdd2-49cd-9cbc-9a2c39793333
+z = 1 + 2im
 
-# ╔═╡ 3dcab89a-20ca-462a-b887-2b16710e5502
-fieldnames(typeof(z))
+# ╔═╡ 20ba7245-15ed-417e-b887-2b16710e5502
+isdefined(Main, :z)
 
 # ╔═╡ 65eb310b-82e8-4a1d-9452-5298a8a4a401
 md"Symbols are generalized by *expressions*:"
@@ -522,7 +522,7 @@ md"""
 # ╟─d00b2507-e891-4ec5-9292-fe822525fc77
 # ╠═4d1dd37a-194e-4ed2-ae5e-4b83dcbc9675
 # ╟─86e6e727-5a64-4c78-8a29-32f11452654a
-# ╠═488fc97f-87c1-4801-a5f1-151fcbe229a2
+# ╠═e43cabe7-48a5-4c51-a5f1-151fcbe229a2
 # ╠═38477997-58dd-4248-81bc-2d5603785a09
 # ╠═e61c7ae2-8204-4a20-9d87-1d1fbb0e3997
 # ╟─d38b7040-bb41-44be-b950-fddef2a1fb10
@@ -543,12 +543,12 @@ md"""
 # ╟─166a1850-cddb-4f72-9a2e-c468345d87d1
 # ╠═44ef9d71-f75b-4140-b5fa-cb79ebf595ef
 # ╠═ff4b5618-4be7-4111-91c5-524da38aa391
-# ╟─fb16016a-87d7-4e9f-ad90-b4405b216771
-# ╠═20ba7245-15ed-417e-895b-997a92b731e0
-# ╠═697eed84-bdd2-49cd-a525-e9b04a4bd246
+# ╟─b2af25ee-1007-4e6d-ad90-b4405b216771
+# ╠═7b5d88e0-e6ea-4568-895b-997a92b731e0
+# ╠═1498397f-1c26-42ff-a525-e9b04a4bd246
 # ╠═20ba7245-15ed-417e-80f0-ba7781e173cf
-# ╠═8b1e2b91-947c-4046-9cbc-9a2c39793333
-# ╠═3dcab89a-20ca-462a-b887-2b16710e5502
+# ╠═697eed84-bdd2-49cd-9cbc-9a2c39793333
+# ╠═20ba7245-15ed-417e-b887-2b16710e5502
 # ╟─65eb310b-82e8-4a1d-9452-5298a8a4a401
 # ╠═35998a8b-6fda-4a2f-b017-96f1602f2cad
 # ╟─2db5e586-237b-45aa-8be2-2a4017c45345

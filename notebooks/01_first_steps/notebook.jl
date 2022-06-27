@@ -74,7 +74,7 @@ A[1, 1] = 42
 # Matrices can also be indexed as if columns where concatenated into a
 # single vector (which is how they are stored internally):
 
-A[2, 1] == A[2]
+A[2, 3] == A[8]
 
 #-
 
@@ -143,9 +143,17 @@ a_symbol = :t
 a_string[1] == a_character
 
 # A `Symbol` is string-like but
-# [interned](https://en.wikipedia.org/wiki/String_interning). Generally
-# use `String` for ordinary textual data, but use `Symbol` for
-# language reflection (metaprogramming). For example:
+# [interned](https://en.wikipedia.org/wiki/String_interning). Generally use `String` for
+# ordinary textual data, but use `Symbol` for language reflection (metaprogramming) - for
+# example when referring to the *name* of a variable, as opposed to its value:
+
+names = keys(t2)
+
+#-
+
+:x in names
+
+#-
 
 isdefined(Main, :z)
 
@@ -157,13 +165,6 @@ z = 1 + 2im
 
 isdefined(Main, :z)
 
-#-
-
-z.im
-
-#-
-
-fieldnames(typeof(z))
 
 # Symbols are generalized by *expressions*:
 
