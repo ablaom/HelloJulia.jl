@@ -8,6 +8,10 @@ While Julia can be run in the cloud (see e.g.,
 your machine when starting out:
 
 - *Install the julia compiler:*
+  <br>
+  <img src="./Julia_Installation.gif" width="500" height="300">
+  </br>
+
   [Ubuntu](https://ferrolho.github.io/blog/2019-01-26/how-to-install-julia-on-ubuntu) or
   similar; [Mac,
   Windows](https://www.juliafordatascience.com/first-steps-1-installing-julia/). The Julia
