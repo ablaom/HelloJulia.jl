@@ -1,4 +1,4 @@
-<span style='font-size:20px;'>&#10024; Participating in JuliaCon 2022?</span>
+## &#10024; Participating in JuliaCon 2022?
 
 Start [here](https://github.com/ablaom/HelloJulia.jl/wiki/JuliaCon-2022-workshop:-Getting-started-with-Julia-and-MLJ) for the workshop **Getting started with Julia and machine learning**.
 
