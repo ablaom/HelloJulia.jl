@@ -70,6 +70,10 @@ channel](https://julialang.org/slack/). Also useful:
 
 - [Julia cheatsheet](https://juliadocs.github.io/Julia-Cheat-Sheet/).
 
+- [DataFrames cheatsheet](https://ahsmart.com/pub/data-wrangling-with-data-frames-jl-cheat-sheet/index.html)
+
+- [MLJ cheatsheet](https://alan-turing-institute.github.io/MLJ.jl/dev/mlj_cheatsheet/)
+
 - Get help on a command with `juia> ?some_command` at the REPL or `@doc ?some_command` in a notebook.
 
 - `apropos("invert")` seaches for objects with "invert" in the doc string.
