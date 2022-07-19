@@ -17,26 +17,49 @@ Pkg.activate(joinpath(@__DIR__, "..", ".."))
 Pkg.instantiate()
 
 
-# ## Loading some demonstration data
+# ## A simple handmade data frame
+
+# A `DataFrame` is one of [many kinds of
+# objects](https://github.com/JuliaData/Tables.jl/blob/main/INTEGRATIONS.md) in the Julia
+# ecosystem for representing tabular data. Here's a simple example of a table you can define
+# using basic Julia (no libraries). It is a named tuple whose values are all vectors of the
+# same length:
+
+columntable = (
+    age = [21, 25, 40],
+    height = [1.89, 1.5, 1.4],
+    married = [true, false, false],
+)
+
+# One problem with such a table is that it's not a simple matter to grab a single row, or to
+# filter rows (records) based on some criterion. For this we can convert our table to a
+# `DataFrame` from the DataFrames.jl package:
+
+using DataFrames
+dataframe = DataFrame(columntable)
+
+# Now we can do things like this:
+
+filter(dataframe) do row
+    row.married == false
+end
+
+# ... and much more.
+
+
+# ## Grabbing the Titanic dataset as a DataFrame
 
 # We'll be using [OpenML](https://www.openml.org/home) to grab datasets.
 
 using OpenML
-using DataFrames
 
 table = OpenML.load(42638); # Titanic data set
 typeof(table)
 
-# This is not a `DataFrame`. However, like
-# [many](https://github.com/JuliaData/Tables.jl/blob/main/INTEGRATIONS.md)
-# other tabular data containers in Julia, it can be converted to one in the
-# obvious way:
+# This is not a `DataFrame`. However, it can be converted to one in the same way we
+# converted our named-tuple table:
 
 df = DataFrame(table);
-
-# A `DataFrame` is essentially just a wrapper around a number of
-# vectors with names, conceptualized as a table with the vectors as
-# columns.
 
 # Lets' look the first few rows (observations) of `df`:
 
