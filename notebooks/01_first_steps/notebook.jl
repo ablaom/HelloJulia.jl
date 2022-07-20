@@ -7,6 +7,15 @@
 
 # (40 min)
 
+# ## Setup
+
+# The following block of code installs some third-party Julia packges. Beginners do not need
+# to understand them.
+
+using Pkg
+Pkg.activate(joinpath(@__DIR__, "..", ".."))
+Pkg.instantiate()
+
 # ## Julia is a calculator:
 
 1 + 2^3
@@ -303,30 +312,9 @@ quantile(y, 0.75);
 # For sampling from more general distributions we need
 # Distributions.jl package which is not part of the standard library.
 
-
-# ## Loading packages
-
-# If not in the REPL:
-
-using Pkg                        # built-in package manager
-Pkg.status()                     # list packages in active environment
-Pkg.activate("env", shared=true) # create a new pkg env
-
-# Add some packages to your environment (latest compatible versions
-# added by default):
-
-Pkg.add("Distributions")
-Pkg.add("ElectronDisplay") #src
-Pkg.add("CairoMakie")
-Pkg.status()
-
-# To load the code for use:
+# ##
 
 using Distributions
-
-using ElectronDisplay #src
-using CairoMakie
-CairoMakie.activate!(type = "svg")
 
 N = 1000
 samples = rand(Normal(), N);   # equivalent to Julia's built-in `randn(d)`
@@ -348,8 +336,21 @@ median(g)
 
 pdf(g, 1)
 
+#-
+
+using PkgOnlineHelp
+
+# Uncomment and execute the next line to launch Distribution documentation in your browser:
+
+#@docs Distributions
 
 # ## Plotting
+
+using ElectronDisplay #src
+using CairoMakie
+CairoMakie.activate!(type = "svg")
+
+#-
 
 f(x) = pdf(g, x)
 
