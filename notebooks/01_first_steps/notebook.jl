@@ -306,13 +306,11 @@ mean(y)
 
 quantile(y, 0.75);
 
-# (Use the macro @show before stuff you want printed prefixed by
-# *what* it is that is being printed.)
+
+# ## Probability distributions
 
 # For sampling from more general distributions we need
 # Distributions.jl package which is not part of the standard library.
-
-# ##
 
 using Distributions
 

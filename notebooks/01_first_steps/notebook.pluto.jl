@@ -369,11 +369,8 @@ end
 # ╔═╡ 9c18343b-4459-44d2-9b21-6d4eb642d87e
 quantile(y, 0.75);
 
-# ╔═╡ bd256b23-4c27-4ca0-b98c-3df1f31879bf
-md"""
-(Use the macro @show before stuff you want printed prefixed by
-*what* it is that is being printed.)
-"""
+# ╔═╡ 6043c761-98c1-4f5f-b98c-3df1f31879bf
+md"## Probability distributions"
 
 # ╔═╡ 133e6f93-bb0b-460d-92b7-4ceba56e97ad
 md"""
@@ -381,10 +378,7 @@ For sampling from more general distributions we need
 Distributions.jl package which is not part of the standard library.
 """
 
-# ╔═╡ 043803a3-8baf-4df1-b122-214de244406c
-md"##"
-
-# ╔═╡ c0df6812-9717-454b-8a4b-c83694978e38
+# ╔═╡ c0df6812-9717-454b-b122-214de244406c
 begin
   using Distributions
   
@@ -393,37 +387,37 @@ begin
   samples = (samples).^2;        # square element-wise
 end
 
-# ╔═╡ f618c762-a936-433f-a8b6-f7ff516dedc4
+# ╔═╡ f618c762-a936-433f-8a4b-c83694978e38
 g = fit(Gamma, samples)
 
-# ╔═╡ 52bf705d-bc40-4990-81e1-74ef03c2e79e
+# ╔═╡ 52bf705d-bc40-4990-a8b6-f7ff516dedc4
 mean(g)
 
-# ╔═╡ 33fdde7c-1c73-42a6-a04e-0b76409c14a7
+# ╔═╡ 33fdde7c-1c73-42a6-81e1-74ef03c2e79e
 median(g)
 
-# ╔═╡ bcce5556-9e92-4dfa-b979-3458f2f26667
+# ╔═╡ bcce5556-9e92-4dfa-a04e-0b76409c14a7
 pdf(g, 1)
 
-# ╔═╡ 4d822ecd-c6da-4bcb-97e3-6677afc6ca9f
+# ╔═╡ 4d822ecd-c6da-4bcb-b979-3458f2f26667
 using PkgOnlineHelp
 
-# ╔═╡ 60aef579-9404-4272-b10e-562ce21caa04
+# ╔═╡ 60aef579-9404-4272-97e3-6677afc6ca9f
 md"Uncomment and execute the next line to launch Distribution documentation in your browser:"
 
-# ╔═╡ a35c0fe8-afc4-4eaf-8f78-ab549ef1544e
+# ╔═╡ a35c0fe8-afc4-4eaf-b10e-562ce21caa04
 #@docs Distributions
 
-# ╔═╡ 2a96dfa7-cf5a-4e7f-a8a4-a53f5149481e
+# ╔═╡ 2a96dfa7-cf5a-4e7f-8f78-ab549ef1544e
 md"## Plotting"
 
-# ╔═╡ fd21ac37-974b-452a-8704-dbab8e09b4f1
+# ╔═╡ fd21ac37-974b-452a-a8a4-a53f5149481e
 begin
   using CairoMakie
   CairoMakie.activate!(type = "svg")
 end
 
-# ╔═╡ 6439f7a8-34f3-4a01-a02f-27b6c05e4d02
+# ╔═╡ 6439f7a8-34f3-4a01-8704-dbab8e09b4f1
 begin
   f(x) = pdf(g, x)
   
@@ -435,22 +429,22 @@ begin
   current_figure()
 end
 
-# ╔═╡ 98dfc0a3-83fc-4c05-bea4-3d467d48781c
+# ╔═╡ 98dfc0a3-83fc-4c05-a02f-27b6c05e4d02
 save("my_first_plot.svg", fig)
 
-# ╔═╡ a7f061b8-d1ed-4b1f-97c5-2979af8a507d
+# ╔═╡ a7f061b8-d1ed-4b1f-bea4-3d467d48781c
 md"# Exercises"
 
-# ╔═╡ 19dae74b-24bd-428f-b639-63c76c72c513
+# ╔═╡ 19dae74b-24bd-428f-97c5-2979af8a507d
 md"## Exercise 1"
 
-# ╔═╡ 3af8467f-4988-44dc-8f5a-e1ee9eb5c15c
+# ╔═╡ 3af8467f-4988-44dc-b639-63c76c72c513
 md"Write a function named `total` that adds the elements of its vector input."
 
-# ╔═╡ b04e2fdc-8f1a-4964-adc5-e671db8bca5d
+# ╔═╡ b04e2fdc-8f1a-4964-8f5a-e1ee9eb5c15c
 md"## Exercise 2"
 
-# ╔═╡ 2b88d9c5-61a4-4e1f-86f1-0ea38de21abb
+# ╔═╡ 2b88d9c5-61a4-4e1f-adc5-e671db8bca5d
 md"""
 Generate a 1000 random samples from the standard normal
 distribution. Create a second such sample, and add the two samples
@@ -461,34 +455,34 @@ and a plot of the pdf for normal distribution with zero mean and
 variance `2`.
 """
 
-# ╔═╡ b899ecf2-1e43-4783-a55c-0cb44ab816d7
+# ╔═╡ b899ecf2-1e43-4783-86f1-0ea38de21abb
 md"""
 You can use `std` to compute the standard deviation and `sqrt` to
 compute square roots.
 """
 
-# ╔═╡ 4f939d4a-e802-4b7d-be86-92ecfd0d2343
+# ╔═╡ 4f939d4a-e802-4b7d-a55c-0cb44ab816d7
 md"## Exercise 3"
 
-# ╔═╡ 63f410ea-c37a-4761-9cf1-facf39e3f302
+# ╔═╡ 63f410ea-c37a-4761-be86-92ecfd0d2343
 md"The following shows that named tuples share some behaviour with dictionaries:"
 
-# ╔═╡ cb2c42bf-21b5-4e04-b61c-748aec38e674
+# ╔═╡ cb2c42bf-21b5-4e04-9cf1-facf39e3f302
 begin
   t = (x = 1, y = "cat", z = 4.5)
   keys(t)
 end
 
-# ╔═╡ b8996fa3-c046-4fb1-9727-ed822e4fd85d
+# ╔═╡ b8996fa3-c046-4fb1-b61c-748aec38e674
 t[:y]
 
-# ╔═╡ 6584c100-ffd6-4fa1-b2f2-e08965e5be66
+# ╔═╡ 6584c100-ffd6-4fa1-9727-ed822e4fd85d
 md"""
 Write a function called `dict` that converts a named tuple to an
 actual dictionary. You can create an empty dictionary using `Dict()`.
 """
 
-# ╔═╡ 135dac9b-0bd9-4e1d-897c-f79712f9ec7c
+# ╔═╡ 135dac9b-0bd9-4e1d-b2f2-e08965e5be66
 md"""
 ---
 
@@ -596,30 +590,29 @@ md"""
 # ╠═3a2fb476-5685-40aa-a38a-beb5c7157b57
 # ╠═974b70c1-2df2-40c6-81f5-507803ea9ed6
 # ╠═9c18343b-4459-44d2-9b21-6d4eb642d87e
-# ╟─bd256b23-4c27-4ca0-b98c-3df1f31879bf
+# ╟─6043c761-98c1-4f5f-b98c-3df1f31879bf
 # ╟─133e6f93-bb0b-460d-92b7-4ceba56e97ad
-# ╟─043803a3-8baf-4df1-b122-214de244406c
-# ╠═c0df6812-9717-454b-8a4b-c83694978e38
-# ╠═f618c762-a936-433f-a8b6-f7ff516dedc4
-# ╠═52bf705d-bc40-4990-81e1-74ef03c2e79e
-# ╠═33fdde7c-1c73-42a6-a04e-0b76409c14a7
-# ╠═bcce5556-9e92-4dfa-b979-3458f2f26667
-# ╠═4d822ecd-c6da-4bcb-97e3-6677afc6ca9f
-# ╟─60aef579-9404-4272-b10e-562ce21caa04
-# ╠═a35c0fe8-afc4-4eaf-8f78-ab549ef1544e
-# ╟─2a96dfa7-cf5a-4e7f-a8a4-a53f5149481e
-# ╠═fd21ac37-974b-452a-8704-dbab8e09b4f1
-# ╠═6439f7a8-34f3-4a01-a02f-27b6c05e4d02
-# ╠═98dfc0a3-83fc-4c05-bea4-3d467d48781c
-# ╟─a7f061b8-d1ed-4b1f-97c5-2979af8a507d
-# ╟─19dae74b-24bd-428f-b639-63c76c72c513
-# ╟─3af8467f-4988-44dc-8f5a-e1ee9eb5c15c
-# ╟─b04e2fdc-8f1a-4964-adc5-e671db8bca5d
-# ╟─2b88d9c5-61a4-4e1f-86f1-0ea38de21abb
-# ╟─b899ecf2-1e43-4783-a55c-0cb44ab816d7
-# ╟─4f939d4a-e802-4b7d-be86-92ecfd0d2343
-# ╟─63f410ea-c37a-4761-9cf1-facf39e3f302
-# ╠═cb2c42bf-21b5-4e04-b61c-748aec38e674
-# ╠═b8996fa3-c046-4fb1-9727-ed822e4fd85d
-# ╟─6584c100-ffd6-4fa1-b2f2-e08965e5be66
-# ╟─135dac9b-0bd9-4e1d-897c-f79712f9ec7c
+# ╠═c0df6812-9717-454b-b122-214de244406c
+# ╠═f618c762-a936-433f-8a4b-c83694978e38
+# ╠═52bf705d-bc40-4990-a8b6-f7ff516dedc4
+# ╠═33fdde7c-1c73-42a6-81e1-74ef03c2e79e
+# ╠═bcce5556-9e92-4dfa-a04e-0b76409c14a7
+# ╠═4d822ecd-c6da-4bcb-b979-3458f2f26667
+# ╟─60aef579-9404-4272-97e3-6677afc6ca9f
+# ╠═a35c0fe8-afc4-4eaf-b10e-562ce21caa04
+# ╟─2a96dfa7-cf5a-4e7f-8f78-ab549ef1544e
+# ╠═fd21ac37-974b-452a-a8a4-a53f5149481e
+# ╠═6439f7a8-34f3-4a01-8704-dbab8e09b4f1
+# ╠═98dfc0a3-83fc-4c05-a02f-27b6c05e4d02
+# ╟─a7f061b8-d1ed-4b1f-bea4-3d467d48781c
+# ╟─19dae74b-24bd-428f-97c5-2979af8a507d
+# ╟─3af8467f-4988-44dc-b639-63c76c72c513
+# ╟─b04e2fdc-8f1a-4964-8f5a-e1ee9eb5c15c
+# ╟─2b88d9c5-61a4-4e1f-adc5-e671db8bca5d
+# ╟─b899ecf2-1e43-4783-86f1-0ea38de21abb
+# ╟─4f939d4a-e802-4b7d-a55c-0cb44ab816d7
+# ╟─63f410ea-c37a-4761-be86-92ecfd0d2343
+# ╠═cb2c42bf-21b5-4e04-9cf1-facf39e3f302
+# ╠═b8996fa3-c046-4fb1-b61c-748aec38e674
+# ╟─6584c100-ffd6-4fa1-9727-ed822e4fd85d
+# ╟─135dac9b-0bd9-4e1d-b2f2-e08965e5be66
