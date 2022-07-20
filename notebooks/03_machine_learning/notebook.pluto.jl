@@ -1,8 +1,21 @@
 ### A Pluto.jl notebook ###
-# v0.16.0
+# v0.19.9
 
 using Markdown
 using InteractiveUtils
+
+# ╔═╡ 4474fd86-9496-44c7-a6bf-47194d7e8e12
+begin
+  using Pkg
+  Pkg.activate(joinpath(@__DIR__, "..", ".."))
+  Pkg.instantiate()
+end
+
+# ╔═╡ 86f5ae82-8207-416e-9e54-3f7b3ca87ecb
+begin
+  using MLJ
+  import DataFrames
+end
 
 # ╔═╡ 5dad6a5d-e6e9-4ea0-9bca-7c69b794f8ce
 md"# Tutorial 3"
@@ -31,21 +44,8 @@ section of the
 # ╔═╡ 1734e972-19e8-4d40-8af5-148d95ea2900
 md"## Activate package environment"
 
-# ╔═╡ 4474fd86-9496-44c7-a6bf-47194d7e8e12
-begin
-  using Pkg
-  Pkg.activate(joinpath(@__DIR__, "..", ".."))
-  Pkg.instantiate()
-end
-
 # ╔═╡ 6f4d110c-7f0b-4e70-828a-4cc485149963
 md"## Establishing correct data representation"
-
-# ╔═╡ 86f5ae82-8207-416e-9e54-3f7b3ca87ecb
-begin
-  using MLJ
-  import DataFrames
-end
 
 # ╔═╡ e5885e24-b17b-471b-ba1f-6363f43ec697
 md"""
