@@ -12,8 +12,6 @@ your machine when starting out:
   <br style="width:600px; height:480px">
     <img src="./Julia_Installation.gif" />
   </br>
-  
-  [ab](open?path=Julia_Installation.gif)
 
   [Ubuntu](https://ferrolho.github.io/blog/2019-01-26/how-to-install-julia-on-ubuntu) or
   similar; [Mac,
