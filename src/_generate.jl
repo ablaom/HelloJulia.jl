@@ -1,8 +1,10 @@
 # helper
+#=
 function runcommand(cmd)
 #    @info cmd
     run(cmd)
 end
+=#
 
 function generate(dir; execute=true, pluto=true)
     quote
@@ -21,14 +23,13 @@ function generate(dir; execute=true, pluto=true)
         if $pluto
             TEMPDIR = tempdir()
             Literate.notebook(INFILE, TEMPDIR, flavor=Literate.PlutoFlavor())
-            runcommand(`mv $TEMPDIR/notebook.jl $OUTDIR/notebook.pluto.jl`)
+            mv("$TEMPDIR/notebook.jl", "$OUTDIR/notebook.pluto.jl", force=true)
         else
             @warn "Not generating a Pluto notebook for $outdir."
         end
 
         Literate.notebook(INFILE, OUTDIR, execute=false)
-        runcommand(
-            `mv $OUTDIR/notebook.ipynb $OUTDIR/notebook.unexecuted.ipynb`)
+        mv("$OUTDIR/notebook.ipynb", "$OUTDIR/notebook.unexecuted.ipynb", force=true)
         if $execute
             Literate.notebook(INFILE, OUTDIR, execute=true)
         else
