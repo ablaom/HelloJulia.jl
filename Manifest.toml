@@ -15,12 +15,6 @@ git-tree-sha1 = "6f1d9bc1c08f9f4a8fa92e3ea3cb50153a1b40d4"
 uuid = "621f4979-c628-5d54-868e-fcf4e3e8185c"
 version = "1.1.0"
 
-[[deps.AbstractPlutoDingetjes]]
-deps = ["Pkg"]
-git-tree-sha1 = "8eaf9f1b4921132a4cff3f36a1d9ba923b14a481"
-uuid = "6e696c72-6542-2067-7265-42206c756150"
-version = "1.1.4"
-
 [[deps.AbstractTrees]]
 git-tree-sha1 = "03e0550477d86222521d254b741d470ba17ea0b5"
 uuid = "1520ce14-60c1-5f80-bbc7-55ef81b5835c"
@@ -528,12 +522,6 @@ git-tree-sha1 = "cb7099a0109939f16a4d3b572ba8396b1f6c7c31"
 uuid = "34004b35-14d8-5ef3-9330-4cdb6864b03a"
 version = "0.3.10"
 
-[[deps.Hyperscript]]
-deps = ["Test"]
-git-tree-sha1 = "8d511d5b81240fc8e6802386302675bdf47737b9"
-uuid = "47d2ed2b-36de-50cf-bf87-49c2cf4b8b91"
-version = "0.0.4"
-
 [[deps.HypertextLiteral]]
 deps = ["Tricks"]
 git-tree-sha1 = "c47c5fa4c5308f27ccaac35504858d8914e102f9"
@@ -545,12 +533,6 @@ deps = ["Base64", "Conda", "Dates", "InteractiveUtils", "JSON", "Libdl", "Markdo
 git-tree-sha1 = "98ab633acb0fe071b671f6c1785c46cd70bb86bd"
 uuid = "7073ff75-c697-5162-941a-fcdaad2a7d2a"
 version = "1.23.3"
-
-[[deps.IOCapture]]
-deps = ["Logging", "Random"]
-git-tree-sha1 = "f7be53659ab06ddc986428d3a9dcc95f6fa6705a"
-uuid = "b5f81e59-6552-4d32-b1f0-c071b021bf89"
-version = "0.2.2"
 
 [[deps.IRTools]]
 deps = ["InteractiveUtils", "MacroTools", "Test"]
@@ -1095,12 +1077,6 @@ deps = ["Base64", "Configurations", "Dates", "Distributed", "FileWatching", "Fuz
 git-tree-sha1 = "1c340815f709cb59831ada9f6b273ebd56863177"
 uuid = "c3e4b0f8-55cb-11ea-2926-15256bba5781"
 version = "0.19.8"
-
-[[deps.PlutoUI]]
-deps = ["AbstractPlutoDingetjes", "Base64", "ColorTypes", "Dates", "Hyperscript", "HypertextLiteral", "IOCapture", "InteractiveUtils", "JSON", "Logging", "Markdown", "Random", "Reexport", "UUIDs"]
-git-tree-sha1 = "8d1f54886b9037091edf146b517989fc4a09efec"
-uuid = "7f904dfe-b85e-4ff6-b463-dae2292396a8"
-version = "0.7.39"
 
 [[deps.PolygonOps]]
 git-tree-sha1 = "77b3d3605fc1cd0b42d95eba87dfcd2bf67d5ff6"
