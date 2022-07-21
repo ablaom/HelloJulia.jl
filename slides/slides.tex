@@ -49,6 +49,8 @@
         \titlepage
 \end{frame}
 
+\iffalse
+
 \begin{frame}
   \frametitle{Interacting}
   
@@ -73,23 +75,7 @@
   \end{enumerate}
 \end{frame}
 
-\begin{frame}
-  \vspace{5\baselineskip}
-  \begin{center}
-  {\Large machine learning $\ne$ deep learning\\
-  \mbox{}\hspace{4cm} \pause {\normalfont (neural networks)}}
-  \end{center}
-\end{frame}
-
-\begin{frame}
-  \frametitle{A plethora of machine learning models}
-  \begin{center}
-    \includegraphics[scale=0.25]{plethora_of_models.png}
-  \end{center}
-  {\tiny Figure source: Oleksii Trekhleb ({\ttfamily https://github.com/trekhleb/homemade-machine-learning})}
-\end{frame}
-
-\iffalse
+\fi
 
 \begin{frame}
   \frametitle{Introducing Julia}
@@ -142,15 +128,15 @@
 
 \begin{frame}
   \begin{block}{Secret sauce demo:}
-    {\large\texttt{github.com/ablaom/HelloJulia.jl/}}\newline
-    {\large\texttt{blob/dev/demos/secret\_sauce/notebook.ipynb}}
+    {\large\texttt{github.com/ablaom/HelloJulia.jl}}\newline
+    {\large\mbox{~~}\texttt{/tree/dev/notebooks/secret\_sauce}}
     \end{block}
 \end{frame}
 %
 \begin{frame}
   \begin{block}{Package composability demo:}
-    {\large\texttt{github.com/ablaom/HelloJulia.jl/}}\newline
-    {\large\texttt{blob/dev/demos/pkg\_composability/notebook.ipynb}}
+    {\large\texttt{github.com/ablaom/HelloJulia.jl}}\newline
+    {\large\mbox{~~}\texttt{/tree/dev/notebooks/pkg\_composability}}
     \end{block}
 \end{frame}
 
@@ -306,7 +292,21 @@
 
 % %% Intro to machine learning process
 
-\fi
+\begin{frame}
+  \vspace{5\baselineskip}
+  \begin{center}
+  {\Large machine learning $\ne$ deep learning\\
+  \mbox{}\hspace{4cm} \pause {\normalfont (neural networks)}}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{A plethora of machine learning models}
+  \begin{center}
+    \includegraphics[scale=0.25]{plethora_of_models.png}
+  \end{center}
+  {\tiny Figure source: Oleksii Trekhleb ({\ttfamily https://github.com/trekhleb/homemade-machine-learning})}
+\end{frame}
 
 \begin{frame}
   \frametitle{Supervised Learning}
@@ -406,7 +406,12 @@
    \end{center}
 \end{frame}
 
-
+\begin{frame}
+  \begin{block}{Tutorials}
+    {\large\texttt{github.com/ablaom/HelloJulia.jl}}\newline
+    {\large\mbox{~~}\texttt{/tree/dev/notebooks/}}
+    \end{block}
+\end{frame}
 
 \end{document}
 
