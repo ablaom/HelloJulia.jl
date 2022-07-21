@@ -65,17 +65,18 @@ DataFrames.describe(df0)
 
 # The `schema` operator summarizes the column scitypes of a table:
 
-schema(df0) |> DataFrames.DataFrame  # converted to DataFrame for better display
+schema(df0)
 
 # Looks like we need to fix `:sibsp`, the number of siblings/spouses:
 
-coerce!(df0, :sibsp => Count);
+df1 = coerce(df0, :sibsp => Count)
+schema(df1)
 
-# And we'll regard `:survived`, our target variable, as ordered (the
-# first level is then considered the "false" class)
+# Lets take a closer look at our target column :survived. Here a value 
+# `0`` means that the individual didn't survive while a value of `1`` indicates 
+# an individual survived.
 
-coerce!(df0, :survived => OrderedFactor)
-levels(df0.survived)
+levels(df1.survived)
 
 # The `:cabin` feature has a lot of missing values, and low frequency
 # for other classes:
@@ -97,17 +98,18 @@ end
 # Shorthand syntax would be `class(c) = ismissing(c) ? "without cabin" :
 # "has cabin"`. Now to transform the whole column:
 
-df0.cabin = map(class, df0.cabin)          # now a `Textual` scitype
-coerce!(df0, :class => Multiclass)
-schema(df0)
+df2 = DataFrames.transform(
+    df1, :cabin => DataFrames.ByRow(class) => :cabin
+) # now a `Textual` scitype
+coerce!(df2, :class => Multiclass)
+schema(df2)
 
 
 # ## Splitting into train and test sets
-
 # Here we split off 30% of our observations into a
 # lock-and-throw-away-the-key holdout set, called `df_test`:
 
-df, df_test = partition(df0, 0.7, rng=123)
+df, df_test = partition(df2, 0.7, rng=123)
 DataFrames.nrow(df)
 
 #-
