@@ -182,7 +182,7 @@ tree = Tree()                                   # default instance
 # values for the various hyperparameters that control how the tree is
 # trained. We specify keyword arguments to overide these defaults. For example:
 
-small_tree = Tree(maxDepth=3)
+small_tree = Tree(max_depth=3)
 
 # A decision tree is frequently not the best performing model, but it
 # is easy to interpret (and the algorithm is relatively easy to

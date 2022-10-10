@@ -1,21 +1,8 @@
 ### A Pluto.jl notebook ###
-# v0.19.9
+# v0.16.0
 
 using Markdown
 using InteractiveUtils
-
-# ╔═╡ 4474fd86-9496-44c7-a6bf-47194d7e8e12
-begin
-  using Pkg
-  Pkg.activate(joinpath(@__DIR__, "..", ".."))
-  Pkg.instantiate()
-end
-
-# ╔═╡ 86f5ae82-8207-416e-9e54-3f7b3ca87ecb
-begin
-  using MLJ
-  import DataFrames
-end
 
 # ╔═╡ 5dad6a5d-e6e9-4ea0-9bca-7c69b794f8ce
 md"# Tutorial 3"
@@ -44,8 +31,21 @@ section of the
 # ╔═╡ 1734e972-19e8-4d40-8af5-148d95ea2900
 md"## Activate package environment"
 
+# ╔═╡ 4474fd86-9496-44c7-a6bf-47194d7e8e12
+begin
+  using Pkg
+  Pkg.activate(joinpath(@__DIR__, "..", ".."))
+  Pkg.instantiate()
+end
+
 # ╔═╡ 6f4d110c-7f0b-4e70-828a-4cc485149963
 md"## Establishing correct data representation"
+
+# ╔═╡ 86f5ae82-8207-416e-9e54-3f7b3ca87ecb
+begin
+  using MLJ
+  import DataFrames
+end
 
 # ╔═╡ e5885e24-b17b-471b-ba1f-6363f43ec697
 md"""
@@ -292,8 +292,8 @@ values for the various hyperparameters that control how the tree is
 trained. We specify keyword arguments to overide these defaults. For example:
 """
 
-# ╔═╡ e9c248f5-559d-40d7-9f43-49763e8691a1
-small_tree = Tree(maxDepth=3)
+# ╔═╡ 951f2042-3674-4481-9f43-49763e8691a1
+small_tree = Tree(max_depth=3)
 
 # ╔═╡ edd14491-9fc4-4d0d-bb0e-3a45761c733a
 md"""
@@ -448,7 +448,7 @@ md"""
 # ╠═b517f63a-5d15-497c-8be2-2a4017c45345
 # ╠═01daecc9-68be-4f98-a7ad-80d84f5b0070
 # ╟─187f489f-0d7e-4f8c-8378-5aa686f0b407
-# ╠═e9c248f5-559d-40d7-9f43-49763e8691a1
+# ╠═951f2042-3674-4481-9f43-49763e8691a1
 # ╟─edd14491-9fc4-4d0d-bb0e-3a45761c733a
 # ╠═78c34e59-26f0-4bf8-9979-7044b2f2df33
 # ╟─8674f741-da03-46f5-b2a1-fbbde543f620

@@ -1,10 +1,7 @@
 ### A Pluto.jl notebook ###
-# v0.19.5
+# v0.16.0
 
 using Markdown
-using InteractiveUtils
-
-# ╔═╡ e415e89d-f149-45c6-a6bf-47194d7e8e12
 using InteractiveUtils
 
 # ╔═╡ f6b2d3ed-0205-44aa-9bca-7c69b794f8ce
@@ -28,6 +25,9 @@ md"""
 If your just copying code into Julia's REPL, then you can ignore the
 next line:
 """
+
+# ╔═╡ e415e89d-f149-45c6-a6bf-47194d7e8e12
+using InteractiveUtils
 
 # ╔═╡ b479e9f2-7327-4fac-828a-4cc485149963
 md"## Just-in-time compilation"
@@ -65,6 +65,9 @@ Fast!!! Why? Because Julia caches the compiled code and the types
 are the same. We can even inpsect an annotated version of this
 compiled code:
 """
+
+# ╔═╡ bfc1b998-468b-45e6-bca8-7eec7950fd82
+@code_llvm add(4, 7)
 
 # ╔═╡ 3b854215-32d8-4762-9873-1b1430e635cc
 md"This code is indistinguishable from analogous C code (if using the `clang` compiler)."
@@ -127,6 +130,9 @@ Here we are using the built-in broadcasted version of `+` which adds
 the scalar `x` to each element of `y`. Now this works:
 """
 
+# ╔═╡ da4868c0-2d93-4dd9-951b-64cb2a36c8e3
+add(4, A)
+
 # ╔═╡ 0fcf0345-8ccd-4ae8-b0e6-441461cc8770
 md"""
 This is essentially what multiple dispatch is about. We use *all*
@@ -148,6 +154,9 @@ If you are coming from a traditional object oriented language like
 Python, then you're used to thinking of objects "owning" methods. In
 Julia *functions*, not objects, own *methods*:
 """
+
+# ╔═╡ 4a0d9a26-63d1-4e9c-8448-4bcb089096cd
+methods(add)
 
 # ╔═╡ ab84efb1-244a-4545-a012-a84240254fb6
 md"""
@@ -224,15 +233,6 @@ arbitrary scalars and matrices:
 # ╔═╡ 43f8f733-eb9b-412d-b017-96f1602f2cad
 add(x::Real, y::Matrix) = x .+ y
 
-# ╔═╡ bfc1b998-468b-45e6-bca8-7eec7950fd82
-@code_llvm add(4, 7)
-
-# ╔═╡ da4868c0-2d93-4dd9-951b-64cb2a36c8e3
-add(4, A)
-
-# ╔═╡ 4a0d9a26-63d1-4e9c-8448-4bcb089096cd
-methods(add)
-
 # ╔═╡ b6b617cc-bbb7-4235-8be2-2a4017c45345
 add(4.0, rand(Bool, 2, 3))
 
@@ -252,31 +252,6 @@ md"""
 ---
 
 *This notebook was generated using [Literate.jl](https://github.com/fredrikekre/Literate.jl).*
-"""
-
-# ╔═╡ 00000000-0000-0000-0000-000000000001
-PLUTO_PROJECT_TOML_CONTENTS = """
-[deps]
-InteractiveUtils = "b77e0a4c-d291-57a0-90e8-8db25a27a240"
-"""
-
-# ╔═╡ 00000000-0000-0000-0000-000000000002
-PLUTO_MANIFEST_TOML_CONTENTS = """
-# This file is machine-generated - editing it directly is not advised
-
-julia_version = "1.7.1"
-manifest_format = "2.0"
-
-[[deps.Base64]]
-uuid = "2a0f44e3-6c83-55bd-87e4-b1978d98bd5f"
-
-[[deps.InteractiveUtils]]
-deps = ["Markdown"]
-uuid = "b77e0a4c-d291-57a0-90e8-8db25a27a240"
-
-[[deps.Markdown]]
-deps = ["Base64"]
-uuid = "d6f4376e-aef5-505a-96c1-9c027394607a"
 """
 
 # ╔═╡ Cell order:
@@ -340,5 +315,3 @@ uuid = "d6f4376e-aef5-505a-96c1-9c027394607a"
 # ╠═b6b617cc-bbb7-4235-8be2-2a4017c45345
 # ╟─65028960-b00a-4216-a7ad-80d84f5b0070
 # ╟─135dac9b-0bd9-4e1d-8378-5aa686f0b407
-# ╟─00000000-0000-0000-0000-000000000001
-# ╟─00000000-0000-0000-0000-000000000002
