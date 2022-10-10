@@ -1,7 +1,7 @@
 module HelloJulia
 
-# should have form v"1.x" for some integer x:
-const JULIA_VERSION = "1.7"
+# should have form "1.x" for some integer x; do not use v"1.x".
+const JULIA_VERSION = "1.8"
 const ROOT = joinpath(@__DIR__, "..")
 const NOTEBOOKS = joinpath(ROOT, "notebooks")
 
@@ -25,8 +25,8 @@ function __init__()
 
     VERSION in Pkg.Types.VersionSpec(JULIA_VERSION) ||
         @warn "This version of HelloJulia.jl should be run "*
-        "under Julia $(JULIA_VERSION.major).$(JULIA_VERSION.minor), "*
-        "but you're running $VERSION. "
+        "under Julia $JULIA_VERSION"
+        "but you're running $VERSION"
 
     PrecompilePlutoCourse.configure(
         @__MODULE__,
