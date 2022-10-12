@@ -46,7 +46,7 @@ scitype(3.143f0)
 
 html"""
 <div style="text-align: left";>
-	<img src="https://github.com/ablaom/MLJTutorial.jl/blob/dev/notebooks/01_data_representation/scitypes.png?raw=true">
+        <img src="https://github.com/ablaom/MLJTutorial.jl/blob/dev/notebooks/01_data_representation/scitypes.png?raw=true">
 </div>
 """
 
@@ -72,8 +72,8 @@ schema(df0)
 df1 = coerce(df0, :sibsp => Count)
 schema(df1)
 
-# Lets take a closer look at our target column :survived. Here a value 
-# `0`` means that the individual didn't survive while a value of `1`` indicates 
+# Lets take a closer look at our target column :survived. Here a value
+# `0` means that the individual didn't survive while a value of `1` indicates
 # an individual survived.
 
 levels(df1.survived)
@@ -99,8 +99,9 @@ end
 # "has cabin"`. Now to transform the whole column:
 
 df2 = DataFrames.transform(
-    df1, :cabin => DataFrames.ByRow(class) => :cabin
-) # now a `Textual` scitype
+    df1,
+    :cabin => DataFrames.ByRow(class) => :cabin
+) # :cabin now has `Textual` scitype
 coerce!(df2, :class => Multiclass)
 schema(df2)
 
@@ -119,13 +120,16 @@ DataFrames.nrow(df_test)
 
 # ## Cleaning the data
 
-# Let's constructor an MLJ model to impute missing data using default hyper-parameters:
+# Let's construct an MLJ model to impute missing data:
 
 cleaner = FillImputer()
 
-# In MLJ a *model* is just a container for hyper-parameters associated
-# with some ML algorithm. It does not store learned parameters (unlike
-# scikit-learn "estimators").
+# In MLJ a *model* is just a container for hyper-parameters associated with some ML
+# algorithm. It does not store learned parameters (unlike scikit-learn "estimators"). In
+# this case the hyper-parameters `features`, `continuous_fill`, `count_fill`, and
+# `finite_fill` specify which features should be imputed and how imputation should be
+# carried out, depending on the scitype. Since we didn't specify any features in our
+# constructor, we are using default values.
 
 # We now bind the model with training data in a *machine*:
 
@@ -161,7 +165,7 @@ scitype(y)
 y_test, X_test = unpack(dfc_test, ==(:survived));
 
 
-# ## Choosing an supervised model:
+# ## Choosing a supervised model:
 
 # There are not many models that can directly handle a mixture of
 # scitypes, as we have here:
@@ -192,14 +196,14 @@ small_tree = Tree(max_depth=3)
 
 html"""
 <div style="text-align: left";>
-	<img src="https://upload.wikimedia.org/wikipedia/commons/5/58/Decision_Tree_-_survival_of_passengers_on_the_Titanic.jpg">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/58/Decision_Tree_-_survival_of_passengers_on_the_Titanic.jpg">
 </div>
 """
 
 # ## The fit/predict worflow
 
-# We now the bind data to used for training and evaluation to the model
-# in a machine, just like we did for missing value imputation. In this
+# We now the bind data to be used for training and evaluation to the model (ie, choice of
+# hyperparameters) in a machine, just like we did for missing value imputation. In this
 # case, however, we also need to specify the training target `y`:
 
 macht = machine(tree, X, y)

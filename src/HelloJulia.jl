@@ -7,13 +7,14 @@ const NOTEBOOKS = joinpath(ROOT, "notebooks")
 
 # need Pluto here?
 import IJulia, PrecompilePlutoCourse, Pluto, Pkg
-export go, start, pluto, setup, stop, jupyter, jupiter
+export go, start, pluto, pluto_now, setup, stop, jupyter, jupiter
 
+const START_NOTEBOOK = joinpath(pkgdir(@__MODULE__), "notebooks", "pluto_index.jl")
 
 go() = IJulia.notebook(dir=NOTEBOOKS)
-
 const jupyter = go
 const jupiter = go
+
 const pluto = PrecompilePlutoCourse.start
 const stop = PrecompilePlutoCourse.stop
 const setup = PrecompilePlutoCourse.create_sysimage
@@ -29,12 +30,13 @@ function __init__()
         "but you're running $VERSION"
 
     PrecompilePlutoCourse.configure(
-        @__MODULE__,
-        start_notebook =
-        joinpath(pkgdir(@__MODULE__), "notebooks", "pluto_index.jl"),
+        @__MODULE__;
+        start_notebook = START_NOTEBOOK,
         warmup_file = joinpath(pkgdir(@__MODULE__), "precompile", "warmup.jl"),
         packages = [:Pluto, :HelloJulia, :CairoMakie, :Distributions]
     )
 end
+
+pluto_now() = Pluto.run(notebook=START_NOTEBOOK)
 
 end # module

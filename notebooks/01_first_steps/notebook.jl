@@ -1,5 +1,7 @@
 # # Tutorial 1
 
+# Notebook from [HelloJulia.jl](https://github.com/ablaom/HelloJulia.jl)
+
 # Crash course in Julia basics:
 
 # Arithmetic, arrays, tuples, strings, dictionaries, functions,
@@ -10,7 +12,7 @@
 # ## Setup
 
 # The following block of code installs some third-party Julia packges. Beginners do not need
-# to understand them.
+# to understand it.
 
 using Pkg
 Pkg.activate(joinpath(@__DIR__, "..", ".."))
@@ -164,7 +166,8 @@ names = keys(t2)
 
 #-
 
-isdefined(Main, :z)
+isdefined(Main, :z) #!nb
+isdefined(@__MODULE__, :z) #nb
 
 #-
 
@@ -172,12 +175,15 @@ z = 1 + 2im
 
 #-
 
-isdefined(Main, :z)
-
+isdefined(Main, :z) #!nb
+isdefined(@__MODULE__, :z) #nb
 
 # Symbols are generalized by *expressions*:
 
 ex = :(z == 3)
+
+#-
+
 eval(ex)
 
 # If this is confusing, forget it for now.
@@ -200,7 +206,7 @@ d
 
 keys(d)
 
-# The expression 'a' => "ant" is itself a stand-alone object:
+# The expression 'a' => "ant" is itself a stand-alone object called a *pair*:
 
 pair = 'a' => "ant"
 first(pair)
@@ -304,7 +310,7 @@ mean(y)
 
 #-
 
-quantile(y, 0.75);
+quantile(y, 0.75)
 
 
 # ## Probability distributions
@@ -346,7 +352,7 @@ using PkgOnlineHelp
 
 using ElectronDisplay #src
 using CairoMakie
-CairoMakie.activate!(type = "svg")
+CairoMakie.activate!(type = "png")
 
 #-
 
@@ -361,7 +367,7 @@ current_figure()
 
 #-
 
-save("my_first_plot.svg", fig)
+save("my_first_plot.png", fig)
 
 
 # # Exercises

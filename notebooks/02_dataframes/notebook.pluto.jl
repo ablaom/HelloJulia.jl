@@ -17,11 +17,11 @@ tutorial](https://juliaai.github.io/DataScienceTutorials.jl/data/dataframe/)
 from Data Science Tutorials.
 """
 
-# ╔═╡ 17e21026-099b-4b8e-af2a-25235e544a31
+# ╔═╡ e4dc9623-7dda-4d90-af2a-25235e544a31
 md"""
 DataFrames.jl **cheatsheets**:
 [english](https://www.ahsmart.com/assets/pages/data-wrangling-with-data-frames-jl-cheat-sheet/DataFramesCheatSheet_v1.x_rev1.pdf),
-[chinese](https://www.ahsmart.com/assets/pages/data-wrangling-with-data-frames-jl-cheat-sheet/DataFramesCheatSheet_v1.x_rev1_zh.pdf)
+[中文](https://www.ahsmart.com/assets/pages/data-wrangling-with-data-frames-jl-cheat-sheet/DataFramesCheatSheet_v1.x_rev1_zh.pdf)
 """
 
 # ╔═╡ 40956165-26d0-4d61-8af5-148d95ea2900
@@ -283,11 +283,8 @@ The following are all supported:
 * `eltype`, `nunique`, `nmissing` can also be used
 """
 
-# ╔═╡ 964ea710-9e32-4706-910b-f8a9a217eff2
-md"""
-You can also pass your custom function with a pair `function =>
-:name` for instance:
-"""
+# ╔═╡ ffaa27c3-5c5c-44d4-910b-f8a9a217eff2
+md"You can also pass custom function, together  with a name for the generated column by passing a pair `function => :name`, as in"
 
 # ╔═╡ ba1b1b96-46b0-4cf8-aa36-d2e8546da46a
 begin
@@ -303,12 +300,11 @@ md"Note that the object returned by `describe` is itself a `DataFrame`:"
 # ╔═╡ 947b4436-1432-4110-a1cb-54e34396a855
 select(d, [:variable, :mean])
 
-# ╔═╡ 91880b82-ffab-4c52-8037-0de5806e1a54
+# ╔═╡ 4365d9b8-1123-4d51-8037-0de5806e1a54
 md"""
 ## Materializing as a matrix
 
 To convert the content of the dataframe as one big matrix do this:
-use `convert`:
 """
 
 # ╔═╡ d92e2ff5-948d-47b3-9961-a09632c33fb0
@@ -348,9 +344,9 @@ begin
   first(iris, 3)
 end
 
-# ╔═╡ 6d10c87e-5886-41ee-9e90-09023d201062
+# ╔═╡ 431c0e94-107e-4648-9e90-09023d201062
 md"""
-## `groupby`
+## Split into sub-dataframes  according to values in a column using `groupby`
 
 The `groupby` function allows to form "sub-dataframes" corresponding
 to groups of rows.  This can be very convenient to run specific
@@ -403,8 +399,8 @@ parent `iris`.
 # ╔═╡ ca52a424-87bf-4394-b473-4aa968e6937a
 md"Do `?groupby` for more information."
 
-# ╔═╡ 23f3a8cd-3f38-4b9e-8d9e-644a1b3cc6b6
-md"## `combine`"
+# ╔═╡ d79f4034-cea2-4ca1-8d9e-644a1b3cc6b6
+md"## The `combine` function"
 
 # ╔═╡ ef382b74-3247-45a4-ac0a-23ded81445da
 md"""
@@ -447,9 +443,9 @@ begin
   combine(df3, :a => goo, :b => bar)
 end
 
-# ╔═╡ e87aa3fa-0db2-4734-abf5-96f457eb2bdf
+# ╔═╡ 51f79bba-b6b8-45a0-abf5-96f457eb2bdf
 md"""
-## `combine` with `groupby`
+## Using `combine` with `groupby`
 
 Combining `groupby` with `combine` is very useful.  For instance you
 might want to compute statistics across groups for different
@@ -511,7 +507,7 @@ md"""
 # ╟─7775b104-385d-4721-9bca-7c69b794f8ce
 # ╟─879229d0-fa8d-4b7d-b795-033f6f2a0674
 # ╟─ced52df6-0aec-456f-935f-ddf6a6bfbbdd
-# ╟─17e21026-099b-4b8e-af2a-25235e544a31
+# ╟─e4dc9623-7dda-4d90-af2a-25235e544a31
 # ╟─40956165-26d0-4d61-8af5-148d95ea2900
 # ╠═4474fd86-9496-44c7-a6bf-47194d7e8e12
 # ╟─e9994202-88fc-4bab-828a-4cc485149963
@@ -572,11 +568,11 @@ md"""
 # ╟─9b14c716-41ca-404e-bb0e-3a45761c733a
 # ╠═c0fcd414-a37f-4e48-9979-7044b2f2df33
 # ╟─95e50de2-775d-4457-b2a1-fbbde543f620
-# ╟─964ea710-9e32-4706-910b-f8a9a217eff2
+# ╟─ffaa27c3-5c5c-44d4-910b-f8a9a217eff2
 # ╠═ba1b1b96-46b0-4cf8-aa36-d2e8546da46a
 # ╟─3e50f94b-94c4-4fb3-88a1-a2bf91434413
 # ╠═947b4436-1432-4110-a1cb-54e34396a855
-# ╟─91880b82-ffab-4c52-8037-0de5806e1a54
+# ╟─4365d9b8-1123-4d51-8037-0de5806e1a54
 # ╠═d92e2ff5-948d-47b3-9961-a09632c33fb0
 # ╟─8214a5ed-990e-4a79-b7cc-46f4ef988c68
 # ╟─3c144b2c-87bf-438a-90fb-7f2721f6fcc7
@@ -584,7 +580,7 @@ md"""
 # ╟─e38109ec-ebf4-423a-8890-979691212d9b
 # ╟─8fb350ab-8631-4335-a6fa-eaf14df5d44b
 # ╠═c23a0e49-62ee-4eba-8025-5084804a9f6c
-# ╟─6d10c87e-5886-41ee-9e90-09023d201062
+# ╟─431c0e94-107e-4648-9e90-09023d201062
 # ╟─9d0800b7-fa7a-4c4b-b7bb-2f33ef765cc0
 # ╟─3414a5db-2bd9-4df4-9625-01172c4a0081
 # ╠═fbdc3ba2-fd93-473e-af4f-11c7de9e21dd
@@ -595,7 +591,7 @@ md"""
 # ╠═0add26cb-530d-4375-bce6-0a1379cc1259
 # ╟─c04bf75a-cb47-463a-9608-b5032c116833
 # ╟─ca52a424-87bf-4394-b473-4aa968e6937a
-# ╟─23f3a8cd-3f38-4b9e-8d9e-644a1b3cc6b6
+# ╟─d79f4034-cea2-4ca1-8d9e-644a1b3cc6b6
 # ╟─ef382b74-3247-45a4-ac0a-23ded81445da
 # ╠═81a9302f-431b-417e-8535-1a088a6a3228
 # ╠═8a900763-3658-4074-a39f-7893c73eef39
@@ -603,7 +599,7 @@ md"""
 # ╠═b985d3fb-2b57-42d2-9b33-09b4b6661170
 # ╟─d494e8d7-6fe8-4693-b45d-88d068bb0fa2
 # ╠═4559184a-36ef-4e6b-92c8-6db3a590d963
-# ╟─e87aa3fa-0db2-4734-abf5-96f457eb2bdf
+# ╟─51f79bba-b6b8-45a0-abf5-96f457eb2bdf
 # ╠═c17b5bb3-4f9f-4f0f-8a60-2e0214c059f5
 # ╟─6765732d-45d5-4468-a38a-beb5c7157b57
 # ╠═b59c860d-0212-4d53-81f5-507803ea9ed6

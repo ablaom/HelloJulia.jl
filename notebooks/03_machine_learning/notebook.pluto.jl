@@ -76,10 +76,10 @@ md"In MLJ, model data requirements are articulated using scitypes."
 # ╔═╡ ca482134-299b-459a-bca8-7eec7950fd82
 md"Here are common \"scalar\" scitypes:"
 
-# ╔═╡ c7a45cde-2f9b-47c9-9873-1b1430e635cc
+# ╔═╡ 2d0de272-ed0a-4c6b-9873-1b1430e635cc
 html"""
 <div style="text-align: left";>
-	<img src="https://github.com/ablaom/MLJTutorial.jl/blob/dev/notebooks/01_data_representation/scitypes.png?raw=true">
+        <img src="https://github.com/ablaom/MLJTutorial.jl/blob/dev/notebooks/01_data_representation/scitypes.png?raw=true">
 </div>
 """
 
@@ -121,10 +121,10 @@ begin
   schema(df1)
 end
 
-# ╔═╡ e9881856-85c2-49cf-9292-fe822525fc77
+# ╔═╡ 53001b24-6238-404e-9292-fe822525fc77
 md"""
 Lets take a closer look at our target column :survived. Here a value
-`0`` means that the individual didn't survive while a value of `1`` indicates
+`0` means that the individual didn't survive while a value of `1` indicates
 an individual survived.
 """
 
@@ -164,11 +164,12 @@ Shorthand syntax would be `class(c) = ismissing(c) ? "without cabin" :
 "has cabin"`. Now to transform the whole column:
 """
 
-# ╔═╡ b98ed4e8-c14a-4809-951b-64cb2a36c8e3
+# ╔═╡ b6f40008-ecad-44d1-951b-64cb2a36c8e3
 begin
   df2 = DataFrames.transform(
-      df1, :cabin => DataFrames.ByRow(class) => :cabin
-  ) # now a `Textual` scitype
+      df1,
+      :cabin => DataFrames.ByRow(class) => :cabin
+  ) # :cabin now has `Textual` scitype
   coerce!(df2, :class => Multiclass)
   schema(df2)
 end
@@ -192,17 +193,20 @@ DataFrames.nrow(df_test)
 # ╔═╡ 937fe069-98c9-45dd-8448-4bcb089096cd
 md"## Cleaning the data"
 
-# ╔═╡ fe8a8726-5047-4826-a012-a84240254fb6
-md"Let's constructor an MLJ model to impute missing data using default hyper-parameters:"
+# ╔═╡ 2b121607-501c-4b1b-a012-a84240254fb6
+md"Let's construct an MLJ model to impute missing data:"
 
 # ╔═╡ f49bb16f-aeeb-4fcd-bbdd-9799f7bb2e60
 cleaner = FillImputer()
 
-# ╔═╡ f94cdf23-d113-4386-97a7-88e3af4f10ee
+# ╔═╡ e72cfd45-8a02-4604-97a7-88e3af4f10ee
 md"""
-In MLJ a *model* is just a container for hyper-parameters associated
-with some ML algorithm. It does not store learned parameters (unlike
-scikit-learn "estimators").
+In MLJ a *model* is just a container for hyper-parameters associated with some ML
+algorithm. It does not store learned parameters (unlike scikit-learn "estimators"). In
+this case the hyper-parameters `features`, `continuous_fill`, `count_fill`, and
+`finite_fill` specify which features should be imputed and how imputation should be
+carried out, depending on the scitype. Since we didn't specify any features in our
+constructor, we are using default values.
 """
 
 # ╔═╡ bde9148b-79c2-4033-b372-8c9866e51852
@@ -258,8 +262,8 @@ md"While we're here, we'll do the same for the holdout test set:"
 # ╔═╡ 103d62ac-e7d0-4fd3-80f0-ba7781e173cf
 y_test, X_test = unpack(dfc_test, ==(:survived));
 
-# ╔═╡ 5fb0d820-3f4a-4974-9cbc-9a2c39793333
-md"## Choosing an supervised model:"
+# ╔═╡ a3fe5054-53da-422d-9cbc-9a2c39793333
+md"## Choosing a supervised model:"
 
 # ╔═╡ 2ca455ea-0a5d-40c8-b887-2b16710e5502
 md"""
@@ -304,20 +308,20 @@ tree trained on (some part of) the Titanic data set, which suggests
 how prediction works:
 """
 
-# ╔═╡ 78c34e59-26f0-4bf8-9979-7044b2f2df33
+# ╔═╡ 4b0e1d08-f24a-4fcb-9979-7044b2f2df33
 html"""
 <div style="text-align: left";>
-	<img src="https://upload.wikimedia.org/wikipedia/commons/5/58/Decision_Tree_-_survival_of_passengers_on_the_Titanic.jpg">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/58/Decision_Tree_-_survival_of_passengers_on_the_Titanic.jpg">
 </div>
 """
 
 # ╔═╡ 8674f741-da03-46f5-b2a1-fbbde543f620
 md"## The fit/predict worflow"
 
-# ╔═╡ 5879a6ad-8c92-4516-910b-f8a9a217eff2
+# ╔═╡ 232b57a3-a256-4d49-910b-f8a9a217eff2
 md"""
-We now the bind data to used for training and evaluation to the model
-in a machine, just like we did for missing value imputation. In this
+We now the bind data to be used for training and evaluation to the model (ie, choice of
+hyperparameters) in a machine, just like we did for missing value imputation. In this
 case, however, we also need to specify the training target `y`:
 """
 
@@ -404,7 +408,7 @@ md"""
 # ╠═5c2ec910-6444-4c53-8514-99938a2932db
 # ╟─ddaf1934-1aba-4ede-a0de-1721c1bc2df2
 # ╟─ca482134-299b-459a-bca8-7eec7950fd82
-# ╠═c7a45cde-2f9b-47c9-9873-1b1430e635cc
+# ╠═2d0de272-ed0a-4c6b-9873-1b1430e635cc
 # ╟─96c58ce9-9b29-4c5e-b43e-d0ebe87da176
 # ╠═9d2f0b19-2942-47ac-9009-4cfb2012998f
 # ╟─b90f3b7b-4de2-4a5c-abd3-cb77d7a79683
@@ -413,21 +417,21 @@ md"""
 # ╠═7072a580-be0d-4d88-bf32-94657e65284e
 # ╟─45dd887b-332e-48ff-9afd-65a5b5facac9
 # ╠═edb65ac2-2d62-48d0-b6c8-54f5ed90a964
-# ╟─e9881856-85c2-49cf-9292-fe822525fc77
+# ╟─53001b24-6238-404e-9292-fe822525fc77
 # ╠═32586af9-7600-4901-ae5e-4b83dcbc9675
 # ╟─1e99474e-2fd8-4e7d-8a29-32f11452654a
 # ╠═39a7b366-0330-4abd-a5f1-151fcbe229a2
 # ╟─940f1ee2-f54d-4fa1-81bc-2d5603785a09
 # ╠═069f1237-eb21-43cb-9d87-1d1fbb0e3997
 # ╟─1e97e00e-d895-49d3-b950-fddef2a1fb10
-# ╠═b98ed4e8-c14a-4809-951b-64cb2a36c8e3
+# ╠═b6f40008-ecad-44d1-951b-64cb2a36c8e3
 # ╟─207a7021-fe9f-44d4-b0e6-441461cc8770
 # ╠═26e3e647-8af0-42c7-8cb0-de601961bc02
 # ╠═30eb5d8f-e6c4-4a50-a87d-950c50fb2955
 # ╟─937fe069-98c9-45dd-8448-4bcb089096cd
-# ╟─fe8a8726-5047-4826-a012-a84240254fb6
+# ╟─2b121607-501c-4b1b-a012-a84240254fb6
 # ╠═f49bb16f-aeeb-4fcd-bbdd-9799f7bb2e60
-# ╟─f94cdf23-d113-4386-97a7-88e3af4f10ee
+# ╟─e72cfd45-8a02-4604-97a7-88e3af4f10ee
 # ╟─bde9148b-79c2-4033-b372-8c9866e51852
 # ╠═de5e2209-020b-4bce-8f3d-b82f1e7b6f7a
 # ╟─3ac76fef-0379-4d32-ab04-579e5608ae53
@@ -441,7 +445,7 @@ md"""
 # ╠═8d7d9cdb-4dcf-407a-895b-997a92b731e0
 # ╟─29bbd36f-5d25-43b6-a525-e9b04a4bd246
 # ╠═103d62ac-e7d0-4fd3-80f0-ba7781e173cf
-# ╟─5fb0d820-3f4a-4974-9cbc-9a2c39793333
+# ╟─a3fe5054-53da-422d-9cbc-9a2c39793333
 # ╟─2ca455ea-0a5d-40c8-b887-2b16710e5502
 # ╠═db2d9ba2-1fc4-4a7f-9452-5298a8a4a401
 # ╟─9e70bac7-6c1c-4fe4-b017-96f1602f2cad
@@ -450,9 +454,9 @@ md"""
 # ╟─187f489f-0d7e-4f8c-8378-5aa686f0b407
 # ╠═951f2042-3674-4481-9f43-49763e8691a1
 # ╟─edd14491-9fc4-4d0d-bb0e-3a45761c733a
-# ╠═78c34e59-26f0-4bf8-9979-7044b2f2df33
+# ╠═4b0e1d08-f24a-4fcb-9979-7044b2f2df33
 # ╟─8674f741-da03-46f5-b2a1-fbbde543f620
-# ╟─5879a6ad-8c92-4516-910b-f8a9a217eff2
+# ╟─232b57a3-a256-4d49-910b-f8a9a217eff2
 # ╠═487955f9-4158-4f5e-aa36-d2e8546da46a
 # ╟─f55550b3-b0eb-4ae7-88a1-a2bf91434413
 # ╠═890a342e-c900-4b6c-a1cb-54e34396a855

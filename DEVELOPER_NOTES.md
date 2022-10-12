@@ -6,8 +6,9 @@
 All tutorials use a common Project.toml/Manifest.toml pair, located at
 the root level.
 
-**IMPORTANT** Always ensure the version of Julia used to generate this
-pair matches what is declared in `/FIRST_STEPS.md`.
+**IMPORTANT** Always ensure the version of Julia used to generate this pair matches what
+is declared in `/FIRST_STEPS.md`. This needs to match `JULIA_VERSION` defined in
+src/HelloJulia.jl.
 
 
 ## Notebook types
