@@ -95,6 +95,10 @@ a pretty good ab initio introduction to programming.
 
 ### If you have moderate to advanced programming experience elsewhere
 
+If you are already python proficient, check out
+[this](https://colab.research.google.com/drive/1G04w8tTl074180DP_Ka9X44r_pndUYxq?usp=sharing#scrollTo=9at61Y3LLJWX)
+Colab notebook.
+
 My strong recommendation would be to read Aaron Christinson's tutorial
 [Dispatching Design
 Patterns](https://github.com/ninjaaron/dispatching-design-patterns)
