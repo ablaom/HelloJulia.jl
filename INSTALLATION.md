@@ -71,6 +71,18 @@ using HelloJulia
 pluto()
 ```
 
+If you encounter problems with running `setup()` or `pluto()` you can try launching the notebooks directly (without creating a system image) by restarting Julia and trying:
+
+```julia
+using Pkg; Pkg.activate(joinpath(Pkg.devdir(), "HelloJulia"))
+using HelloJulia
+pluto_now()
+```
+
+The only difference here is that notebooks may take a while to load, at least the first
+time they are launched.
+
+
 ## Option 3: To run as script in your editor
 
 For more experienced users and instructors.

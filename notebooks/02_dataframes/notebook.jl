@@ -8,7 +8,7 @@
 
 # DataFrames.jl **cheatsheets**:
 # [english](https://www.ahsmart.com/assets/pages/data-wrangling-with-data-frames-jl-cheat-sheet/DataFramesCheatSheet_v1.x_rev1.pdf),
-# [chinese](https://www.ahsmart.com/assets/pages/data-wrangling-with-data-frames-jl-cheat-sheet/DataFramesCheatSheet_v1.x_rev1_zh.pdf)
+# [中文](https://www.ahsmart.com/assets/pages/data-wrangling-with-data-frames-jl-cheat-sheet/DataFramesCheatSheet_v1.x_rev1_zh.pdf)
 
 # ## Setup
 
@@ -190,13 +190,13 @@ describe(df, :min, :max, :mean, :median, :std)
 # * `q25`, `q75` are respectively for the 25th and 75th percentile,
 # * `eltype`, `nunique`, `nmissing` can also be used
 
-# You can also pass your custom function with a pair `function =>
-# :name` for instance:
+# You can also pass custom function, together  with a name for the generated column by passing a pair `function => :name`, as in 
 
 using Statistics # to get functions like `mean` and `std`
 foo(v) = mean(abs.(v))
 d = describe(df, :mean, :median, foo => :mae)
 first(d, 3)
+
 
 # Note that the object returned by `describe` is itself a `DataFrame`:
 
@@ -206,7 +206,6 @@ select(d, [:variable, :mean])
 # ## Materializing as a matrix
 #
 # To convert the content of the dataframe as one big matrix do this:
-# use `convert`:
 
 mat = Matrix(df)
 mat[1:3, 1:3]
@@ -229,7 +228,7 @@ first(df, 3)
 iris = OpenML.load(61) |> DataFrame;
 first(iris, 3)
 
-# ## `groupby`
+# ## Split into sub-dataframes  according to values in a column using `groupby`
 #
 # The `groupby` function allows to form "sub-dataframes" corresponding
 # to groups of rows.  This can be very convenient to run specific
@@ -264,7 +263,7 @@ describe(subdf_setosa, :min, :mean, :max)
 # Do `?groupby` for more information.
 
 
-# ## `combine`
+# ## The `combine` function
 
 # The `combine` function allows to derive a new dataframe out of
 # transformations of an existing one.  Here's an example taken from
@@ -293,7 +292,7 @@ bar(v) = v[end-1:end]
 combine(df3, :a => goo, :b => bar)
 
 
-# ## `combine` with `groupby`
+# ## Using `combine` with `groupby`
 #
 # Combining `groupby` with `combine` is very useful.  For instance you
 # might want to compute statistics across groups for different

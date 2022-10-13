@@ -1,46 +1,8 @@
 ### A Pluto.jl notebook ###
-# v0.19.8
+# v0.16.0
 
 using Markdown
 using InteractiveUtils
-
-# ╔═╡ 4474fd86-9496-44c7-af2a-25235e544a31
-begin
-  using Pkg
-  Pkg.activate(joinpath(@__DIR__, "..", ".."))
-  Pkg.instantiate()
-end
-
-# ╔═╡ 2da628f3-c301-4e4d-8514-99938a2932db
-begin
-  using Distributions, Statistics
-  
-  samples1 = randn(1000); # or rand(Normal(), 1000)
-  samples2 = randn(1000);
-  
-  samples = samples1 .+ samples2;
-  
-  mu = mean(samples)
-  var = std(samples)^2
-  
-  @show mu var
-end
-
-# ╔═╡ f5122507-66bb-49ea-a0de-1721c1bc2df2
-begin
-  d = Normal(0, sqrt(2))
-  f(x) = pdf(d, x)
-  
-  xs = -5:(0.1):5
-  ys = f.(xs);
-  
-  using CairoMakie
-  CairoMakie.activate!(type = "svg")
-  
-  fig = hist(samples, normalization=:pdf)
-  lines!(xs, ys)
-  current_figure()
-end
 
 # ╔═╡ a2a09c0b-d3ec-4b46-9bca-7c69b794f8ce
 md"# Solutions to exercises"
@@ -50,6 +12,13 @@ md"## Setup"
 
 # ╔═╡ 45740c4d-b789-45dc-935f-ddf6a6bfbbdd
 md"The following instantiates a package environment."
+
+# ╔═╡ 4474fd86-9496-44c7-af2a-25235e544a31
+begin
+  using Pkg
+  Pkg.activate(joinpath(@__DIR__, "..", ".."))
+  Pkg.instantiate()
+end
 
 # ╔═╡ 19dae74b-24bd-428f-8af5-148d95ea2900
 md"## Exercise 1"
@@ -90,6 +59,37 @@ with zero mean and variance `2`.
 
 # ╔═╡ cd6e9fce-e54a-48c3-a949-7f3bd292fe31
 md"### Solution"
+
+# ╔═╡ 2da628f3-c301-4e4d-8514-99938a2932db
+begin
+  using Distributions, Statistics
+  
+  samples1 = randn(1000); # or rand(Normal(), 1000)
+  samples2 = randn(1000);
+  
+  samples = samples1 .+ samples2;
+  
+  mu = mean(samples)
+  var = std(samples)^2
+  
+  @show mu var
+end
+
+# ╔═╡ f5122507-66bb-49ea-a0de-1721c1bc2df2
+begin
+  d = Normal(0, sqrt(2))
+  f(x) = pdf(d, x)
+  
+  xs = -5:(0.1):5
+  ys = f.(xs);
+  
+  using CairoMakie
+  CairoMakie.activate!(type = "svg")
+  
+  fig = hist(samples, normalization=:pdf)
+  lines!(xs, ys)
+  current_figure()
+end
 
 # ╔═╡ 4f939d4a-e802-4b7d-bca8-7eec7950fd82
 md"## Exercise 3"

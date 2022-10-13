@@ -1,21 +1,8 @@
 ### A Pluto.jl notebook ###
-# v0.19.8
+# v0.16.0
 
 using Markdown
 using InteractiveUtils
-
-# ╔═╡ 4474fd86-9496-44c7-af2a-25235e544a31
-begin
-  using Pkg
-  Pkg.activate(joinpath(@__DIR__, "..", ".."))
-  Pkg.instantiate()
-end
-
-# ╔═╡ fd21ac37-974b-452a-a6bf-47194d7e8e12
-begin
-  using CairoMakie
-  CairoMakie.activate!(type = "svg")
-end
 
 # ╔═╡ eb79ecc5-d91f-45d2-9bca-7c69b794f8ce
 md"# Fractals using Julia"
@@ -26,8 +13,21 @@ md"Notebook from [HelloJulia.jl](https://github.com/ablaom/HelloJulia.jl)"
 # ╔═╡ ec6ad8e5-c854-41db-935f-ddf6a6bfbbdd
 md"Instantiate package environment:"
 
+# ╔═╡ 4474fd86-9496-44c7-af2a-25235e544a31
+begin
+  using Pkg
+  Pkg.activate(joinpath(@__DIR__, "..", ".."))
+  Pkg.instantiate()
+end
+
 # ╔═╡ e2dd3622-41bb-4ec7-8af5-148d95ea2900
 md"Load plotting package and set in-line display type:"
+
+# ╔═╡ 912dc07c-b98e-45fb-a6bf-47194d7e8e12
+begin
+  using CairoMakie
+  CairoMakie.activate!(type = "png")
+end
 
 # ╔═╡ 0acdb4d2-3952-40df-828a-4cc485149963
 function mandelbrot(z)
@@ -51,11 +51,11 @@ begin
           colormap = Reverse(:deep))
 end
 
-# ╔═╡ b7dc0b70-d371-4289-ba1f-6363f43ec697
-save("mandelbrot.svg", fig);
+# ╔═╡ efbca6b5-a003-4742-ba1f-6363f43ec697
+save("mandelbrot.png", fig);
 
-# ╔═╡ d734e051-6c92-4296-95ea-2955abd45275
-md"![](mandelbrot.svg)"
+# ╔═╡ 07d7034c-163f-4be0-95ea-2955abd45275
+md"![](mandelbrot.png)"
 
 # ╔═╡ 135dac9b-0bd9-4e1d-b1b3-dd47e367ba54
 md"""
@@ -70,9 +70,9 @@ md"""
 # ╟─ec6ad8e5-c854-41db-935f-ddf6a6bfbbdd
 # ╠═4474fd86-9496-44c7-af2a-25235e544a31
 # ╟─e2dd3622-41bb-4ec7-8af5-148d95ea2900
-# ╠═fd21ac37-974b-452a-a6bf-47194d7e8e12
+# ╠═912dc07c-b98e-45fb-a6bf-47194d7e8e12
 # ╠═0acdb4d2-3952-40df-828a-4cc485149963
 # ╠═ef1f39ed-5a24-4b57-9e54-3f7b3ca87ecb
-# ╠═b7dc0b70-d371-4289-ba1f-6363f43ec697
-# ╟─d734e051-6c92-4296-95ea-2955abd45275
+# ╠═efbca6b5-a003-4742-ba1f-6363f43ec697
+# ╟─07d7034c-163f-4be0-95ea-2955abd45275
 # ╟─135dac9b-0bd9-4e1d-b1b3-dd47e367ba54

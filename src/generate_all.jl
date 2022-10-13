@@ -4,6 +4,7 @@ const NOTEBOOK_PATHS = [
     "secret_sauce",
     "01_first_steps",
     "02_dataframes",
+    "03_machine_learning",
     "99_solutions_to_exercises"
 ]
 

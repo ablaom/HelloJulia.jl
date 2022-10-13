@@ -12,7 +12,7 @@ Pkg.instantiate()
 
 # Load plotting package and set in-line display type:
 using CairoMakie
-CairoMakie.activate!(type = "svg") #nb
+CairoMakie.activate!(type = "png") #nb
 
 #-
 
@@ -38,6 +38,6 @@ fig = heatmap(xs, ys, (x, y) -> mandelbrot(x + im*y),
 
 #-
 
-save("mandelbrot.svg", fig);
+save("mandelbrot.png", fig);
 
-# ![](mandelbrot.svg) #nb
+# ![](mandelbrot.png) #nb
