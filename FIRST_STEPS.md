@@ -7,26 +7,38 @@ While Julia can be run in the cloud (see e.g.,
 [here](https://juliahub.com/ui/Home)) we recommend installing Julia on
 your machine when starting out:
 
-- *Install the julia compiler:*
+1. If you are a Windows user, install [Windows
+   Terminal](https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701?hl=en-nz&gl=nz)
+   and make sure you know how to open a new terminal process, into which you can type
+   commands.
+
+2. *Install the julia compiler:*
   
+  - [Windows](https://julialang.org/downloads/platform/#windows) 
+
+  - Mac: Download the appropriate the file ending in `.dmg` appropriate to your processor
+    and follow [these instructions](https://julialang.org/downloads/platform/#macos).
+
+  - [Ubuntu](https://ferrolho.github.io/blog/2019-01-26/how-to-install-julia-on-ubuntu) or
+    other Linux distributions.
+	
+  *It is very strongly recommended that you add `julia` to your `PATH`*, as described in
+  the instructions, so that Julia can be launched from a terminal/console. (On a Mac,
+  double clicking on the Julia application icon will also do.)
+
   <br style="width:600px; height:480px">
     <img src="./Julia_Installation.gif" />
   </br>
 
-  [Ubuntu](https://ferrolho.github.io/blog/2019-01-26/how-to-install-julia-on-ubuntu) or
-  similar; [Mac,
-  Windows](https://www.juliafordatascience.com/first-steps-1-installing-julia/). The Julia
-  download page is [here](https://julialang.org/downloads/). *We strongly recommend you you
-  add `julia` to your `PATH`*, as described in the instructions, so that Julia can be
-  launched from the terminal/console.
-
-- Open the downloaded application in the usual way for your OS, or run
-  `julia` from a terminal/console. This launches a command-line
+3. Open the downloaded application in the usual way for your OS, or 
+  type `julia` and press `return` from a terminal window. This launches a command-line
   interface for interacting with julia called the
   [REPL](https://en.wikipedia.org/wiki/Read–eval–print_loop).
 
-- At the `julia> ` prompt, type the obligatory `println("Hello
-  world!")` to check the REPL is alive and kicking.
+4. *Testing.* At the `julia> ` prompt, type `println("Hello
+  world!")` and press `enter`. The words "Hello world!" should be repeated back to you:
+  
+![Julia REPL screen shot](/assets/hello_world.png)
 
 *Known issue*: If launching Julia on a Mac by clicking on the app icon, you may encounter
 "Error: Not authorised to send Apple events to Terminal." Workaround: See [this
