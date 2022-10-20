@@ -31,6 +31,8 @@ Pkg.activate(temp=true)
 Pkg.develop(url="https://github.com/ablaom/HelloJulia.jl")
 Pkg.activate(joinpath(Pkg.devdir(), "HelloJulia"))
 Pkg.instantiate()
+Pkg.build("Conda")
+Pkg.build("IJulia")
 ENV["JULIA_PKG_PRECOMPILE_AUTO"]=1
 
 using HelloJulia
@@ -69,12 +71,15 @@ tailored to the notebook content.)
 using Pkg; Pkg.activate(joinpath(Pkg.devdir(), "HelloJulia"))
 using HelloJulia
 pluto()
+
 ```
 
 If you encounter problems with running `setup()` or `pluto()` you can try launching the notebooks directly (without creating a system image) by restarting Julia and trying:
 
 ```julia
 using Pkg; Pkg.activate(joinpath(Pkg.devdir(), "HelloJulia"))
+Pkg.build("Conda")  # only need to do this very first time
+Pkg.build("IJulia") # only need to do this very first time
 using HelloJulia
 pluto_now()
 ```

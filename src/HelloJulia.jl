@@ -17,7 +17,11 @@ const jupiter = go
 
 const pluto = PrecompilePlutoCourse.start
 const stop = PrecompilePlutoCourse.stop
-const setup = PrecompilePlutoCourse.create_sysimage
+function setup()
+    Pkg.build("Conda")
+    Pkg.build("IJulia")
+    PrecompilePlutoCourse.create_sysimage
+end
 
 function __init__()
     if haskey(ENV, "TEST_MLJBASE")

@@ -6,6 +6,7 @@ version = "0.1.0"
 [deps]
 BetaML = "024491cd-cc6b-443e-8034-08ea7eb7db2b"
 CairoMakie = "13f3f980-e62b-5c42-98c6-ff1f3baf88f0"
+Conda = "8f4d0f93-b110-5947-807f-2305c1781a2d"
 DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
 Distributions = "31c24e10-a181-5473-b8eb-7969acd0382f"
 ElectronDisplay = "d872a56f-244b-5cc9-b574-2017b5b909a8"
