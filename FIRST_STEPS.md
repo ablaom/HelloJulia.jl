@@ -1,6 +1,6 @@
 # Installing Julia
 
-**Important** When following the following steps, be sure the version
+**Important** When following the following **four steps**, be sure the version
 of Julia you install is **version 1.8.x**, where **x** is any integer.
 
 While Julia can be run in the cloud (see e.g.,
@@ -12,17 +12,16 @@ your machine when starting out:
    and make sure you know how to open a new terminal process, into which you can type
    commands.
 
-2. *Install the julia compiler:*
+2. Install the julia compiler:
   
-  - [Windows](https://julialang.org/downloads/platform/#windows) 
-
   - Mac: Download the appropriate the file ending in `.dmg` appropriate to your processor
     and follow [these instructions](https://julialang.org/downloads/platform/#macos).
 
-  - [Ubuntu](https://ferrolho.github.io/blog/2019-01-26/how-to-install-julia-on-ubuntu) or
-    other Linux distributions.
+  - Ubuntu and other Linux distributions: Follow [these instructions](https://ferrolho.github.io/blog/2019-01-26/how-to-install-julia-on-ubuntu)
 	
-  *It is very strongly recommended that you add `julia` to your `PATH`*, as described in
+  - Windows: Follow [these instructions](https://julialang.org/downloads/platform/#windows) (video below)
+
+  **It is very strongly recommended that you add `julia` to your `PATH`**, as described in
   the instructions, so that Julia can be launched from a terminal/console. (On a Mac,
   double clicking on the Julia application icon will also do.)
 
