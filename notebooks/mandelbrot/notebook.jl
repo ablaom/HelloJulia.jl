@@ -14,7 +14,8 @@ Pkg.instantiate()
 using CairoMakie
 CairoMakie.activate!(type = "png") #nb
 
-#-
+# To plot the famous Mandelbrot set, we need to apply the following function millions of
+# times:
 
 function mandelbrot(z)
     c = z     # starting value and constant shift
@@ -27,6 +28,28 @@ function mandelbrot(z)
     end
     return max_iterations
 end
+
+# Let's see how long it takes to apply it just once:
+
+@time @eval mandelbrot(0.5)
+
+# Slow!! Why? Because Julia is a *compiled* language and does not
+# compile new code until it knows the type of arguments you want to
+# use. (The use of the macro `@eval` helps us to include this
+# compilation time in the total measurement, since `@time` is designed
+# to cleverly exclude it in recent Julia versions.)
+
+# Let's try again *with the same type* of argument:
+
+@time @eval mandelbrot(0.6)
+
+# Fast!!! Why? Because Julia caches the compiled code and the types
+# are the same. 
+
+# If we call with a new argument type (complex instead of float) we'll incur a compilation
+# delay once more:
+
+@time @eval mandelbrot(0.6 + im*0.1)
 
 #-
 
