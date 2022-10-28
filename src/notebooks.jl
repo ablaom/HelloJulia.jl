@@ -13,6 +13,8 @@ const NOTEBOOKS = [
      joinpath("03_machine_learning", "notebook.pluto.jl")),
     ("Solutions to exercises",
      joinpath("99_solutions_to_exercises", "notebook.pluto.jl")),
+    ("Blank notebook",
+     joinpath("blank_notebook", "notebook.pluto.jl")),
 ]
 
 function _linkname(path, nb, basedir)
