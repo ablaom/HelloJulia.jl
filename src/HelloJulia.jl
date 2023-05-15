@@ -1,7 +1,7 @@
 module HelloJulia
 
 # should have form "1.x" for some integer x; do not use v"1.x".
-const JULIA_VERSION = "1.8"
+const JULIA_VERSION = "1.9"
 const ROOT = joinpath(@__DIR__, "..")
 const NOTEBOOKS = joinpath(ROOT, "notebooks")
 

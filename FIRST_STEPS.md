@@ -1,7 +1,7 @@
 # Installing Julia
 
 **Important** When following the following **four steps**, be sure the version
-of Julia you install is **version 1.8.x**, where **x** is any integer.
+of Julia you install is **version 1.9.x**, where **x** is any integer.
 
 While Julia can be run in the cloud (see e.g.,
 [here](https://juliahub.com/ui/Home)) we recommend installing Julia on

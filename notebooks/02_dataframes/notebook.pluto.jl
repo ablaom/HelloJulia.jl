@@ -1,8 +1,23 @@
 ### A Pluto.jl notebook ###
-# v0.16.0
+# v0.19.25
 
 using Markdown
 using InteractiveUtils
+
+# ╔═╡ 4474fd86-9496-44c7-a6bf-47194d7e8e12
+begin
+  using Pkg
+  Pkg.activate(joinpath(@__DIR__, "..", ".."))
+  Pkg.instantiate()
+end
+
+# ╔═╡ 231ecead-09a5-4ac7-9873-1b1430e635cc
+begin
+  using OpenML
+  
+  table = OpenML.load(42638); # Titanic data set
+  typeof(table)
+end
 
 # ╔═╡ 7775b104-385d-4721-9bca-7c69b794f8ce
 md"# Tutorial 2"
@@ -27,13 +42,6 @@ DataFrames.jl **cheatsheets**:
 # ╔═╡ 40956165-26d0-4d61-8af5-148d95ea2900
 md"## Setup"
 
-# ╔═╡ 4474fd86-9496-44c7-a6bf-47194d7e8e12
-begin
-  using Pkg
-  Pkg.activate(joinpath(@__DIR__, "..", ".."))
-  Pkg.instantiate()
-end
-
 # ╔═╡ e9994202-88fc-4bab-828a-4cc485149963
 md"## A simple handmade data frame"
 
@@ -53,18 +61,18 @@ columntable = (
     married = [true, false, false],
 )
 
+# ╔═╡ aeb4f41d-2abe-4a3b-b1b3-dd47e367ba54
+begin
+  using DataFrames
+  dataframe = DataFrame(columntable)
+end
+
 # ╔═╡ 95df9fbb-9752-4500-95ea-2955abd45275
 md"""
 One problem with such a table is that it's not a simple matter to grab a single row, or to
 filter rows (records) based on some criterion. For this we can convert our table to a
 `DataFrame` from the DataFrames.jl package:
 """
-
-# ╔═╡ aeb4f41d-2abe-4a3b-b1b3-dd47e367ba54
-begin
-  using DataFrames
-  dataframe = DataFrame(columntable)
-end
 
 # ╔═╡ 8f2fe8d6-1e0f-4e02-8d7e-8e449afd1c48
 md"Now we can do things like this:"
@@ -83,14 +91,6 @@ md"## Grabbing the Titanic dataset as a DataFrame"
 # ╔═╡ 368564ee-157f-44dc-bca8-7eec7950fd82
 md"We'll be using [OpenML](https://www.openml.org/home) to grab datasets."
 
-# ╔═╡ 231ecead-09a5-4ac7-9873-1b1430e635cc
-begin
-  using OpenML
-  
-  table = OpenML.load(42638); # Titanic data set
-  typeof(table)
-end
-
 # ╔═╡ 7e19d8ea-14a4-4a2d-b43e-d0ebe87da176
 md"""
 This is not a `DataFrame`. However, it can be converted to one in the same way we
@@ -99,6 +99,14 @@ converted our named-tuple table:
 
 # ╔═╡ 943a5fd8-56fc-420e-9009-4cfb2012998f
 df = DataFrame(table);
+
+# ╔═╡ ba1b1b96-46b0-4cf8-aa36-d2e8546da46a
+begin
+  using Statistics # to get functions like `mean` and `std`
+  foo(v) = mean(abs.(v))
+  d = describe(df, :mean, :median, foo => :mae)
+  first(d, 3)
+end
 
 # ╔═╡ 7fe10a23-640b-4bf5-abd3-cb77d7a79683
 md"Lets' look the first few rows (observations) of `df`:"
@@ -285,14 +293,6 @@ The following are all supported:
 
 # ╔═╡ ffaa27c3-5c5c-44d4-910b-f8a9a217eff2
 md"You can also pass custom function, together  with a name for the generated column by passing a pair `function => :name`, as in"
-
-# ╔═╡ ba1b1b96-46b0-4cf8-aa36-d2e8546da46a
-begin
-  using Statistics # to get functions like `mean` and `std`
-  foo(v) = mean(abs.(v))
-  d = describe(df, :mean, :median, foo => :mae)
-  first(d, 3)
-end
 
 # ╔═╡ 3e50f94b-94c4-4fb3-88a1-a2bf91434413
 md"Note that the object returned by `describe` is itself a `DataFrame`:"

@@ -1,6 +1,6 @@
 ## &#10024; Participating in ResBaz 2022?
 
-Start [here](https://github.com/ablaom/HelloJulia.jl/wiki/Preparing-for-your-ResBaz-2022-Julia-workshop) either of these workshops:
+Start [here](https://github.com/ablaom/HelloJulia.jl/wiki/Preparing-for-your-ResBaz-2023-Julia-workshop) either of these workshops:
 
 - **Getting Started With the Julia Programming Language** 
 - **Introduction to Using Julia for Machine Learning**

@@ -1,8 +1,39 @@
 ### A Pluto.jl notebook ###
-# v0.16.0
+# v0.19.25
 
 using Markdown
 using InteractiveUtils
+
+# ╔═╡ 4474fd86-9496-44c7-9e54-3f7b3ca87ecb
+begin
+  using Pkg
+  Pkg.activate(joinpath(@__DIR__, "..", ".."))
+  Pkg.instantiate()
+end
+
+# ╔═╡ cc2371a4-26be-4325-a38a-beb5c7157b57
+using Random
+
+# ╔═╡ 3a2fb476-5685-40aa-9b21-6d4eb642d87e
+using Statistics
+
+# ╔═╡ c0df6812-9717-454b-a8b6-f7ff516dedc4
+begin
+  using Distributions
+  
+  N = 1000
+  samples = rand(Normal(), N);   # equivalent to Julia's built-in `randn(d)`
+  samples = (samples).^2;        # square element-wise
+end
+
+# ╔═╡ 4d822ecd-c6da-4bcb-b10e-562ce21caa04
+using PkgOnlineHelp
+
+# ╔═╡ 912dc07c-b98e-45fb-a02f-27b6c05e4d02
+begin
+  using CairoMakie
+  CairoMakie.activate!(type = "png")
+end
 
 # ╔═╡ 142b62e1-364e-45d6-9bca-7c69b794f8ce
 md"# Tutorial 1"
@@ -30,13 +61,6 @@ md"""
 The following block of code installs some third-party Julia packges. Beginners do not need
 to understand it.
 """
-
-# ╔═╡ 4474fd86-9496-44c7-9e54-3f7b3ca87ecb
-begin
-  using Pkg
-  Pkg.activate(joinpath(@__DIR__, "..", ".."))
-  Pkg.instantiate()
-end
 
 # ╔═╡ 96774cd2-130c-4455-ba1f-6363f43ec697
 md"## Julia is a calculator:"
@@ -354,14 +378,8 @@ rand(['a', 'b', 'c'], 10) # 10 random elements from a vector
 # ╔═╡ b87a9e77-1e26-4a1f-8a60-2e0214c059f5
 md"Some standard libraries are needed to do more, for example:"
 
-# ╔═╡ cc2371a4-26be-4325-a38a-beb5c7157b57
-using Random
-
 # ╔═╡ 9ac1f1af-bfdc-4499-81f5-507803ea9ed6
 randstring(30)
-
-# ╔═╡ 3a2fb476-5685-40aa-9b21-6d4eb642d87e
-using Statistics
 
 # ╔═╡ 974b70c1-2df2-40c6-b98c-3df1f31879bf
 begin
@@ -381,15 +399,6 @@ For sampling from more general distributions we need
 Distributions.jl package which is not part of the standard library.
 """
 
-# ╔═╡ c0df6812-9717-454b-a8b6-f7ff516dedc4
-begin
-  using Distributions
-  
-  N = 1000
-  samples = rand(Normal(), N);   # equivalent to Julia's built-in `randn(d)`
-  samples = (samples).^2;        # square element-wise
-end
-
 # ╔═╡ f618c762-a936-433f-81e1-74ef03c2e79e
 g = fit(Gamma, samples)
 
@@ -402,9 +411,6 @@ median(g)
 # ╔═╡ bcce5556-9e92-4dfa-97e3-6677afc6ca9f
 pdf(g, 1)
 
-# ╔═╡ 4d822ecd-c6da-4bcb-b10e-562ce21caa04
-using PkgOnlineHelp
-
 # ╔═╡ 60aef579-9404-4272-8f78-ab549ef1544e
 md"Uncomment and execute the next line to launch Distribution documentation in your browser:"
 
@@ -413,12 +419,6 @@ md"Uncomment and execute the next line to launch Distribution documentation in y
 
 # ╔═╡ 2a96dfa7-cf5a-4e7f-8704-dbab8e09b4f1
 md"## Plotting"
-
-# ╔═╡ 912dc07c-b98e-45fb-a02f-27b6c05e4d02
-begin
-  using CairoMakie
-  CairoMakie.activate!(type = "png")
-end
 
 # ╔═╡ 6439f7a8-34f3-4a01-bea4-3d467d48781c
 begin

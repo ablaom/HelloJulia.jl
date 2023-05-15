@@ -1,8 +1,21 @@
 ### A Pluto.jl notebook ###
-# v0.16.0
+# v0.19.25
 
 using Markdown
 using InteractiveUtils
+
+# ╔═╡ 4474fd86-9496-44c7-af2a-25235e544a31
+begin
+  using Pkg
+  Pkg.activate(joinpath(@__DIR__, "..", ".."))
+  Pkg.instantiate()
+end
+
+# ╔═╡ 912dc07c-b98e-45fb-a6bf-47194d7e8e12
+begin
+  using CairoMakie
+  CairoMakie.activate!(type = "png")
+end
 
 # ╔═╡ eb79ecc5-d91f-45d2-9bca-7c69b794f8ce
 md"# Fractals using Julia"
@@ -13,21 +26,8 @@ md"Notebook from [HelloJulia.jl](https://github.com/ablaom/HelloJulia.jl)"
 # ╔═╡ ec6ad8e5-c854-41db-935f-ddf6a6bfbbdd
 md"Instantiate package environment:"
 
-# ╔═╡ 4474fd86-9496-44c7-af2a-25235e544a31
-begin
-  using Pkg
-  Pkg.activate(joinpath(@__DIR__, "..", ".."))
-  Pkg.instantiate()
-end
-
 # ╔═╡ e2dd3622-41bb-4ec7-8af5-148d95ea2900
 md"Load plotting package and set in-line display type:"
-
-# ╔═╡ 912dc07c-b98e-45fb-a6bf-47194d7e8e12
-begin
-  using CairoMakie
-  CairoMakie.activate!(type = "png")
-end
 
 # ╔═╡ 442d865d-b88e-467d-828a-4cc485149963
 md"""
