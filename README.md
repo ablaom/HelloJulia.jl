@@ -7,7 +7,7 @@ Start [here](https://github.com/ablaom/HelloJulia.jl/wiki/Preparing-for-your-Res
 
 ---
 
-## Participating in JuliaCon 2022?
+## Participating in JuliaCon 2023?
 
 Start [here](https://github.com/ablaom/HelloJulia.jl/wiki/JuliaCon-2022-workshop:-Getting-started-with-Julia-and-MLJ) for the workshop **Getting started with Julia and machine learning**.
 
