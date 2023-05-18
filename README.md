@@ -1,4 +1,4 @@
-## &#10024; Participating in ResBaz 2022?
+## &#10024; Participating in ResBaz 2023?
 
 Start [here](https://github.com/ablaom/HelloJulia.jl/wiki/Preparing-for-your-ResBaz-2023-Julia-workshop) either of these workshops:
 
@@ -7,7 +7,7 @@ Start [here](https://github.com/ablaom/HelloJulia.jl/wiki/Preparing-for-your-Res
 
 ---
 
-## Participating in JuliaCon 2023?
+## Participating in JuliaCon 2022?
 
 Start [here](https://github.com/ablaom/HelloJulia.jl/wiki/JuliaCon-2022-workshop:-Getting-started-with-Julia-and-MLJ) for the workshop **Getting started with Julia and machine learning**.
 
