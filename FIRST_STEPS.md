@@ -19,7 +19,8 @@ your machine when starting out:
 
   - Ubuntu and other Linux distributions: Follow [these
     instructions](https://ferrolho.github.io/blog/2019-01-26/how-to-install-julia-on-ubuntu)
-    **but replace "1.8.5" with "1.9.0"** in all commands. 
+    **but replace "1.8" with "1.9", and "1.8.5" with "1.9.0"** in all commands (unless
+    this has already been updated in the post).
 	
   - Windows: Follow [these instructions](https://julialang.org/downloads/platform/#windows) (video below)
 
