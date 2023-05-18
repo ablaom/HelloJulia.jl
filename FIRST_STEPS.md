@@ -17,7 +17,9 @@ your machine when starting out:
   - Mac: Download the appropriate the file ending in `.dmg` appropriate to your processor
     and follow [these instructions](https://julialang.org/downloads/platform/#macos).
 
-  - Ubuntu and other Linux distributions: Follow [these instructions](https://ferrolho.github.io/blog/2019-01-26/how-to-install-julia-on-ubuntu)
+  - Ubuntu and other Linux distributions: Follow [these
+    instructions](https://ferrolho.github.io/blog/2019-01-26/how-to-install-julia-on-ubuntu)
+    **but replace "1.8.5" with "1.9.0"** in all commands. 
 	
   - Windows: Follow [these instructions](https://julialang.org/downloads/platform/#windows) (video below)
 
@@ -28,6 +30,9 @@ your machine when starting out:
   <br style="width:600px; height:480px">
     <img src="./Julia_Installation.gif" />
   </br>
+  
+  An new alternative I have not tried or tested myself is to use
+  [juliaup](https://github.com/JuliaLang/juliaup).
 
 3. Open the downloaded application in the usual way for your OS, or 
   type `julia` and press `return` from a terminal window. This launches a command-line
